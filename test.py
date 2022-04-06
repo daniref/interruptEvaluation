@@ -45,7 +45,7 @@ print("Configuring Digital Out / In...")
 dwf.FDwfDigitalOutConfigure(hdwf, c_int(1))
 
 # set number of sample to acquire
-nSamples = 400
+nSamples = 2000
 rgwSamples = (c_uint8 * nSamples)()
 cAvailable = c_int()
 cLost = c_int()
@@ -87,7 +87,7 @@ dwf.FDwfDigitalInTriggerSourceSet(hdwf, c_int(3))  # 3=trigsrcDetectorDigitalIn 
 dwf.FDwfDigitalInTriggerPositionSet(hdwf, c_int(nSamples))
 # in sync mode the trigger is used for sampling condition
 # trigger detector mask:          low &     hight & ( rising | falling )
-dwf.FDwfDigitalInTriggerSet(hdwf, c_int(0), c_int(0), c_int(1 << trigDIN), c_int(0))
+dwf.FDwfDigitalInTriggerSet(hdwf, c_int(1 << trigDIN), c_int(0), c_int(0), c_int(0))
 
 # begin acquisition
 dwf.FDwfDigitalInConfigure(hdwf, c_bool(0), c_bool(1))

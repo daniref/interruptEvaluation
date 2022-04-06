@@ -5,7 +5,7 @@ from sys import platform, path    # this is needed to check the OS type and get 
 from os import sep                # OS specific file path separators
 from LogicAnalyzer.dwfconstants import *
 
-class LOGIC_ANALYZER():
+class ANALOG_DISCOVERY():
     def __init__(self):
         # load the dynamic library, get constants path (the path is OS specific)
         if platform.startswith("win"):
@@ -29,11 +29,11 @@ class LOGIC_ANALYZER():
         self.__sampling_frequency = 0
 
     def open_device(self):
-        print("Logic Analyzer: Opening first device")
+        print("Analog Discovery: Opening first device")
         self.__dwf.FDwfDeviceOpen(c_int(-1), byref(self.__hdwf))
 
         if self.__hdwf.value == 0:
-            print("Logic Analyzer: Failed to open device")
+            print("Analog Discovery: Failed to open device")
             szerr = create_string_buffer(512)
             self.__dwf.FDwfGetLastErrorMsg(szerr)
             print(str(szerr.value))
@@ -51,113 +51,80 @@ class LOGIC_ANALYZER():
         internal_frequency = c_double()
         self.__dwf.FDwfDigitalInInternalClockInfo(self.__hdwf, byref(internal_frequency))
 
-        # print("Logic Analyzer: Internal frequency: ",internal_frequency.value)
+        # print("Analog Discovery: Internal frequency: ",internal_frequency.value)
         # set clock frequency divider (needed for lower frequency input signals)
         self.__dwf.FDwfDigitalInDividerSet(self.__hdwf, c_int(int(internal_frequency.value / sampling_frequency)))
 
         # 8bit => legge i primi 8 canali digitali; 16 => 16 canali; 32 => 32 canali
         self.__dwf.FDwfDigitalInSampleFormatSet(self.__hdwf, c_int(8))
 
-    def trigger_device(self, enable, channel, position=0, timeout=0, rising_edge=True, length_min=0, length_max=20, count=1):
+    def trigger_lowlev_device(self, enable, channel, count=1):
         # set trigger source to digital I/O lines, or turn it off
         if enable:
             self.__dwf.FDwfDigitalInTriggerSourceSet(self.__hdwf, trigsrcDetectorDigitalIn)
         else:
             self.__dwf.FDwfDigitalInTriggerSourceSet(self.__hdwf, trigsrcNone)
 
-        # set starting position and prefill
-        position = min(self.__sample_number, max(0, position))
-        self.__dwf.FDwfDigitalInTriggerPositionSet(self.__hdwf, ctypes.c_int(self.__sample_number - position))
-        self.__dwf.FDwfDigitalInTriggerPrefillSet(self.__hdwf, ctypes.c_int(position))
+        # set starting position
+        self.__dwf.FDwfDigitalInTriggerPositionSet(self.__hdwf, ctypes.c_int(self.__sample_number))
 
-        # set trigger condition
-        channel = ctypes.c_int(1 << channel)
-        if rising_edge:
-            self.__dwf.FDwfDigitalInTriggerSet(self.__hdwf, channel, ctypes.c_int(0), ctypes.c_int(0), ctypes.c_int(0))
-            self.__dwf.FDwfDigitalInTriggerResetSet(self.__hdwf, ctypes.c_int(0), ctypes.c_int(0), ctypes.c_int(0), channel)
-        else:
-            self.__dwf.FDwfDigitalInTriggerSet(self.__hdwf, ctypes.c_int(0), channel, ctypes.c_int(0), ctypes.c_int(0))
-            self.__dwf.FDwfDigitalInTriggerResetSet(self.__hdwf, ctypes.c_int(0), ctypes.c_int(0), channel, ctypes.c_int(0))
-
-        # set auto triggering
-        # self.__dwf.FDwfDigitalInTriggerAutoTimeoutSet(self.__hdwf, ctypes.c_double(timeout))
-
-        # set sequence length to activate trigger
-        self.__dwf.FDwfDigitalInTriggerLengthSet(self.__hdwf, ctypes.c_double(length_min), ctypes.c_double(length_max), ctypes.c_int(0))
+        # trigger detector mask:                            low &   hight &             ( rising | falling )
+        self.__dwf.FDwfDigitalInTriggerSet(self.__hdwf, ctypes.c_int(1 << channel), ctypes.c_int(0), ctypes.c_int(0), ctypes.c_int(0))
 
         # set event counter
         self.__dwf.FDwfDigitalInTriggerCountSet(self.__hdwf, ctypes.c_int(count), ctypes.c_int(0))
 
     def aquire_samples(self):
         # set some important variables
-        rgwSamples = (c_uint8 * self.__sample_number)()
-        cAvailable = c_int()
-        cLost = c_int()
-        cCorrupted = c_int()
-        cSamples = 0
-        fLost = 0
-        fCorrupted = 0
+        samplevalues = (c_uint8 * self.__sample_number)()
+        
+        dataAvailable = c_int()
+        dataLost = c_int()
+        dataCorrupted = c_int()
+        
+        samplesaquired = 0
+        
+        sample_is_lost = 0
+        sample_is_corrupted = 0
         status = c_byte()
 
         # begin acquisition
         self.__dwf.FDwfDigitalInConfigure(self.__hdwf, c_bool(0), c_bool(1))
 
-        print("Logic Analyzer: Aquisition...")
+        print("Analog Discovery: Aquisition...")
 
-        while cSamples < self.__sample_number:
+        while samplesaquired < self.__sample_number:
             self.__dwf.FDwfDigitalInStatus(self.__hdwf, c_int(1), byref(status))
-            if cSamples == 0 and (status == DwfStateConfig or status == DwfStatePrefill or status == DwfStateArmed):
+            if samplesaquired == 0 and (status == DwfStateConfig or status == DwfStatePrefill or status == DwfStateArmed):
                 # acquisition not yet started.
                 continue
 
-            self.__dwf.FDwfDigitalInStatusRecord(self.__hdwf, byref(cAvailable), byref(cLost), byref(cCorrupted))
+            self.__dwf.FDwfDigitalInStatusRecord(self.__hdwf, byref(dataAvailable), byref(dataLost), byref(dataCorrupted))
 
-            cSamples += cLost.value
+            samplesaquired += dataLost.value
 
-            if cLost.value:
-                fLost = 1
-            if cCorrupted.value:
-                fCorrupted = 1
-
-            if cAvailable.value == 0:
+            if dataLost.value:
+                sample_is_lost = 1
+            if dataCorrupted.value:
+                sample_is_corrupted = 1
+            if dataAvailable.value == 0:
                 continue
-
-            if cSamples + cAvailable.value > self.__sample_number:
-                cAvailable = c_int(self.__sample_number - cSamples)
+            if samplesaquired + dataAvailable.value > self.__sample_number:
+                dataAvailable = c_int(self.__sample_number - samplesaquired)
 
             # get samples
-            self.__dwf.FDwfDigitalInStatusData(self.__hdwf, byref(rgwSamples, 1 * cSamples), c_int(1 * cAvailable.value))
-            cSamples += cAvailable.value
+            self.__dwf.FDwfDigitalInStatusData(self.__hdwf, byref(samplevalues, 1 * samplesaquired), c_int(1 * dataAvailable.value))
+            samplesaquired += dataAvailable.value
 
-        # self.__dwf.FDwfDeviceClose(self.__hdwf)
-
-        print("Logic Analyzer: Aquisition complete!")
-        if fLost:
+        print("Analog Discovery: Aquisition complete!")
+        if sample_is_lost:
             print("Samples were lost! Reduce sample rate")
-        if cCorrupted:
+        if sample_is_corrupted:
             print("Samples could be corrupted! Reduce sample rate")
 
-        f = open("LogicAnalyzer/record.csv", "w")
-        for v in rgwSamples:
-            f.write("%s\n" % v)
-        f.close()
+        return samplevalues
 
-
-
-
-
-
-
-
-
-
-
-#
-# """-----------------------------------------------------------------------"""
-#
-# def close(self.__hdwf):
-#     """
-#         reset the instrument
-#     """
-# self.__dwf.FDwfDigitalInReset(self.__hdwf)
-#     return
+    def close(self):
+        self.__dwf.FDwfDigitalInReset(self.__hdwf)
+        print("Analog Discovery: Device closed!")
+        return

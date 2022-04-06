@@ -5,9 +5,13 @@ import LogicAnalyzer.getSamples as la
 if __name__ == '__main__':
     print("Main starts!")
 
-    sample_number = 10
-    logic_sampl_freq = 100e6
+    observation_number = 5     # number of observation for each sample of the experiment
 
-    la.get_sample(logic_sampl_freq,sample_number)
+    sample_number = 1000         # sample number to aquire from logic analyzer for each sample of the experiment
+    logic_sampl_freq = 100e6    # sampling frequency of logic analyzer
+
+
+    latencies = la.get_LA_latency(logic_sampl_freq,sample_number,observation_number)
+    print(latencies)
 
     print("Main ends!")

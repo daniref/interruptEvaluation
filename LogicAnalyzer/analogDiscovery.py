@@ -127,4 +127,5 @@ class ANALOG_DISCOVERY():
     def close(self):
         self.__dwf.FDwfDigitalInReset(self.__hdwf)
         print("Analog Discovery: Device closed!")
+        del self.__dwf
         return

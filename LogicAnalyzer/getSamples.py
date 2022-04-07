@@ -1,7 +1,7 @@
 from LogicAnalyzer.analogDiscovery import *
 
 def get_LA_latency(sampling_frequency, sample_number, observation_number):
-
+    print("Hello, I'm the Analog Discovery!")
     # connect to the analog discovery and aquire samples
     la = ANALOG_DISCOVERY()
     la.open_device()
@@ -28,6 +28,7 @@ def process_latencies(samples, observation_number, sampling_frequency):
     samples_processed = 0
     latency_ticks_counter = 0
     latency_values = []
+    mask_zero = 0b00000000
     mask_channel0 = 0b00000001
     mask_channel1 = 0b00000010
     mask_irq_served = mask_channel0 | mask_channel1
@@ -37,10 +38,10 @@ def process_latencies(samples, observation_number, sampling_frequency):
 
     while(observation_detected < observation_number):                                       # find all latencies observed
 
-        while((samples[samples_processed] & mask_irq_served) != 0):                         # skip to the next DIO1/DIO0 low levels
+        while((samples[samples_processed] & mask_irq_served) != mask_zero):                 # skip to the next DIO1/DIO0 low levels
             samples_processed+=1                                                            # state = (DIO1-DIO0:1-1 or 0-1 or 1-0(?))
 
-        while((samples[samples_processed] & mask_channel0) != 0):                           # skip to the next DIO0 rising edge
+        while((samples[samples_processed] & mask_channel0) != mask_channel0):               # skip to the next DIO0 rising edge
             samples_processed+=1                                                            # state = (DIO1-DIO0:0-0)
 
         latency_ticks_counter = 0
@@ -49,8 +50,6 @@ def process_latencies(samples, observation_number, sampling_frequency):
             samples_processed+=1                                                            # state = (DIO1-DIO0:0-1)
             latency_ticks_counter+=1
 
-        print("tick counter ", latency_ticks_counter)
-        print("sampl freq ", sampling_frequency)
         latency_values.append(latency_ticks_counter/sampling_frequency)                     # save latency
         observation_detected+=1                                                             # state = (DIO1-DIO0:1-1)
 

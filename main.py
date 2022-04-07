@@ -7,21 +7,24 @@ from multiprocessing import Process, Lock
 if __name__ == '__main__':
     print("Main starts!")
 
-    observation_number = 10     # number of observation for each sample of the experiment
+    observation_number = 3     # number of observation for each sample of the experiment
 
     sample_number = 1000         # sample number to aquire from logic analyzer for each sample of the experiment
     logic_sampl_freq = 100e6    # sampling frequency of logic analyzer
 
+    serial_port = "/dev/ttyUSB2"
+
     jobs = []
-    p = Process(target=la.get_LA_latency, args=(logic_sampl_freq,sample_number,observation_number))
-    jobs.append(p)
-    p.start()
 
-    p = Process(target=lb.get_LB_latencies())
-    jobs.append(p)
-    p.start()
+    # p = Process(target=la.get_LA_latency, args=(logic_sampl_freq,sample_number,observation_number))
+    # jobs.append(p)
+    # p.start()
 
-    p = Process(target=st.get_ST_latencies())
+    # p = Process(target=lb.get_LB_latencies())
+    # jobs.append(p)
+    # p.start()
+
+    p = Process(target=st.get_ST_latencies, args=(serial_port,observation_number))
     jobs.append(p)
     p.start()
 

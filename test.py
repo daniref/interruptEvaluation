@@ -9,14 +9,14 @@
 
 from LogicAnalyzer.dwfconstants import *
 import sys
-
+"""
 if sys.platform.startswith("win"):
     dwf = cdll.dwf
 elif sys.platform.startswith("darwin"):
     dwf = cdll.LoadLibrary("/Library/Frameworks/dwf.framework/dwf")
 else:
     dwf = cdll.LoadLibrary("libdwf.so")
-
+"""
 hdwf = c_int()
 sts = c_byte()
 

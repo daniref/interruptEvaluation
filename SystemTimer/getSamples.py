@@ -10,22 +10,26 @@ def get_ST_latencies(name_serial, observation_number):
     latencies = []
 
     line = ser.readline()
-    while(line != "END TIMES:\r\r\n"):
+    while(line.decode('Ascii') != "END TIMES:\r\r\n"):
         line = ser.readline()
 
-    for i in range(0,observation_number):
-        end_times.append(ser.readline())
+    for i in range(0, observation_number):
+        end_times.append(ser.readline().decode('Ascii'))
 
     line = ser.readline()
 
-    if(line == "START TIMES:\r\r\n"):
+    if(line.decode('Ascii') != "START TIMES:\r\r\n"):
         for i in range(0, observation_number):
-            start_times.append(ser.readline())
+            start_times.append(ser.readline().decode('Ascii'))
     else:
         print("System Timer: reading error")
         return
 
     for i in range(0, observation_number):
-        latencies.append(end_times[i] - start_times[i])
+        print(end_times[i])
+    for i in range(0, observation_number):
+        print(start_times[i])
+    for i in range(0, observation_number):
+        latencies.append(int(end_times[i]) - int(start_times[i]))
 
     print(latencies)

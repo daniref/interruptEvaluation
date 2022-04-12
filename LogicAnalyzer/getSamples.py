@@ -53,8 +53,6 @@ def process_latencies(samples, observation_number, sampling_frequency):
         latency_values.append(latency_ticks_counter/sampling_frequency)                     # save latency
         observation_detected+=1                                                             # state = (DIO1-DIO0:1-1)
 
-
-
     return latency_values
 
 

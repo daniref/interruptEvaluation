@@ -20,13 +20,13 @@ if __name__ == '__main__':
     # jobs.append(p)
     # p.start()
 
-    # p = Process(target=lb.get_LB_latencies())
-    # jobs.append(p)
-    # p.start()
-
-    p = Process(target=st.get_ST_latencies, args=(serial_port,observation_number))
+    p = Process(target=lb.get_LB_latencies())
     jobs.append(p)
     p.start()
+
+    # p = Process(target=st.get_ST_latencies, args=(serial_port,observation_number))
+    # jobs.append(p)
+    # p.start()
 
     for job in jobs:
         job.join()

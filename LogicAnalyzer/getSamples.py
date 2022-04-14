@@ -1,4 +1,4 @@
-from LogicAnalyzer.analogDiscovery import *
+from LogicAnalyzer.analogDiscoveryAPI import *
 
 def get_LA_latency(sampling_frequency, sample_number, observation_number):
     print("Hello, I'm the Analog Discovery!")

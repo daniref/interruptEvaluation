@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"zcu106_int_meas_plat": {
+			"proto_instances": {
+			}
+		}
+	}
+}

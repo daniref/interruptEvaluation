@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdsproject="http://www.xilinx.com/sdsproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="test_interrupt_v3_system" platform="/home/oppy/Documenti/PhD/vitis_ws/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/zcu106_int_meas_plat_v3.xpfm" platformUID="xilinx:zcu106::0.0(custom)" sysConfig="zcu106_int_meas_plat_v3" runtime="C/C++" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.99635218">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="test_interrupt_v3" domainName="standalone_domain" domainPrettyName="standalone_domain" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1826517461">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="test_interrupt_v3" domainName="standalone_domain" domainPrettyName="standalone_domain" appBuildConfig="Release"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

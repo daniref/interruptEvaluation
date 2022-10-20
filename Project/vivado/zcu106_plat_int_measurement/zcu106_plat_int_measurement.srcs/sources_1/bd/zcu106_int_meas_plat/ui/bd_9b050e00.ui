@@ -1,0 +1,39 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.679688",
+   "Default View_TopLeft":"-88,29",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_TRACE_CTL -pg 1 -lvl 4 -x 1360 -y 610 -defaultsOSRD
+preplace port port-id_TRACE_CLK -pg 1 -lvl 4 -x 1360 -y 650 -defaultsOSRD
+preplace portBus ACK_SIGNAL -pg 1 -lvl 4 -x 1360 -y 410 -defaultsOSRD
+preplace portBus IRQ_SIGNAL -pg 1 -lvl 4 -x 1360 -y 550 -defaultsOSRD
+preplace portBus TRACE_DATA -pg 1 -lvl 4 -x 1360 -y 580 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 340 -y 120 -defaultsOSRD
+preplace inst output_external_gpio -pg 1 -lvl 3 -x 1180 -y 400 -defaultsOSRD
+preplace inst interr_source_gpio -pg 1 -lvl 3 -x 1180 -y 540 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 2 -x 870 -y 390 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 340 -y 380 -defaultsOSRD
+preplace netloc axi_gpio_0_gpio_io_o 1 3 1 NJ 410
+preplace netloc axi_gpio_1_gpio_io_o 1 0 4 20 620 NJ 620 NJ 620 1320
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 2 710 560 1040
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 3 20 240 700 570 1030
+preplace netloc zynq_ultra_ps_e_0_pl_clk1 1 0 2 10 520 660
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 2 10 20 660
+preplace netloc zynq_ultra_ps_e_0_ps_pl_tracectl 1 1 3 690J 630 NJ 630 1340J
+preplace netloc zynq_ultra_ps_e_0_trace_clk_out 1 1 3 670J 650 NJ 650 NJ
+preplace netloc zynq_ultra_ps_e_0_ps_pl_tracedata 1 1 3 680J 640 NJ 640 1330J
+preplace netloc ps8_0_axi_periph_M00_AXI 1 2 1 N 380
+preplace netloc ps8_0_axi_periph_M01_AXI 1 2 1 1020 400n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 670 280n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 1 1 690 300n
+levelinfo -pg 1 -10 340 870 1180 1360
+pagesize -pg 1 -db -bbox -sgen -10 0 1550 670
+"
+}
+{
+   "da_axi4_cnt":"3",
+   "da_board_cnt":"2",
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

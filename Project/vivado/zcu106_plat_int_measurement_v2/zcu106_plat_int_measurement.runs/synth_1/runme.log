@@ -1,0 +1,219 @@
+
+*** Running vivado
+    with args -log zcu106_int_meas_plat_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zcu106_int_meas_plat_wrapper.tcl
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source zcu106_int_meas_plat_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+Command: synth_design -top zcu106_int_meas_plat_wrapper -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 204963
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2981.777 ; gain = 149.797 ; free physical = 7829 ; free virtual = 20152
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'zcu106_int_meas_plat_wrapper' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/hdl/zcu106_int_meas_plat_wrapper.vhd:24]
+INFO: [Synth 8-3491] module 'zcu106_int_meas_plat' declared at '/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/synth/zcu106_int_meas_plat.vhd:14' bound to instance 'zcu106_int_meas_plat_i' of component 'zcu106_int_meas_plat' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/hdl/zcu106_int_meas_plat_wrapper.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'zcu106_int_meas_plat' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/synth/zcu106_int_meas_plat.vhd:28]
+INFO: [Synth 8-3491] module 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0' declared at '/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.runs/synth_1/.Xil/Vivado-204935-oppy/realtime/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_stub.vhdl:5' bound to instance 'zynq_ultra_ps_e_0' of component 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/synth/zcu106_int_meas_plat.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.runs/synth_1/.Xil/Vivado-204935-oppy/realtime/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'zcu106_int_meas_plat' (1#1) [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/synth/zcu106_int_meas_plat.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'zcu106_int_meas_plat_wrapper' (2#1) [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/hdl/zcu106_int_meas_plat_wrapper.vhd:24]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3026.746 ; gain = 194.766 ; free physical = 7440 ; free virtual = 19762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3044.559 ; gain = 212.578 ; free physical = 7415 ; free virtual = 19754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3044.559 ; gain = 212.578 ; free physical = 7415 ; free virtual = 19754
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3044.559 ; gain = 0.000 ; free physical = 7411 ; free virtual = 19749
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zcu106_int_meas_plat_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'zcu106_int_meas_plat_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.srcs/constrs/new/constraints.xdc]
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.srcs/constrs/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.srcs/constrs/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zcu106_int_meas_plat_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zcu106_int_meas_plat_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3139.309 ; gain = 0.000 ; free physical = 8255 ; free virtual = 20577
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3139.309 ; gain = 0.000 ; free physical = 8255 ; free virtual = 20577
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3139.309 ; gain = 307.328 ; free physical = 8328 ; free virtual = 20650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3139.309 ; gain = 307.328 ; free physical = 8328 ; free virtual = 20650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for zcu106_int_meas_plat_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for zcu106_int_meas_plat_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3139.309 ; gain = 307.328 ; free physical = 8327 ; free virtual = 20650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3139.309 ; gain = 307.328 ; free physical = 8327 ; free virtual = 20651
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 3139.309 ; gain = 307.328 ; free physical = 8325 ; free virtual = 20655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3577.855 ; gain = 745.875 ; free physical = 7709 ; free virtual = 20076
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3577.855 ; gain = 745.875 ; free physical = 7709 ; free virtual = 20076
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3596.887 ; gain = 764.906 ; free physical = 7705 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------------------+----------+
+|      |BlackBox name                            |Instances |
++------+-----------------------------------------+----------+
+|1     |zcu106_int_meas_plat_zynq_ultra_ps_e_0_0 |         1|
++------+-----------------------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------------------------+------+
+|      |Cell                                          |Count |
++------+----------------------------------------------+------+
+|1     |zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_bbox |     1|
+|2     |IBUF                                          |     1|
+|3     |OBUF                                          |    22|
++------+----------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.824 ; gain = 770.844 ; free physical = 7739 ; free virtual = 20072
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 3602.824 ; gain = 676.094 ; free physical = 7778 ; free virtual = 20111
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3602.832 ; gain = 770.844 ; free physical = 7778 ; free virtual = 20111
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3618.762 ; gain = 0.000 ; free physical = 7870 ; free virtual = 20203
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3638.605 ; gain = 0.000 ; free physical = 7802 ; free virtual = 20135
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+
+Synth Design complete, checksum: 3466114f
+INFO: [Common 17-83] Releasing license: Synthesis
+26 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 3638.605 ; gain = 1024.625 ; free physical = 7999 ; free virtual = 20332
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement_v2/zcu106_plat_int_measurement.runs/synth_1/zcu106_int_meas_plat_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zcu106_int_meas_plat_wrapper_utilization_synth.rpt -pb zcu106_int_meas_plat_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 19 15:12:02 2022...

@@ -1,0 +1,747 @@
+
+*** Running vivado
+    with args -log zcu106_int_meas_plat_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zcu106_int_meas_plat_wrapper.tcl -notrace
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source zcu106_int_meas_plat_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2021.2/data/ip'.
+Command: link_design -top zcu106_int_meas_plat_wrapper -part xczu7ev-ffvc1156-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_1/zcu106_int_meas_plat_axi_gpio_0_1.dcp' for cell 'yZynq/interr_source_gpio'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_0/zcu106_int_meas_plat_axi_gpio_0_0.dcp' for cell 'yZynq/output_external_gpio'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_rst_ps8_0_99M_0/zcu106_int_meas_plat_rst_ps8_0_99M_0.dcp' for cell 'yZynq/rst_ps8_0_99M'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.dcp' for cell 'yZynq/zynq_ultra_ps_e_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_xbar_0/zcu106_int_meas_plat_xbar_0.dcp' for cell 'yZynq/ps8_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_0/zcu106_int_meas_plat_auto_ds_0.dcp' for cell 'yZynq/ps8_0_axi_periph/s00_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_pc_0/zcu106_int_meas_plat_auto_pc_0.dcp' for cell 'yZynq/ps8_0_axi_periph/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_1/zcu106_int_meas_plat_auto_ds_1.dcp' for cell 'yZynq/ps8_0_axi_periph/s01_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_pc_1/zcu106_int_meas_plat_auto_pc_1.dcp' for cell 'yZynq/ps8_0_axi_periph/s01_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2842.770 ; gain = 0.000 ; free physical = 14862 ; free virtual = 25190
+INFO: [Netlist 29-17] Analyzing 34 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_rst_ps8_0_99M_0/zcu106_int_meas_plat_rst_ps8_0_99M_0_board.xdc] for cell 'yZynq/rst_ps8_0_99M/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_rst_ps8_0_99M_0/zcu106_int_meas_plat_rst_ps8_0_99M_0_board.xdc] for cell 'yZynq/rst_ps8_0_99M/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_rst_ps8_0_99M_0/zcu106_int_meas_plat_rst_ps8_0_99M_0.xdc] for cell 'yZynq/rst_ps8_0_99M/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_rst_ps8_0_99M_0/zcu106_int_meas_plat_rst_ps8_0_99M_0.xdc] for cell 'yZynq/rst_ps8_0_99M/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_0/zcu106_int_meas_plat_axi_gpio_0_0_board.xdc] for cell 'yZynq/output_external_gpio/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_0/zcu106_int_meas_plat_axi_gpio_0_0_board.xdc] for cell 'yZynq/output_external_gpio/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_0/zcu106_int_meas_plat_axi_gpio_0_0.xdc] for cell 'yZynq/output_external_gpio/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_0/zcu106_int_meas_plat_axi_gpio_0_0.xdc] for cell 'yZynq/output_external_gpio/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_1/zcu106_int_meas_plat_axi_gpio_0_1_board.xdc] for cell 'yZynq/interr_source_gpio/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_1/zcu106_int_meas_plat_axi_gpio_0_1_board.xdc] for cell 'yZynq/interr_source_gpio/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_1/zcu106_int_meas_plat_axi_gpio_0_1.xdc] for cell 'yZynq/interr_source_gpio/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_axi_gpio_0_1/zcu106_int_meas_plat_axi_gpio_0_1.xdc] for cell 'yZynq/interr_source_gpio/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.xdc] for cell 'yZynq/zynq_ultra_ps_e_0/U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.xdc] for cell 'yZynq/zynq_ultra_ps_e_0/U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[31]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[30]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[29]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[28]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[27]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[26]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[25]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[24]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[23]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[22]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[21]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[20]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[19]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[18]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[17]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRACE_DATA[16]'. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.srcs/constrs_1/new/constraints.xdc]
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_0/zcu106_int_meas_plat_auto_ds_0_clocks.xdc] for cell 'yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_0/zcu106_int_meas_plat_auto_ds_0_clocks.xdc] for cell 'yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_1/zcu106_int_meas_plat_auto_ds_1_clocks.xdc] for cell 'yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_auto_ds_1/zcu106_int_meas_plat_auto_ds_1_clocks.xdc] for cell 'yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst'
+INFO: [Project 1-1714] 6 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3056.629 ; gain = 0.000 ; free physical = 14744 ; free virtual = 25093
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+20 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3056.629 ; gain = 449.973 ; free physical = 14744 ; free virtual = 25093
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 3056.629 ; gain = 0.000 ; free physical = 14751 ; free virtual = 25084
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 120bc918b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3242.387 ; gain = 185.758 ; free physical = 14549 ; free virtual = 24880
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-1287] Pulled Inverter yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/current_word_1[3]_i_1 into driver instance yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/s_axi_rvalid_INST_0_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/first_mi_word_i_2 into driver instance yZynq/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/s_axi_bvalid_INST_0_i_1, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/current_word_1[3]_i_1 into driver instance yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/s_axi_rvalid_INST_0_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/first_mi_word_i_2 into driver instance yZynq/ps8_0_axi_periph/s01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.USE_SPLIT.write_resp_inst/s_axi_bvalid_INST_0_i_1, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter yZynq/ps8_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_atarget_enc[1]_i_1 into driver instance yZynq/ps8_0_axi_periph/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/m_atarget_hot[2]_i_2, which resulted in an inversion of 5 pins
+INFO: [Opt 31-138] Pushed 10 inverter(s) to 825 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1794d3071
+
+Time (s): cpu = 00:00:00.40 ; elapsed = 00:00:00.22 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14357 ; free virtual = 24680
+INFO: [Opt 31-389] Phase Retarget created 6 cells and removed 42 cells
+INFO: [Opt 31-1021] In phase Retarget, 54 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 21c420432
+
+Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14357 ; free virtual = 24680
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 16 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 54 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 17c716817
+
+Time (s): cpu = 00:00:00.84 ; elapsed = 00:00:00.66 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14345 ; free virtual = 24678
+INFO: [Opt 31-389] Phase Sweep created 2 cells and removed 497 cells
+INFO: [Opt 31-1021] In phase Sweep, 193 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG yZynq/zynq_ultra_ps_e_0/U0/trace_clk_out_BUFG_inst to drive 51 load(s) on clock net yZynq/zynq_ultra_ps_e_0/U0/trace_clk_out_BUFGCE
+INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 4 BUFG optimization | Checksum: 184990170
+
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.73 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14346 ; free virtual = 24679
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 184990170
+
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14346 ; free virtual = 24679
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 15ad6d73c
+
+Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.76 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14346 ; free virtual = 24679
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 66 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               6  |              42  |                                             54  |
+|  Constant propagation         |               0  |              16  |                                             54  |
+|  Sweep                        |               2  |             497  |                                            193  |
+|  BUFG optimization            |               1  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             66  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14346 ; free virtual = 24679
+Ending Logic Optimization Task | Checksum: 16a659cea
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.84 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14346 ; free virtual = 24679
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 16a659cea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14345 ; free virtual = 24679
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 16a659cea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14345 ; free virtual = 24679
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14345 ; free virtual = 24679
+Ending Netlist Obfuscation Task | Checksum: 16a659cea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3494.371 ; gain = 0.000 ; free physical = 14345 ; free virtual = 24679
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3534.391 ; gain = 0.000 ; free physical = 14338 ; free virtual = 24675
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file zcu106_int_meas_plat_wrapper_drc_opted.rpt -pb zcu106_int_meas_plat_wrapper_drc_opted.pb -rpx zcu106_int_meas_plat_wrapper_drc_opted.rpx
+Command: report_drc -file zcu106_int_meas_plat_wrapper_drc_opted.rpt -pb zcu106_int_meas_plat_wrapper_drc_opted.pb -rpx zcu106_int_meas_plat_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 4846.129 ; gain = 1311.738 ; free physical = 13292 ; free virtual = 23743
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13283 ; free virtual = 23734
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 13cf3366d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13283 ; free virtual = 23734
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13283 ; free virtual = 23734
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10dfc3828
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.65 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13296 ; free virtual = 23751
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1a53ec4b3
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13260 ; free virtual = 23716
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1a53ec4b3
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13260 ; free virtual = 23716
+Phase 1 Placer Initialization | Checksum: 1a53ec4b3
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13257 ; free virtual = 23714
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 1daa8b967
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13244 ; free virtual = 23702
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 192bc92b1
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13238 ; free virtual = 23698
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 192bc92b1
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4846.129 ; gain = 0.000 ; free physical = 13122 ; free virtual = 23643
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: ff56c526
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13120 ; free virtual = 23642
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: ff56c526
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13120 ; free virtual = 23642
+Phase 2.1.1 Partition Driven Placement | Checksum: ff56c526
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13121 ; free virtual = 23642
+Phase 2.1 Floorplanning | Checksum: a7387f48
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13121 ; free virtual = 23642
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: a7387f48
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13121 ; free virtual = 23642
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: a7387f48
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 4866.480 ; gain = 20.352 ; free physical = 13121 ; free virtual = 23643
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 145 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 55 nets or LUTs. Breaked 0 LUT, combined 55 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1030] Pass 1. Identified 2 candidate driver sets for equivalent driver rewiring.
+INFO: [Physopt 32-661] Optimized 2 nets.  Re-placed 12 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 12 existing cells
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 4882.488 ; gain = 0.000 ; free physical = 13098 ; free virtual = 23619
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4882.488 ; gain = 0.000 ; free physical = 13099 ; free virtual = 23621
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             55  |                    55  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     2  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |             55  |                    57  |           0  |           5  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 170c1458d
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:08 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13103 ; free virtual = 23624
+Phase 2.4 Global Placement Core | Checksum: 1278cdc43
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13111 ; free virtual = 23625
+Phase 2 Global Placement | Checksum: 1278cdc43
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:11 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13117 ; free virtual = 23630
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 124ca94ef
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13129 ; free virtual = 23642
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 15368ef6d
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13125 ; free virtual = 23638
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 1ffffa09b
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13113 ; free virtual = 23626
+
+Phase 3.3.2 Flow Legalize Slice Clusters
+Phase 3.3.2 Flow Legalize Slice Clusters | Checksum: 20900e9b0
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13110 ; free virtual = 23623
+
+Phase 3.3.3 Slice Area Swap
+Phase 3.3.3 Slice Area Swap | Checksum: 14b585c40
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13091 ; free virtual = 23604
+Phase 3.3 Small Shape DP | Checksum: 1d6a44ca4
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13111 ; free virtual = 23626
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 19ccb8b59
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13108 ; free virtual = 23623
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 202f73a5d
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13108 ; free virtual = 23623
+Phase 3 Detail Placement | Checksum: 202f73a5d
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13108 ; free virtual = 23623
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 15c4846e5
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.369 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 170913398
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4882.488 ; gain = 0.000 ; free physical = 13100 ; free virtual = 23614
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 190bc1fad
+
+Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.06 . Memory (MB): peak = 4882.488 ; gain = 0.000 ; free physical = 13099 ; free virtual = 23613
+Phase 4.1.1.1 BUFG Insertion | Checksum: 15c4846e5
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:16 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13100 ; free virtual = 23614
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.369. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 14712484a
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:16 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13100 ; free virtual = 23614
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:16 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13101 ; free virtual = 23615
+Phase 4.1 Post Commit Optimization | Checksum: 14712484a
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:16 . Memory (MB): peak = 4882.488 ; gain = 36.359 ; free physical = 13101 ; free virtual = 23615
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13105 ; free virtual = 23620
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 15f461362
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|              16x16|              16x16|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|              16x16|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 15f461362
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+Phase 4.3 Placer Reporting | Checksum: 15f461362
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13117 ; free virtual = 23631
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 201ce6d2d
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+Ending Placer Task | Checksum: 1848dc6c0
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13117 ; free virtual = 23631
+INFO: [Common 17-83] Releasing license: Implementation
+87 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:21 . Memory (MB): peak = 4897.480 ; gain = 51.352 ; free physical = 13262 ; free virtual = 23777
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.17 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13243 ; free virtual = 23768
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file zcu106_int_meas_plat_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.25 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13221 ; free virtual = 23740
+INFO: [runtcl-4] Executing : report_utilization -file zcu106_int_meas_plat_wrapper_utilization_placed.rpt -pb zcu106_int_meas_plat_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file zcu106_int_meas_plat_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.09 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13255 ; free virtual = 23774
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+96 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.17 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13210 ; free virtual = 23739
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: b2a1911d ConstDB: 0 ShapeSum: b9b86a8b RouteDB: 1833cb18
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.61 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13013 ; free virtual = 23540
+Post Restoration Checksum: NetGraph: 7f301e0a NumContArr: bd4aaf48 Constraints: cb0b9e20 Timing: 0
+Phase 1 Build RT Design | Checksum: 207866b72
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 13004 ; free virtual = 23532
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 207866b72
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 12945 ; free virtual = 23473
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 207866b72
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 4897.480 ; gain = 0.000 ; free physical = 12945 ; free virtual = 23473
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 14f7ccb12
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 4976.676 ; gain = 79.195 ; free physical = 12939 ; free virtual = 23468
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 16bc7f853
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 4976.676 ; gain = 79.195 ; free physical = 12935 ; free virtual = 23464
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.455  | TNS=0.000  | WHS=-0.039 | THS=-4.352 |
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 5116
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 3869
+  Number of Partially Routed Nets     = 1247
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 19c15e9f7
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 4976.676 ; gain = 79.195 ; free physical = 12950 ; free virtual = 23481
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 19c15e9f7
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 4976.676 ; gain = 79.195 ; free physical = 12950 ; free virtual = 23481
+Phase 3 Initial Routing | Checksum: 2810a3c62
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4993.129 ; gain = 95.648 ; free physical = 12910 ; free virtual = 23443
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1006
+ Number of Nodes with overlaps = 100
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.338  | TNS=0.000  | WHS=0.016  | THS=0.000  |
+
+Phase 4.1 Global Iteration 0 | Checksum: 27d1facf9
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12880 ; free virtual = 23432
+
+Phase 4.2 Additional Iteration for Hold
+Phase 4.2 Additional Iteration for Hold | Checksum: 2aeb51c19
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12879 ; free virtual = 23431
+Phase 4 Rip-up And Reroute | Checksum: 2aeb51c19
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12879 ; free virtual = 23431
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 2364e22f2
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12887 ; free virtual = 23439
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 2364e22f2
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12887 ; free virtual = 23439
+Phase 5 Delay and Skew Optimization | Checksum: 2364e22f2
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12887 ; free virtual = 23440
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2ac66ca2a
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12885 ; free virtual = 23440
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.338  | TNS=0.000  | WHS=0.016  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1c947f589
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12885 ; free virtual = 23440
+Phase 6 Post Hold Fix | Checksum: 1c947f589
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12885 ; free virtual = 23440
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.703938 %
+  Global Horizontal Routing Utilization  = 0.348963 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 228ab6906
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12882 ; free virtual = 23437
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 228ab6906
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12881 ; free virtual = 23437
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 228ab6906
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12881 ; free virtual = 23436
+
+Phase 10 Resolve XTalk
+Phase 10 Resolve XTalk | Checksum: 228ab6906
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12884 ; free virtual = 23439
+
+Phase 11 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.338  | TNS=0.000  | WHS=0.016  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 11 Post Router Timing | Checksum: 228ab6906
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12884 ; free virtual = 23439
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12971 ; free virtual = 23527
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+110 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:10 . Memory (MB): peak = 5057.160 ; gain = 159.680 ; free physical = 12971 ; free virtual = 23527
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.20 . Memory (MB): peak = 5057.160 ; gain = 0.000 ; free physical = 12950 ; free virtual = 23518
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file zcu106_int_meas_plat_wrapper_drc_routed.rpt -pb zcu106_int_meas_plat_wrapper_drc_routed.pb -rpx zcu106_int_meas_plat_wrapper_drc_routed.rpx
+Command: report_drc -file zcu106_int_meas_plat_wrapper_drc_routed.rpt -pb zcu106_int_meas_plat_wrapper_drc_routed.pb -rpx zcu106_int_meas_plat_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpt -pb zcu106_int_meas_plat_wrapper_methodology_drc_routed.pb -rpx zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpt -pb zcu106_int_meas_plat_wrapper_methodology_drc_routed.pb -rpx zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/impl_1/zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file zcu106_int_meas_plat_wrapper_power_routed.rpt -pb zcu106_int_meas_plat_wrapper_power_summary_routed.pb -rpx zcu106_int_meas_plat_wrapper_power_routed.rpx
+Command: report_power -file zcu106_int_meas_plat_wrapper_power_routed.rpt -pb zcu106_int_meas_plat_wrapper_power_summary_routed.pb -rpx zcu106_int_meas_plat_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+122 Infos, 16 Warnings, 16 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file zcu106_int_meas_plat_wrapper_route_status.rpt -pb zcu106_int_meas_plat_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file zcu106_int_meas_plat_wrapper_timing_summary_routed.rpt -pb zcu106_int_meas_plat_wrapper_timing_summary_routed.pb -rpx zcu106_int_meas_plat_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file zcu106_int_meas_plat_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file zcu106_int_meas_plat_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file zcu106_int_meas_plat_wrapper_bus_skew_routed.rpt -pb zcu106_int_meas_plat_wrapper_bus_skew_routed.pb -rpx zcu106_int_meas_plat_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 12 15:07:02 2022...

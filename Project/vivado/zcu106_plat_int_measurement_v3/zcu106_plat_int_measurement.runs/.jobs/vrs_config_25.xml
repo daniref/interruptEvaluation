@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1" LaunchDir="/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

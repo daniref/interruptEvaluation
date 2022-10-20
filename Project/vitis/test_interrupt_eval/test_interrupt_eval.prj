@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="test_interrupt_eval" location="/home/oppy/Documenti/PhD/vitis_ws/test_interrupt_eval" platform="/home/oppy/Documenti/PhD/vitis_ws/zcu106_int_meas_plat_wrapper/export/zcu106_int_meas_plat_wrapper/zcu106_int_meas_plat_wrapper.xpfm" platformUID="xilinx:zcu106::0.0(custom)" systemProject="test_interrupt_eval_system" sysConfig="zcu106_int_meas_plat_wrapper" runtime="cpp" cpu="standalone_psu_cortexa53_0" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="c19a8cd2b1800c8a59701062ae77b2e3">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.804532154">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.2042657446" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

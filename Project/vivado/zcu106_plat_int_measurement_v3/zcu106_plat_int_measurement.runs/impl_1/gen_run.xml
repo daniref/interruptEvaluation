@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1666212443">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BITSTR-SYSDEF" Name="zcu106_int_meas_plat_wrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="zcu106_int_meas_plat_wrapper.ltx"/>
+  <File Type="BG-BGN" Name="zcu106_int_meas_plat_wrapper.bgn"/>
+  <File Type="RNPI_FILE" Name="zcu106_int_meas_plat_wrapper.rnpi"/>
+  <File Type="BG-DRC" Name="zcu106_int_meas_plat_wrapper.drc"/>
+  <File Type="CFI_FILE" Name="zcu106_int_meas_plat_wrapper.cfi"/>
+  <File Type="RCFI_FILE" Name="zcu106_int_meas_plat_wrapper.rcfi"/>
+  <File Type="BITSTR-MMI" Name="zcu106_int_meas_plat_wrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="zcu106_int_meas_plat_wrapper_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="zcu106_int_meas_plat_wrapper.nky"/>
+  <File Type="BITSTR-RBT" Name="zcu106_int_meas_plat_wrapper.rbt"/>
+  <File Type="RBD_FILE" Name="zcu106_int_meas_plat_wrapper.rbd"/>
+  <File Type="BITSTR-MSK" Name="zcu106_int_meas_plat_wrapper.msk"/>
+  <File Type="NPI_FILE" Name="zcu106_int_meas_plat_wrapper.npi"/>
+  <File Type="BG-BIN" Name="zcu106_int_meas_plat_wrapper.bin"/>
+  <File Type="PDI-FILE" Name="zcu106_int_meas_plat_wrapper.pdi"/>
+  <File Type="BG-BIT" Name="zcu106_int_meas_plat_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="zcu106_int_meas_plat_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="zcu106_int_meas_plat_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="zcu106_int_meas_plat_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="zcu106_int_meas_plat_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="RDI-RDI" Name="zcu106_int_meas_plat_wrapper.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="zcu106_int_meas_plat_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="zcu106_int_meas_plat_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="zcu106_int_meas_plat_wrapper_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="zcu106_int_meas_plat_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="zcu106_int_meas_plat_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="zcu106_int_meas_plat_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="zcu106_int_meas_plat_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="zcu106_int_meas_plat_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="zcu106_int_meas_plat_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="zcu106_int_meas_plat_wrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="zcu106_int_meas_plat_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="zcu106_int_meas_plat_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="zcu106_int_meas_plat_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="zcu106_int_meas_plat_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="zcu106_int_meas_plat_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="zcu106_int_meas_plat_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="zcu106_int_meas_plat_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="zcu106_int_meas_plat_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="zcu106_int_meas_plat_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="zcu106_int_meas_plat_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="zcu106_int_meas_plat_wrapper_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="zcu106_int_meas_plat_wrapper_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="zcu106_int_meas_plat_wrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="zcu106_int_meas_plat_wrapper_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="zcu106_int_meas_plat_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="zcu106_int_meas_plat_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="zcu106_int_meas_plat_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="zcu106_int_meas_plat_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="zcu106_int_meas_plat_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="zcu106_int_meas_plat_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="zcu106_int_meas_plat_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="zcu106_int_meas_plat_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="zcu106_int_meas_plat_wrapper_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="zcu106_int_meas_plat_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="zcu106_int_meas_plat_wrapper_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="zcu106_int_meas_plat_wrapper.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="zcu106_int_meas_plat_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="zcu106_int_meas_plat_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="zcu106_int_meas_plat_wrapper_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="zcu106_int_meas_plat_wrapper_timing_summary_init.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="zcu106_int_meas_plat_wrapper_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="zcu106_int_meas_plat_wrapper_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="zcu106_int_meas_plat_wrapper_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="zcu106_int_meas_plat_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/zcu106_int_meas_plat/zcu106_int_meas_plat.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/zcu106_int_meas_plat/hdl/zcu106_int_meas_plat_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/parallel_trace_adapter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="zcu106_int_meas_plat_wrapper"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs">
+    <File Path="$PSRCDIR/constrs/new/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs/new/constraints.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="zcu106_int_meas_plat_zynq_ultra_ps_e_0_0"/>
+</GenRun>

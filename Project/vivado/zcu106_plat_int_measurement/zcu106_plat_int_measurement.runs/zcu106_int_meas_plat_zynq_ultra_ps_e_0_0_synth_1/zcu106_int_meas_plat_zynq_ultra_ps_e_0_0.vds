@@ -1,0 +1,423 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Apr 16 21:04:15 2022
+# Process ID: 205636
+# Current directory: /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1
+# Command line: vivado -log zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.tcl
+# Log file: /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.vds
+# Journal file: /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/vivado.jou
+# Running On: oppy, OS: Linux, CPU Frequency: 3600.000 MHz, CPU Physical cores: 10, Host memory: 33459 MB
+#-----------------------------------------------------------
+source zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.tcl -notrace
+Command: synth_design -top zcu106_int_meas_plat_zynq_ultra_ps_e_0_0 -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 205813
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2979.453 ; gain = 148.797 ; free physical = 684 ; free virtual = 17592
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/synth/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.vhd:149]
+	Parameter C_DP_USE_AUDIO bound to: 0 - type: integer 
+	Parameter C_DP_USE_VIDEO bound to: 0 - type: integer 
+	Parameter C_MAXIGP0_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_MAXIGP1_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_MAXIGP2_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_SAXIGP0_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP1_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP2_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP3_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP4_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP5_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_SAXIGP6_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP0 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP2 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP3 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP4 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP5 bound to: 0 - type: integer 
+	Parameter C_USE_DIFF_RW_CLK_GP6 bound to: 0 - type: integer 
+	Parameter C_EN_FIFO_ENET0 bound to: 0 - type: string 
+	Parameter C_EN_FIFO_ENET1 bound to: 0 - type: string 
+	Parameter C_EN_FIFO_ENET2 bound to: 0 - type: string 
+	Parameter C_EN_FIFO_ENET3 bound to: 0 - type: string 
+	Parameter C_PL_CLK0_BUF bound to: TRUE - type: string 
+	Parameter C_PL_CLK1_BUF bound to: TRUE - type: string 
+	Parameter C_PL_CLK2_BUF bound to: FALSE - type: string 
+	Parameter C_PL_CLK3_BUF bound to: FALSE - type: string 
+	Parameter C_TRACE_PIPELINE_WIDTH bound to: 8 - type: integer 
+	Parameter C_EN_EMIO_TRACE bound to: 1 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_USE_DEBUG_TEST bound to: 0 - type: integer 
+	Parameter C_SD0_INTERNAL_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_SD1_INTERNAL_BUS_WIDTH bound to: 8 - type: integer 
+	Parameter C_NUM_F2P_0_INTR_INPUTS bound to: 1 - type: integer 
+	Parameter C_NUM_F2P_1_INTR_INPUTS bound to: 1 - type: integer 
+	Parameter C_EMIO_GPIO_WIDTH bound to: 1 - type: integer 
+	Parameter C_NUM_FABRIC_RESETS bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e' declared at '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:339' bound to instance 'U0' of component 'zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/synth/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.vhd:1793]
+INFO: [Synth 8-6157] synthesizing module 'zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:339]
+INFO: [Synth 8-6157] synthesizing module 'BUFG_PS' [/tools/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1307]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG_PS' (1#1) [/tools/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:1307]
+INFO: [Synth 8-6157] synthesizing module 'PS8' [/tools/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:91151]
+INFO: [Synth 8-6155] done synthesizing module 'PS8' (2#1) [/tools/Xilinx/Vivado/2021.2/scripts/rt/data/unisim_comp.v:91151]
+WARNING: [Synth 8-689] width (16) of port connection 'PSPLTRACEDATA' does not match port width (32) of module 'PS8' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:4749]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXN0OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXN1OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXN2OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXN3OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXP0OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXP1OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXP2OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTTXP3OUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_PADO' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_BOOTMODE' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_CLK' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DONEB' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMA' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMACTN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMALERTN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMBA' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMBG' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMCK' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMCKE' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMCKN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMCSN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMDM' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMDQ' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMDQS' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMDQSN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMODT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMPARITY' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_DRAMRAMRSTN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_ERROROUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_ERRORSTATUS' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_INITB' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_JTAGTCK' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_JTAGTDI' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_JTAGTDO' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_JTAGTMS' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MIO' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_PORB' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_PROGB' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_RCALIBINOUT' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_SRSTB' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_ZQ' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXN0IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXN1IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXN2IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXN3IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXP0IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXP1IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXP2IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_MGTRXP3IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_PADI' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFN0IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFN1IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFN2IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFN3IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFP0IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFP1IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFP2IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7071] port 'PSS_ALTO_CORE_PAD_REFP3IN' of module 'PS8' is unconnected for instance 'PS8_i' [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-7023] instance 'PS8_i' of module 'PS8' has 1015 connections declared, but only 957 given [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:3893]
+WARNING: [Synth 8-3848] Net dp_audio_ref_clk in module/entity zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e does not have driver. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:392]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_0 in module/entity zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e does not have driver. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:1412]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_1 in module/entity zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e does not have driver. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:1413]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_2 in module/entity zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e does not have driver. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:1414]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_3 in module/entity zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e does not have driver. [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:1415]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e' (3#1) [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_3_6.v:339]
+INFO: [Synth 8-256] done synthesizing module 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0' (4#1) [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/synth/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.vhd:149]
+WARNING: [Synth 8-7129] Port dp_audio_ref_clk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_ipi_pl_0 in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_ipi_pl_1 in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_ipi_pl_2 in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port irq_ipi_pl_3 in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihpc0_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihpc0_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihpc1_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihpc1_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp0_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp0_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp1_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp1_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp2_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp2_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp3_fpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxihp3_fpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxi_lpd_rclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port saxi_lpd_wclk in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[15] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[14] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[13] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[12] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[11] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[10] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[9] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[8] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[7] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_awuser[6] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[15] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[14] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[13] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[12] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[11] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[10] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[9] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[8] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[7] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sacefpd_aruser[6] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_clk[3] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_clk[2] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_clk[1] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_clk[0] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[31] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[30] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[29] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[28] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[27] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[26] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[25] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[24] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[23] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[22] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[21] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[20] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[19] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[18] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[17] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[16] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[15] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[14] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[13] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[12] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[11] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[10] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[9] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[8] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[7] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[6] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[5] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[4] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[3] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[2] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[1] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc_in[0] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[31] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[30] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[29] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[28] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[27] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[26] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[25] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[24] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[23] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[22] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[21] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[20] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[19] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[18] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[17] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[16] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[15] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[14] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[13] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[12] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[11] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[10] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[9] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[8] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+WARNING: [Synth 8-7129] Port test_adc2_in[7] in module zynq_ultra_ps_e_v3_3_6_zynq_ultra_ps_e is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3041.391 ; gain = 210.734 ; free physical = 1320 ; free virtual = 18220
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3059.203 ; gain = 228.547 ; free physical = 1378 ; free virtual = 18278
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3059.203 ; gain = 228.547 ; free physical = 1378 ; free virtual = 18278
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3065.141 ; gain = 0.000 ; free physical = 1373 ; free virtual = 18272
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.xdc] for cell 'U0'
+Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3151.953 ; gain = 0.000 ; free physical = 1279 ; free virtual = 18178
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3151.953 ; gain = 0.000 ; free physical = 1278 ; free virtual = 18177
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3151.953 ; gain = 321.297 ; free physical = 1373 ; free virtual = 18264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3151.953 ; gain = 321.297 ; free physical = 1373 ; free virtual = 18264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0/PS8_i. (constraint file  /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat/ip/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.xdc, line 26).
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3151.953 ; gain = 321.297 ; free physical = 1373 ; free virtual = 18264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 3151.953 ; gain = 321.297 ; free physical = 1377 ; free virtual = 18268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 8     
+	                1 Bit    Registers := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3151.953 ; gain = 321.297 ; free physical = 1370 ; free virtual = 18258
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 4708.375 ; gain = 1877.719 ; free physical = 266 ; free virtual = 16521
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 4734.383 ; gain = 1903.727 ; free physical = 248 ; free virtual = 16502
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 4750.398 ; gain = 1919.742 ; free physical = 244 ; free virtual = 16499
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 233 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 233 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 232 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 232 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 232 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 232 ; free virtual = 16500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG_PS |     2|
+|2     |LUT1    |     1|
+|3     |PS8     |     1|
+|4     |FDRE    |   137|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.367 ; gain = 1923.711 ; free physical = 232 ; free virtual = 16500
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 570 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 4754.367 ; gain = 1830.961 ; free physical = 271 ; free virtual = 16538
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 4754.375 ; gain = 1923.711 ; free physical = 271 ; free virtual = 16538
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4754.375 ; gain = 0.000 ; free physical = 362 ; free virtual = 16629
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4796.992 ; gain = 0.000 ; free physical = 279 ; free virtual = 16538
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: ba6daf70
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:28 . Memory (MB): peak = 4796.992 ; gain = 2189.336 ; free physical = 1526 ; free virtual = 17784
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zcu106_int_meas_plat_zynq_ultra_ps_e_0_0, cache-ID = 8760d141f8de55d6
+INFO: [Common 17-1381] The checkpoint '/home/oppy/vivado_workspace/zcu106_plat_int_measurement/zcu106_plat_int_measurement.runs/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_synth_1/zcu106_int_meas_plat_zynq_ultra_ps_e_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_utilization_synth.rpt -pb zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 21:04:56 2022...

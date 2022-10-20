@@ -1,0 +1,88 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Sat Apr 16 09:52:10 2022
+| Host         : oppy running 64-bit Ubuntu 20.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xczu7ev-ffvc1156-2-e
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zcu106_int_meas_plat_zynq_ultra_ps_e_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zcu106_int_meas_plat_zynq_ultra_ps_e_0_0 (xilinx.com:ip:zynq_ultra_ps_e:3.3) from (Rev. 3) to (Rev. 6)
+
+2. Upgrade messages
+-------------------
+
+Set parameter PSU__GPIO_EMIO__PERIPHERAL__IO to value 95 (source 'default')
+WARNING: upgrade cannot add parameter PSU__USE__USB3_0_HUB with default value 0 : a parameter called PSU__USE__USB3_0_HUB already exists in zynq_ultra_ps_e_v3_3
+WARNING: upgrade cannot add parameter PSU__USE__USB3_1_HUB with default value 0 : a parameter called PSU__USE__USB3_1_HUB already exists in zynq_ultra_ps_e_v3_3
+Set parameter PSU__PROTECTION__FPD_SEGMENTS to value SA:0xFD1A0000; SIZE:1280; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD000000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD010000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD020000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD030000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD040000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD050000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD610000; SIZE:512; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware |  SA:0xFD5D0000; SIZE:64; UNIT:KB; RegionTZ:Secure; WrAllowed:Read/Write; subsystemId:PMU Firmware | SA:0xFD1A0000 ; SIZE:1280; UNIT:KB; RegionTZ:Secure ; WrAllowed:Read/Write; subsystemId:Secure Subsystem (source 'default')
+WARNING: upgrade cannot add parameter PSU_DYNAMIC_DDR_CONFIG_EN with default value 1 : a parameter called PSU_DYNAMIC_DDR_CONFIG_EN already exists in zynq_ultra_ps_e_v3_3
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Sat Apr 16 09:52:10 2022
+| Host         : oppy running 64-bit Ubuntu 20.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xczu7ev-ffvc1156-2-e
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zcu106_int_meas_plat_ps8_0_axi_periph_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zcu106_int_meas_plat_ps8_0_axi_periph_0 (xilinx.com:ip:axi_interconnect:2.1) from (Rev. 23) to (Rev. 26)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Sat Apr 16 09:52:10 2022
+| Host         : oppy running 64-bit Ubuntu 20.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xczu7ev-ffvc1156-2-e
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zcu106_int_meas_plat_axi_gpio_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zcu106_int_meas_plat_axi_gpio_0_1 (xilinx.com:ip:axi_gpio:2.0) from (Rev. 24) to (Rev. 27)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Sat Apr 16 09:52:10 2022
+| Host         : oppy running 64-bit Ubuntu 20.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xczu7ev-ffvc1156-2-e
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zcu106_int_meas_plat_axi_gpio_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zcu106_int_meas_plat_axi_gpio_0_0 (xilinx.com:ip:axi_gpio:2.0) from (Rev. 24) to (Rev. 27)
+

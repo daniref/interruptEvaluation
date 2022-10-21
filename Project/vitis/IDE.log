@@ -2328,3 +2328,19 @@ con
 
 00:11:07 INFO  : Launch script is exported to file '/home/oppy/Documenti/PhD/vitis_ws/test_interrupt_v3_system/_ide/scripts/debugger_test_interrupt_v3-default.tcl'
 00:15:34 INFO  : Disconnected from the channel tcfchan#4.
+13:12:26 INFO  : Platform repository initialization has completed.
+13:12:26 INFO  : Launching XSCT server: xsct -n  -interactive /home/daniele/PycharmProjects/interruptEvaluation/Project/vitis/temp_xsdb_launch_script.tcl
+13:12:26 INFO  : Registering command handlers for Vitis TCF services
+13:12:31 INFO  : XSCT server has started successfully.
+13:12:35 INFO  : Successfully done setting XSCT server connection channel  
+13:12:35 INFO  : plnx-install-location is set to ''
+13:12:35 INFO  : Successfully done query RDI_DATADIR 
+13:12:35 INFO  : Successfully done setting workspace for the tool. 
+13:13:28 INFO  : Platform repository initialization has completed.
+13:13:28 INFO  : Launching XSCT server: xsct -n  -interactive /home/daniele/PycharmProjects/interruptEvaluation/Project/vitis/temp_xsdb_launch_script.tcl
+13:13:29 INFO  : Registering command handlers for Vitis TCF services
+13:13:31 INFO  : XSCT server has started successfully.
+13:13:31 INFO  : Successfully done setting XSCT server connection channel  
+13:13:31 INFO  : plnx-install-location is set to ''
+13:13:31 INFO  : Successfully done setting workspace for the tool. 
+13:13:31 INFO  : Successfully done query RDI_DATADIR 

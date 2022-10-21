@@ -1,0 +1,12 @@
+/* /tmp/bootgen_interr_measurement_test_system7411514059320618884/sd_card_temp/boot.bif */
+/* Command to create bitstream .bin file:       */
+/*   bootgen -image <bif_file> -split bin -w    */
+/* Command to create BOOT.BIN file:             */
+/*   bootgen -arch zynqmp -image <bif_file> -w -o i BOOT.BIN */
+/*zcu106_int_meas_plat_wrapper*/
+the_ROM_image:
+{
+ [bootloader, destination_cpu=a53-0] /home/daniele/vitis_workspace/zcu106_int_meas_plat_wrapper/export/zcu106_int_meas_plat_wrapper/sw/zcu106_int_meas_plat_wrapper/boot/fsbl.elf
+ [destination_device=pl] /home/daniele/vitis_workspace/interr_measurement_test/_ide/bitstream/zcu106_int_meas_plat_wrapper.bit
+ [destination_cpu=a53-0, exception_level=el-3] /home/daniele/vitis_workspace/interr_measurement_test/Debug/interr_measurement_test.elf
+}

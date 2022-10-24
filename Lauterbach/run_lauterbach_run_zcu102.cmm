@@ -12,7 +12,9 @@ ChDir &CurrentDir
 &pmufw="../platform/bare_metal/pmufw.elf"
 &fsbl="../platform/bare_metal/fsbl.elf"
 
-&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
+;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
+&test_elf="../platform/bare_metal/test_int_v3.elf"
+
 ; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
 
 

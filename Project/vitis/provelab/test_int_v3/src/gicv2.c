@@ -118,6 +118,9 @@ void GicInitialize(void)
 	/* Enable the interrupt for the GPIO device. */
 	XScuGic_Enable(&GicInstancePtr, GPIO_INTERR_ID);
 
+	XGpioPs_IntrClear(Gpio, GPIO_BANK,
+			(1 << 0));
+
 
 	/* Enable interrupts in the Processor. */
 	Xil_ExceptionEnableMask(XIL_EXCEPTION_IRQ);

@@ -4,29 +4,24 @@ WinCLEAR
 ; Files
 ; ------------------------------------------------------------------------------
 
+&bitfile="/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/binaries/trace_32_to_16.bit"
+&pmufw="/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/binaries/pmufw.elf"
+&fsbl="/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/binaries/fsbl.elf"
 
-&CurrentDir = OS.PresentPracticeDirectory()
-ChDir &CurrentDir
-
-&bitfile="../platform/bare_metal/zcu106_int_meas_plat_wrapper.bit"
-&pmufw="../platform/bare_metal/pmufw.elf"
-&fsbl="../platform/bare_metal/fsbl.elf"
-
-;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
-&test_elf="../platform/bare_metal/test_int_v3.elf"
-
-; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
+&rfios_elf="/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/binaries/zynqmp/debug/os/RfiOs.elf"
+&rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/rfik_conf.bin"
 
 
-; &supervisor_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/supervisor"
-; &supervisor_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/supervisor.bin"
-; &producer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/producer"
-; &producer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/producer.bin"
-; &consumer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/consumer"
-; &consumer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/consumer.bin"
+&supervisor_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/supervisor"
+&supervisor_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/supervisor.bin"
+&producer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/producer"
+&producer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/producer.bin"
+&consumer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/consumer"
+&consumer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/bin/consumer.bin"
 
 
-; &mask_config_buffer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/mask_conf.bin"
+&mask_config_buffer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/att_tesi/toy_example_with_fault/build/mask_conf.bin"
+
 
 ; ------------------------------------------------------------------------------
 ; check prerequisites
@@ -57,11 +52,61 @@ IF !OS.FILE("&fsbl")
   ENDDO
 )
 
-IF !OS.FILE("&test_elf")
+IF !OS.FILE("&rfios_elf")
 (
-  PRINT %ERROR "&test_elf not found."
+  PRINT %ERROR "&rfios_elf not found."
   ENDDO
 )
+
+IF !OS.FILE("&rfios_cfg")
+(
+  PRINT %ERROR "&rfios_cfg not found."
+  ENDDO
+)
+
+IF !OS.FILE("&supervisor_elf")
+(
+  PRINT %ERROR "&supervisor_elf not found."
+  ENDDO
+)
+
+IF !OS.FILE("&supervisor_bin")
+(
+  PRINT %ERROR "&supervisor_bin not found."
+  ENDDO
+)
+
+IF !OS.FILE("&producer_elf")
+(
+  PRINT %ERROR "&producer_elf not found."
+  ENDDO
+)
+
+IF !OS.FILE("&producer_bin")
+(
+  PRINT %ERROR "&producer_bin not found."
+  ENDDO
+)
+
+IF !OS.FILE("&consumer_elf")
+(
+  PRINT %ERROR "&consumer_elf not found."
+  ENDDO
+)
+
+IF !OS.FILE("&consumer_bin")
+(
+  PRINT %ERROR "&consumer_bin not found."
+  ENDDO
+)
+
+
+IF !OS.FILE("&mask_config_buffer_bin")
+(
+  PRINT %ERROR "&mask_config_buffer_bin not found."
+  ENDDO
+)
+
 
 ; ------------------------------------------------------------------------------
 ; Configuration of Data exchange between different TRACE32 PowerView instances
@@ -93,7 +138,7 @@ IC ARM CORE.ASSIGN 1. 2. 3. 4.
 IC ARM ETM.OFF
 IC ARM Trace.DISable
 IC ARM SYStem.Mode Prepare
-IC ARM DO "../platform/bare_metal/zynq-ultrascale_kick_bootcore.cmm" A53_X64
+IC ARM DO "/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/scripts/zynq-ultrascale_kick_bootcore.cmm" A53_X64
 IC ARM SYStem.Mode.Attach
 
 IF STATE.RUN()
@@ -141,7 +186,7 @@ IF Register(PC)!=ADDRESS.OFFSET(XFsbl_Loop)
 ; program the FPGA fabric (routes the TRACE lines to P6)
 ; --------------------------------------------------------------------------------
 
-IC ARM  DO "../platform/bare_metal/zynq-ultrascale_load_bitstream.cmm" "&bitfile" 0x10000000
+IC ARM  DO "/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/scripts/zynq-ultrascale_load_bitstream.cmm" "&bitfile" 0x10000000
 
 ; DBG_TRACE_CTRL - enable clock to have proper access to the TPIU
 IC ARM  Data.Set ENAXI:0xFD1A0064 %Long Data.Long(ENAXI:0xFD1A0064)|0x01003f00
@@ -161,19 +206,19 @@ Var.Assign psu_ps_pl_isolation_removal_data()
 
 CORE.select 0.
 
-; Data.LOAD.Binary &supervisor_bin 0x40000000 /NoClear
-; Data.LOAD.Binary &producer_bin 0x40015000 /NoClear
-; Data.LOAD.Binary &consumer_bin 0x40034000 /NoClear
+Data.LOAD.Binary &supervisor_bin 0x40000000 /NoClear
+Data.LOAD.Binary &producer_bin 0x40015000 /NoClear
+Data.LOAD.Binary &consumer_bin 0x40033000 /NoClear
 
-; Data.LOAD.Binary &mask_config_buffer_bin  0x12000000 /NoClear
+Data.LOAD.Binary &mask_config_buffer_bin  0x12000000 /NoClear
 
-; Data.LOAD.Binary &rfios_cfg 0x80000 /NoClear
+Data.LOAD.Binary &rfios_cfg 0x80000 /NoClear
 
 
-Data.LOAD.Elf &test_elf 0:0
-; Data.LOAD.Elf &supervisor_elf 1:0 /NoCODE /NoClear
-; Data.LOAD.Elf &producer_elf 2:0 /NoCODE /NoClear
-; Data.LOAD.Elf &consumer_elf 3:0 /NoCODE /NoClear
+Data.LOAD.Elf &rfios_elf 0:0
+Data.LOAD.Elf &supervisor_elf 1:0 /NoCODE /NoClear
+Data.LOAD.Elf &producer_elf 2:0 /NoCODE /NoClear
+Data.LOAD.Elf &consumer_elf 3:0 /NoCODE /NoClear
 
 
 TRANSlation.RESet
@@ -184,26 +229,22 @@ TRANSlation.TableWalk ON       ; debugger uses a table walk to decode virtual ad
 TRANSlation.ON
 
 
-; run up to the first task
-Go main
-WAIT !STATE.RUN()
-
-; TASK.CONFIG /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios64.t32
-; MENU.ReProgram /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios.men
-; TASK.STacK.PATtern 0xAA
+TASK.CONFIG /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios64.t32
+MENU.ReProgram /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios.men
+TASK.STacK.PATtern 0xAA
 
 ; enable a GROUP on RfiOS
-; PRIVATE &address
-; &address=address.offset(symbol.secend(\\RfiOs\.ramtest_executor_secondary))
-; GROUP.Create "RfiOs" 0x1000--&address /GREY
+PRIVATE &address
+&address=address.offset(symbol.secend(\\RfiOs\.ramtest_executor_secondary))
+GROUP.Create "RfiOs" 0x1000--&address /GREY
 
-; GROUP.Create "supervisor" 1:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /YELLOW
-; GROUP.Create "producer" 2:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /BLUE
-; GROUP.Create "consumer" 3:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /RED
+GROUP.Create "supervisor" 1:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /YELLOW
+GROUP.Create "producer" 2:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /BLUE
+GROUP.Create "consumer" 3:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /RED
 
 IF Analyzer()
 (
-  IC ARM DO "../platform/bare_metal/timestamps.cmm"
+  IC ARM DO "/home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/zcu102/scripts/timestamps.cmm"
   IC ARM Trace.Method Analyzer
   IF STRing.SCAN("&bitfile","16_to_16",0.)>0.
   (
@@ -227,7 +268,7 @@ IF Analyzer()
 &current_dir = OS.PresentPracticeDirectory()
 ChDir &current_dir
 
-go \\test_int_v3\test_measurements\main
+go \\producer\main\main
 WAIT !STATE.RUN()
 
 go
@@ -265,7 +306,7 @@ WinPOS 120. 14.
 ;Var.AddWatch %SpotLight applications
 ;WinPOS 120. 25.
 ;Trace.List
-; TASK.TaskApp
+TASK.TaskApp
 WinPOS 0. 32.
 
 

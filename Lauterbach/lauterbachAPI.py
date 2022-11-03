@@ -24,7 +24,7 @@ class Trace32State(enum.IntEnum):
     HALTED = 2
     RUNNING = 3
 
-t32api = CDLL("/home/daniele/t32/demo/api/python/legacy/t32api64.so")
+t32api = CDLL("/home/daniele/Utilities/t32/demo/api/python/legacy/t32api64.so")
 T32_DEV = 1
 
 class LAUTERBACH():
@@ -101,8 +101,10 @@ class LAUTERBACH():
             print("Lauterbach: Error: No connection established to TRACE32!")
             return
 
+        print("Lauterbach: launched script:"+script)
         current_dir = os.path.dirname(os.path.realpath(__file__))
         cmd = "DO " + current_dir + '/' + script
+        print(cmd)
         print("Lauterbach: Sending script to TRACE32...")
         t32api.T32_Cmd(cmd.encode())
 
@@ -110,11 +112,115 @@ class LAUTERBACH():
         while rc == 0 and not practice_state.value == PracticeState.NOT_RUNNING:
             rc = t32api.T32_GetPracticeState(ctypes.byref(practice_state))
 
+        self.disconnect(connection_state)
+
     def disconnect(self, connection_state):
         if connection_state:
             t32api.T32_Exit()
             #t32api.T32_Cmd(b'quit')
             print("Lauterbach: Disconnected!")
+        else:
+            print("Lauterbach: Even connected!")
+
+    def get_trace(self, connection_state):
+        # check_connection()
+
+        systemstate = c_uint()
+        min_record = c_int()
+        max_record = c_int()
+        total_records = c_int()
+
+        """
+        num_bytes indica il numero di dati che ci interessa leggere dalla traccia: tale numero è
+        determinato dalla maschera mask
+        """
+        num_bytes = 20
+        mask = 0x070c
+
+        """
+        recupero informazioni della traccia, ovvero numero di record totali e id del recrod minimo e massimo
+        """
+
+        t32api.T32_GetTraceState(0, byref(systemstate), byref(total_records), byref(min_record), byref(max_record))
+
+        num_records = min_record.value * -1
+        # num_records = 400000
+        total_bytes = num_bytes * num_records
+
+        print("Numero di record =", num_records)
+
+        """
+        buffer contiene i byte dela traccia che interessa leggere
+        """
+
+        buf = array.array('i', list(range(total_bytes)))
+        buffer = (c_ubyte * total_bytes).from_buffer(buf)
+        for i in range(0, sizeof(buffer)):
+            buffer[i] = 0x00
+
+        t32api.T32_ReadTrace(0, min_record.value, num_records, mask, buffer)
+        self.disconnect(connection_state)
+
+        """
+        Interazione con Trace32 finita
+        """
+
+        # applications = search_application_id(args.file)
+        # for i in range(0, len(applications)):
+        #     search_elf(applications[i], os.getcwd() + "/../" + args.app)
+
+        # """
+        # su graph verranno aggiunti i nodi e gi archi
+        # """
+        # g = ig.Graph(directed=True)
+
+        # parsed_trace = []
+
+        # # Creazione primo record per confronto
+        # for i in range(0, 2):
+        #     address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X') \
+        #               + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
+        #               + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
+        #     timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
+        #                 + format(buffer[i + 4], '02X') + format(buffer[0 + 3], '02X') + format(buffer[i + 2], '02X') \
+        #                 + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
+
+        #     cpu_mode = str(format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X'))
+        #     app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
+        #     record = {"address": address, "symbol": '', "timestamp": timestamp, "cpu_mode": cpu_mode, "app_info": app_info}
+        #     parsed_trace.append(record)
+        # for i in range(2 * num_bytes, (num_records - 8000000) * num_bytes, num_bytes):
+        #     if "38" not in format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X') and "0000" not in format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X'):
+        #         address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X')\
+        #                   + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
+        #                   + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
+        #         timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
+        #                     + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
+        #                     + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
+
+        #         cpu_mode = format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X')
+        #         app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
+
+        #         record = {"address": address, "symbol": '', "timestamp": int(timestamp, 16), "cpu_mode": cpu_mode, "app_info": app_info}
+        #         if record["address"] == parsed_trace[-2]["address"] and record["address"] == parsed_trace[-1]["address"]:
+        #             parsed_trace[-1] = record
+        #         else:
+        #             parsed_trace.append(record)
+
+        # find_symbols(parsed_trace)
+        # with open("traccianottimestamppck.txt", 'w') as t:
+        #     for record in parsed_trace:
+        #         t.write(str(record) + '\n')
+        # create_first_node(g)
+        # build_graph(g, parsed_trace)
+        # last_record_node = find_node_by_record(g, parsed_trace[-1])
+        # create_last_node(g, last_record_node)
+
+        # for node in g.vs[1:-1]:
+        #     node["label"] = node["label"] + ' ' + str((node["content"][-1]["timestamp"] - node["content"][0]["timestamp"])/1000)
+
+        # return g
+
 
 # if __name__ == "__main__":
 #     parser = argparse.ArgumentParser()

@@ -1,1 +1,0 @@
-vopt -64 +acc=npr -l elaborate.log -L xil_defaultlib -L xilinx_vip -L axi_infrastructure_v1_1_0 -L axi_vip_v1_1_11 -L zynq_ultra_ps_e_vip_v1_0_11 -L xlconcat_v2_1_4 -L xlslice_v1_0_2 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.int_design xil_defaultlib.glbl -o int_design_opt

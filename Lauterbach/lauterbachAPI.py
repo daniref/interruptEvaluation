@@ -143,8 +143,8 @@ class LAUTERBACH():
         t32api.T32_GetTraceState(0, byref(systemstate), byref(total_records), byref(min_record), byref(max_record))
         print("DEBUG 1")
 
-        num_records = min_record.value * -1
-        # num_records = 400000
+        # num_records = min_record.value * -1
+        num_records = 4000
         total_bytes = num_bytes * num_records
 
         print("Numero di record =", num_records)
@@ -178,35 +178,35 @@ class LAUTERBACH():
         parsed_trace = []
 
         # Creazione primo record per confronto
-        for i in range(0, 2):
-            address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X') \
+        # for i in range(0, 2):
+        #     address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X') \
+        #               + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
+        #               + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
+        #     timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
+        #                 + format(buffer[i + 4], '02X') + format(buffer[0 + 3], '02X') + format(buffer[i + 2], '02X') \
+        #                 + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
+
+        #     cpu_mode = str(format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X'))
+        #     app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
+        #     record = {"address": address, "symbol": '', "timestamp": timestamp, "cpu_mode": cpu_mode, "app_info": app_info}
+        #     parsed_trace.append(record)
+        for i in range(0 * num_bytes, (num_records) * num_bytes, num_bytes):
+            # if "38" not in format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X') and "0000" not in format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X'):
+            address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X')\
                       + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
                       + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
             timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
-                        + format(buffer[i + 4], '02X') + format(buffer[0 + 3], '02X') + format(buffer[i + 2], '02X') \
+                        + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
                         + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
-
-            cpu_mode = str(format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X'))
+    
+            cpu_mode = format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X')
             app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
-            record = {"address": address, "symbol": '', "timestamp": timestamp, "cpu_mode": cpu_mode, "app_info": app_info}
-            parsed_trace.append(record)
-        # for i in range(2 * num_bytes, (num_records - 8000000) * num_bytes, num_bytes):
-        #     if "38" not in format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X') and "0000" not in format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X'):
-        #         address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X')\
-        #                   + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
-        #                   + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
-        #         timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
-        #                     + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
-        #                     + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
-        #
-        #         cpu_mode = format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X')
-        #         app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
-        #
-        #         record = {"address": address, "symbol": '', "timestamp": int(timestamp, 16), "cpu_mode": cpu_mode, "app_info": app_info}
-        #         if record["address"] == parsed_trace[-2]["address"] and record["address"] == parsed_trace[-1]["address"]:
-        #             parsed_trace[-1] = record
-        #         else:
-        #             parsed_trace.append(record)
+    
+            record = {"address": address, "symbol": '', "timestamp": int(timestamp, 16), "cpu_mode": cpu_mode, "app_info": app_info}
+            if record["address"] == parsed_trace[-2]["address"] and record["address"] == parsed_trace[-1]["address"]:
+                parsed_trace[-1] = record
+            else:
+                parsed_trace.append(record)
 
         # find_symbols(parsed_trace)
         with open("traccianottimestamppck.txt", 'w') as t:

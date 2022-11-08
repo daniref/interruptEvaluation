@@ -34,3 +34,20 @@ timestamp=[2022-11-08 18:00:09], mode=WORKBENCH_START, duration=0:00:04.201, dur
 timestamp=[2022-11-08 18:00:09], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.011, duration_ms=11, data={}
 timestamp=[2022-11-08 18:00:10], mode=WORKBENCH_UI_INIT, duration=0:00:00.441, duration_ms=441, data={editors_count=0, platform_editors_count=0, projects_count=7, platform_projects_count=2, active_platform_editor=false, projects=RemoteSystemsTempFiles,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
 timestamp=[2022-11-08 18:02:24], mode=PLATFORM_CREATION, duration=0:00:10.679, duration_ms=10679, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2022-11-08 18:06:23], mode=APP_CREATION, duration=0:00:01.480, duration_ms=1480, data={name=test_int_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_int_plat_v4, application_type=application}
+timestamp=[2022-11-08 18:07:56], mode=PLATFORM_GENERATION, duration=0:00:20.538, duration_ms=20538, data={name=test_int_plat_v4}
+timestamp=[2022-11-08 18:08:02], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=test_int_v4, configuration=Debug, clean_build=false}
+timestamp=[2022-11-08 18:28:33], mode=PLATFORM_CREATION, duration=0:00:08.232, duration_ms=8232, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2022-11-08 18:29:13], mode=APP_CREATION, duration=0:00:00.458, duration_ms=458, data={name=test_int_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_int_plat_v4, application_type=application}
+timestamp=[2022-11-08 18:29:49], mode=APP_CREATION, duration=0:00:00.503, duration_ms=503, data={name=int_test_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_int_plat_v4, application_type=application}
+timestamp=[2022-11-08 18:30:50], mode=APP_CREATION, duration=0:00:00.053, duration_ms=53, data={name=int_test_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_int_plat_v4, application_type=application}
+timestamp=[2022-11-08 18:31:18], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.016, duration_ms=16, data={}
+timestamp=[2022-11-08 18:31:18], mode=WORKBENCH_START, duration=0:00:05.232, duration_ms=5232, data={}
+timestamp=[2022-11-08 18:31:19], mode=WORKBENCH_UI_INIT, duration=0:00:00.537, duration_ms=537, data={editors_count=2, platform_editors_count=1, projects_count=8, platform_projects_count=3, active_platform_editor=false, projects=RemoteSystemsTempFiles,interr_measurement_test,interr_measurement_test_system,test_int_plat_v4,test_int_v3,test_int_v3_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
+timestamp=[2022-11-08 18:31:45], mode=APP_CREATION, duration=0:00:01.423, duration_ms=1423, data={name=test_int_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=test_int_plat_v4, application_type=application}
+timestamp=[2022-11-08 18:32:35], mode=PLATFORM_GENERATION, duration=0:00:26.626, duration_ms=26626, data={name=test_int_plat_v4}
+timestamp=[2022-11-08 18:32:41], mode=BUILD, duration=0:00:00.427, duration_ms=427, data={name=test_int_v4, configuration=Debug, clean_build=false}
+timestamp=[2022-11-08 19:32:00], mode=PLATFORM_CREATION, duration=0:00:08.694, duration_ms=8694, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2022-11-08 19:32:38], mode=APP_CREATION, duration=0:00:02.037, duration_ms=2037, data={name=int_test_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=int_test_plat_v4, application_type=application}
+timestamp=[2022-11-08 19:33:34], mode=PLATFORM_GENERATION, duration=0:00:35.727, duration_ms=35727, data={name=int_test_plat_v4}
+timestamp=[2022-11-08 19:33:39], mode=BUILD, duration=0:00:01.277, duration_ms=1277, data={name=int_test_v4, configuration=Debug, clean_build=false}

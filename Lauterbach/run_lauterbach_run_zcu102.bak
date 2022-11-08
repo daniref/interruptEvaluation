@@ -1,0 +1,281 @@
+WinCLEAR
+
+; ------------------------------------------------------------------------------
+; Files
+; ------------------------------------------------------------------------------
+
+
+&CurrentDir = OS.PresentPracticeDirectory()
+ChDir &CurrentDir
+
+&bitfile="../platform/bare_metal/int_design_wrapper.bit"
+&pmufw="../platform/bare_metal/pmufw.elf"
+&fsbl="../platform/bare_metal/fsbl.elf"
+
+;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
+&test_elf="../platform/bare_metal/int_test_v4.elf"
+
+; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
+
+
+; &supervisor_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/supervisor"
+; &supervisor_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/supervisor.bin"
+; &producer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/producer"
+; &producer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/producer.bin"
+; &consumer_elf = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/consumer"
+; &consumer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/bin/consumer.bin"
+
+
+; &mask_config_buffer_bin = "/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/mask_conf.bin"
+
+; ------------------------------------------------------------------------------
+; check prerequisites
+; ------------------------------------------------------------------------------
+
+IF VERSION.BUILD.BASE()<75524.
+(
+  PRINT %ERROR "Please use more recent Software! Contact support@lauterbach.com."
+  ENDDO
+)
+
+
+IF !OS.FILE("&bitfile")
+(
+  PRINT %ERROR "&bitfile not found."
+  ENDDO
+)
+
+IF !OS.FILE("&pmufw")
+(
+  PRINT %ERROR "&pmufw not found."
+  ENDDO
+)
+
+IF !OS.FILE("&fsbl")
+(
+  PRINT %ERROR "&fsbl not found."
+  ENDDO
+)
+
+IF !OS.FILE("&test_elf")
+(
+  PRINT %ERROR "&test_elf not found."
+  ENDDO
+)
+
+; ------------------------------------------------------------------------------
+; Configuration of Data exchange between different TRACE32 PowerView instances
+; ------------------------------------------------------------------------------
+
+InterCom.ENable "ARM"
+
+IF !InterCom.Ping(MB)
+  TargetSystem.NewInstance MB /ONCE /ARCHitecture MICROBLAZE
+
+IC MB WinClear
+IC ARM AREA
+IC ARM AREA.CLEAR
+IC MB AREA
+IC MB AREA.CLEAR
+
+; ------------------------------------------------------------------------------
+; APU Configuraion
+; ------------------------------------------------------------------------------
+
+IC ALL RESet
+IC ALL SYStem.RESet
+IC ARM SYStem.CPU ZYNQ-ULTRASCALE+-APU
+IC ARM SYStem.Option TRST OFF
+IC ARM SYStem.Option ResBreak OFF
+IC ARM SYStem.Option WaitReset 500ms
+IC ARM SYStem.JtagClock CTCK 10MHz
+IC ARM CORE.ASSIGN 1. 2. 3. 4.
+IC ARM ETM.OFF
+IC ARM Trace.DISable
+IC ARM SYStem.Mode Prepare
+IC ARM DO "../platform/bare_metal/zynq-ultrascale_kick_bootcore.cmm" A53_X64
+IC ARM SYStem.Mode.Attach
+
+IF STATE.RUN()
+  Break.direct
+
+IC ARM SYStem.Option MMUSPACES ON
+; ------------------------------------------------------------------------------
+; PMU Configuration
+; ------------------------------------------------------------------------------
+
+IC ARM PER.Set.simple AD:0xFFCA0038 %Long 0x1ff
+IC MB SYStem.CPU ZYNQ-ULTRASCALE+-PMU
+IC MB SYStem.CONFIG IRPRE 4.
+IC MB SYStem.CONFIG DRPRE 1.
+IC MB SYStem.Option LittleEnd ON
+IC MB SYStem.Mode Attach
+IC MB SYSTEM.UP
+IC MB Data.LOAD.Elf "&pmufw"
+IC MB go
+IC ARM WAIT 1s
+IC MB WAIT 1s
+
+; --------------------------------------------------------------------------------
+; start FSBL execution
+; --------------------------------------------------------------------------------
+
+SYStem.Option CTITimerStop ZYNQULTRASCALE
+
+IC ARM Data.LOAD.Elf "&fsbl"
+IC ARM Go.direct XFsbl_Loop /onchip
+IC ARM WAIT !STATE.RUN() 5.s
+IF STATE.RUN()
+(
+    Break.direct
+)
+SYStem.Option MMUSPACES ON
+
+IF Register(PC)!=ADDRESS.OFFSET(XFsbl_Loop)
+(
+  PRINT %ERROR "Boot flow error"
+  ENDDO
+)
+
+; --------------------------------------------------------------------------------
+; program the FPGA fabric (routes the TRACE lines to P6)
+; --------------------------------------------------------------------------------
+
+IC ARM  DO "../platform/bare_metal/zynq-ultrascale_load_bitstream.cmm" "&bitfile" 0x10000000
+
+; DBG_TRACE_CTRL - enable clock to have proper access to the TPIU
+IC ARM  Data.Set ENAXI:0xFD1A0064 %Long Data.Long(ENAXI:0xFD1A0064)|0x01003f00
+IC ARM WAIT 0.1s
+; switch TPIU to clock source provided by PL
+IC ARM Data.Set EDAP:0x80180FB0 %Long 0xC5ACCE55
+IC ARM  Data.Set EDAP:0x80180404 %Long 0x1
+;IC ARM Data.Set 0xFE980FB0 %Long 0xC5ACCE55
+;IC ARM  Data.Set 0xFE980404 %Long 0x1
+IC ARM  WAIT 0.1s
+Var.Assign psu_ps_pl_isolation_removal_data()
+
+
+; --------------------------------------------------------------------------------
+; load demo program
+; --------------------------------------------------------------------------------
+
+CORE.select 0.
+
+; Data.LOAD.Binary &supervisor_bin 0x40000000 /NoClear
+; Data.LOAD.Binary &producer_bin 0x40015000 /NoClear
+; Data.LOAD.Binary &consumer_bin 0x40034000 /NoClear
+
+; Data.LOAD.Binary &mask_config_buffer_bin  0x12000000 /NoClear
+
+; Data.LOAD.Binary &rfios_cfg 0x80000 /NoClear
+
+
+Data.LOAD.Elf &test_elf 0:0
+; Data.LOAD.Elf &supervisor_elf 1:0 /NoCODE /NoClear
+; Data.LOAD.Elf &producer_elf 2:0 /NoCODE /NoClear
+; Data.LOAD.Elf &consumer_elf 3:0 /NoCODE /NoClear
+
+
+TRANSlation.RESet
+MMU.FORMAT STD /SPACEID TTB1
+TRANSlation.Create 0:0x0--0xffffffff 0x0
+TRANSlation.COMMON 0--0xffffffff
+TRANSlation.TableWalk ON       ; debugger uses a table walk to decode virtual addresses
+TRANSlation.ON
+
+
+; run up to the first task
+; Go main
+; WAIT !STATE.RUN()
+
+; TASK.CONFIG /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios64.t32
+; MENU.ReProgram /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios.men
+; TASK.STacK.PATtern 0xAA
+
+; enable a GROUP on RfiOS
+; PRIVATE &address
+; &address=address.offset(symbol.secend(\\RfiOs\.ramtest_executor_secondary))
+; GROUP.Create "RfiOs" 0x1000--&address /GREY
+
+; GROUP.Create "supervisor" 1:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /YELLOW
+; GROUP.Create "producer" 2:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /BLUE
+; GROUP.Create "consumer" 3:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /RED
+
+
+
+
+&current_dir = OS.PresentPracticeDirectory()
+ChDir &current_dir
+
+
+
+//IC ARM ETM.STALL ON
+//IC ARM ETM.TimeStampCLOCK 1.GHz
+//IC ARM ETM.TimeStamps ON
+//IC ARM ETM.TImeMode CycleAccurate
+//IC ARM ETM.CycleAccurate ON
+////IC ARM Trace.CLOCK 1.GHz
+////IC ARM ETM.ReturnStack ON
+//IC ARM ETM.Trace ON
+//IC ARM ETM.ON
+
+IC ARM ETM.TimeStamps ON
+IC ARM etm.CycleAccurate ON
+IC ARM ETM.ON
+IC ARM Trace.DISable
+
+
+go \\int_test_v4\test_measurements\main\27
+WAIT !STATE.RUN()
+
+
+go
+WAIT 0.7s
+; IC ARM ETM.Trace OFF
+break
+
+; COV.Option.SourceMetric MCDC
+; sYmbol.ECA.LOADALL /SkipErrors
+
+; open some windows
+
+IF Analyzer()
+(
+  IC ARM DO "../platform/bare_metal/timestamps.cmm"
+  IC ARM Trace.Method Analyzer
+  IF STRing.SCAN("&bitfile","16_to_16",0.)>0.
+  (
+    IC ARM Analyzer.PortSize AUTO
+    IC ARM TPIU.PortSize 16
+  )
+  ELSE // 32_to_16 ?
+  (
+    IC ARM Analyzer.PortSize 16
+    IC ARM TPIU.PortSize 32
+  )
+  IC ARM TPIU.PortMode Continuous
+  IC ARM ETM.ContextID 32
+  ; use Autofocus based calibration
+  PER.Set.simple ANUD:0xFF5E00C0 %Long 0x1020600
+  ;IC ARM Analyzer.AutoFocus
+)
+
+
+
+Mode.Hll
+WinPOS 0. 0.
+List.auto
+WinPOS 120. 0. 100. 8.
+Frame.view
+WinPOS 120. 14.
+;Var.Watch
+;Var.AddWatch %SpotLight rfios_cpus
+;Var.AddWatch %SpotLight tasks
+;Var.AddWatch %SpotLight applications
+;WinPOS 120. 25.
+;Trace.List
+; TASK.TaskApp
+WinPOS 0. 32.
+
+
+ENDDO

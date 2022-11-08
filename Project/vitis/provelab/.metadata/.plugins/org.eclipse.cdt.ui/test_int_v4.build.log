@@ -1,13 +1,13 @@
-16:33:33 **** Build of configuration Debug for project test_int_v4 ****
+18:32:40 **** Build of configuration Debug for project test_int_v4 ****
 make all 
 Building file: ../src/axi_gpio.c
 Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axi_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/axi_gpio.d" -MT"src/axi_gpio.o" -o "src/axi_gpio.o" "../src/axi_gpio.c"
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axi_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/axi_gpio.d" -MT"src/axi_gpio.o" -o "src/axi_gpio.o" "../src/axi_gpio.c"
 Finished building: ../src/axi_gpio.c
  
 Building file: ../src/generic_timer.c
 Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/generic_timer.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/generic_timer.d" -MT"src/generic_timer.o" -o "src/generic_timer.o" "../src/generic_timer.c"
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/generic_timer.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/generic_timer.d" -MT"src/generic_timer.o" -o "src/generic_timer.o" "../src/generic_timer.c"
 In file included from ../src/generic_timer.h:4,
                  from ../src/generic_timer.c:1:
 ../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
@@ -20,12 +20,12 @@ Finished building: ../src/generic_timer.c
  
 Building file: ../src/gicv2.c
 Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gicv2.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/gicv2.d" -MT"src/gicv2.o" -o "src/gicv2.o" "../src/gicv2.c"
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gicv2.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/gicv2.d" -MT"src/gicv2.o" -o "src/gicv2.o" "../src/gicv2.c"
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
                  from ../src/gicv2.h:4,
                  from ../src/gicv2.c:1:
 ../src/gicv2.c: In function 'GicInitialize':
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
 ../src/gicv2.c:77:10: note: in expansion of macro 'XST_FAILURE'
@@ -34,10 +34,10 @@ In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/
 ../src/gicv2.c:62:6: note: declared here
    62 | void GicInitialize(void)
       |      ^~~~~~~~~~~~~
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
                  from ../src/gicv2.h:4,
                  from ../src/gicv2.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
 ../src/gicv2.c:83:10: note: in expansion of macro 'XST_FAILURE'
@@ -59,13 +59,13 @@ In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/
       |                                                 void (*)(void)
 In file included from ../src/utility.h:3,
                  from ../src/gicv2.c:6:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xgpiops.h:253:25: note: expected 'XGpioPs_Handler' {aka 'void (*)(void *, unsigned int,  unsigned int)'} but argument is of type 'void (*)(void)'
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xgpiops.h:253:25: note: expected 'XGpioPs_Handler' {aka 'void (*)(void *, unsigned int,  unsigned int)'} but argument is of type 'void (*)(void)'
   253 |         XGpioPs_Handler FuncPointer);
       |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
                  from ../src/gicv2.h:4,
                  from ../src/gicv2.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:42:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xstatus.h:42:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    42 | #define XST_SUCCESS                     0L
       |                                         ^~
 ../src/gicv2.c:128:9: note: in expansion of macro 'XST_SUCCESS'
@@ -89,11 +89,11 @@ Finished building: ../src/gicv2.c
  
 Building file: ../src/ps_gpio.c
 Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/ps_gpio.d" -MT"src/ps_gpio.o" -o "src/ps_gpio.o" "../src/ps_gpio.c"
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/ps_gpio.d" -MT"src/ps_gpio.o" -o "src/ps_gpio.o" "../src/ps_gpio.c"
 In file included from ../src/ps_gpio.h:6,
                  from ../src/ps_gpio.c:1:
 ../src/ps_gpio.c: In function 'PSGpioInit':
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
 ../src/ps_gpio.c:24:10: note: in expansion of macro 'XST_FAILURE'
@@ -104,7 +104,7 @@ In file included from ../src/ps_gpio.h:6,
       |      ^~~~~~~~~~
 In file included from ../src/ps_gpio.h:6,
                  from ../src/ps_gpio.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
 ../src/ps_gpio.c:30:10: note: in expansion of macro 'XST_FAILURE'
@@ -130,7 +130,7 @@ Finished building: ../src/ps_gpio.c
  
 Building file: ../src/test_measurements.c
 Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
 ../src/test_measurements.c: In function 'main':
 ../src/test_measurements.c:49:13: warning: unused variable 'timer_value' [-Wunused-variable]
    49 |    uint64_t timer_value = 0;
@@ -148,7 +148,7 @@ Finished building: ../src/test_measurements.c
  
 Building target: test_int_v4.elf
 Invoking: ARM v8 gcc linker
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bsplib/lib -o "test_int_v4.elf" ./src/axi_gpio.o ./src/generic_timer.o ./src/gicv2.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_plat_v4/export/test_int_plat_v4/sw/test_int_plat_v4/standalone_domain/bsplib/lib -o "test_int_v4.elf" ./src/axi_gpio.o ./src/generic_timer.o ./src/gicv2.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: test_int_v4.elf
  
 Invoking: ARM v8 Print Size
@@ -158,5 +158,5 @@ aarch64-none-elf-size test_int_v4.elf  |tee "test_int_v4.elf.size"
 Finished building: test_int_v4.elf.size
  
 
-16:33:33 Build Finished (took 418ms)
+18:32:41 Build Finished (took 417ms)
 

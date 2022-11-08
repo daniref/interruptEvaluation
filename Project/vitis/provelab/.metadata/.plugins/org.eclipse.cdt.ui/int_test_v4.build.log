@@ -1,0 +1,162 @@
+19:33:38 **** Build of configuration Debug for project int_test_v4 ****
+make all 
+Building file: ../src/axi_gpio.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axi_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/axi_gpio.d" -MT"src/axi_gpio.o" -o "src/axi_gpio.o" "../src/axi_gpio.c"
+Finished building: ../src/axi_gpio.c
+ 
+Building file: ../src/generic_timer.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/generic_timer.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/generic_timer.d" -MT"src/generic_timer.o" -o "src/generic_timer.o" "../src/generic_timer.c"
+In file included from ../src/generic_timer.h:4,
+                 from ../src/generic_timer.c:1:
+../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   21 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:19:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   19 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/generic_timer.c
+ 
+Building file: ../src/gicv2.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gicv2.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/gicv2.d" -MT"src/gicv2.o" -o "src/gicv2.o" "../src/gicv2.c"
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gicv2.h:4,
+                 from ../src/gicv2.c:1:
+../src/gicv2.c: In function 'GicInitialize':
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/gicv2.c:77:10: note: in expansion of macro 'XST_FAILURE'
+   77 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/gicv2.c:62:6: note: declared here
+   62 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gicv2.h:4,
+                 from ../src/gicv2.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/gicv2.c:83:10: note: in expansion of macro 'XST_FAILURE'
+   83 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/gicv2.c:62:6: note: declared here
+   62 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+../src/gicv2.c:104:10: warning: 'return' with a value, in function returning void [-Wreturn-type]
+  104 |   return Status;
+      |          ^~~~~~
+../src/gicv2.c:62:6: note: declared here
+   62 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+../src/gicv2.c:111:49: warning: passing argument 3 of 'XGpioPs_SetCallbackHandler' from incompatible pointer type [-Wincompatible-pointer-types]
+  111 |  XGpioPs_SetCallbackHandler(Gpio, (void *)Gpio, gpio_isr_callback);
+      |                                                 ^~~~~~~~~~~~~~~~~
+      |                                                 |
+      |                                                 void (*)(void)
+In file included from ../src/utility.h:3,
+                 from ../src/gicv2.c:6:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xgpiops.h:253:25: note: expected 'XGpioPs_Handler' {aka 'void (*)(void *, unsigned int,  unsigned int)'} but argument is of type 'void (*)(void)'
+  253 |         XGpioPs_Handler FuncPointer);
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gicv2.h:4,
+                 from ../src/gicv2.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:42:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   42 | #define XST_SUCCESS                     0L
+      |                                         ^~
+../src/gicv2.c:128:9: note: in expansion of macro 'XST_SUCCESS'
+  128 |  return XST_SUCCESS;
+      |         ^~~~~~~~~~~
+../src/gicv2.c:62:6: note: declared here
+   62 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+At top level:
+../src/gicv2.c:26:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
+   26 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
+      |             ^~~~~~~~~~~
+In file included from ../src/gicv2.c:6:
+../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   21 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:19:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   19 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/gicv2.c
+ 
+Building file: ../src/ps_gpio.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/ps_gpio.d" -MT"src/ps_gpio.o" -o "src/ps_gpio.o" "../src/ps_gpio.c"
+In file included from ../src/ps_gpio.h:6,
+                 from ../src/ps_gpio.c:1:
+../src/ps_gpio.c: In function 'PSGpioInit':
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/ps_gpio.c:24:10: note: in expansion of macro 'XST_FAILURE'
+   24 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+In file included from ../src/ps_gpio.h:6,
+                 from ../src/ps_gpio.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/ps_gpio.c:30:10: note: in expansion of macro 'XST_FAILURE'
+   30 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+../src/ps_gpio.c:80:9: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   80 |  return &Gpio;
+      |         ^~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+../src/ps_gpio.c:16:6: warning: unused variable 'Type_of_board' [-Wunused-variable]
+   16 |  int Type_of_board;
+      |      ^~~~~~~~~~~~~
+At top level:
+../src/ps_gpio.c:95:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
+   95 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
+      |             ^~~~~~~~~~~
+Finished building: ../src/ps_gpio.c
+ 
+Building file: ../src/test_measurements.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
+../src/test_measurements.c: In function 'main':
+../src/test_measurements.c:49:13: warning: unused variable 'timer_value' [-Wunused-variable]
+   49 |    uint64_t timer_value = 0;
+      |             ^~~~~~~~~~~
+In file included from ../src/generic_timer.h:4,
+                 from ../src/test_measurements.c:33:
+At top level:
+../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   21 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:19:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   19 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/test_measurements.c
+ 
+Building target: int_test_v4.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bsplib/lib -o "int_test_v4.elf" ./src/axi_gpio.o ./src/generic_timer.o ./src/gicv2.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: int_test_v4.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size int_test_v4.elf  |tee "int_test_v4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 121031	   7712	  21173	 149916	  2499c	int_test_v4.elf
+Finished building: int_test_v4.elf.size
+ 
+
+19:33:39 Build Finished (took 1s.271ms)
+

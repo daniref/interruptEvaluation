@@ -1,8 +1,9 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Emulation,org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Default
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Emulation,org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_int_test_v4-Default
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_int_test_v4-Default/activeLaunchMode=embdebug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Default/activeLaunchMode=embdebug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v3-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_test_int_v4-Default/activeLaunchMode=embdebug

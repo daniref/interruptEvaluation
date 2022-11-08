@@ -14,7 +14,7 @@ def get_LB_latencies():
         print("Lauterbach: Error-No connection established to TRACE32!")
     else:
         print("Lauterbach: Connection established to TRACE32!")
-        lb.runscript(connection_state, launch_script)
+        #lb.runscript(connection_state, launch_script)
         print("Lauterbach: I'm alive!")
         lb.get_trace(connection_state)
         print("Lauterbach: Trace captured")

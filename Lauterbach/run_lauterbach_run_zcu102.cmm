@@ -8,12 +8,12 @@ WinCLEAR
 &CurrentDir = OS.PresentPracticeDirectory()
 ChDir &CurrentDir
 
-&bitfile="../platform/bare_metal/zcu106_int_meas_plat_wrapper.bit"
+&bitfile="../platform/bare_metal/int_design_wrapper.bit"
 &pmufw="../platform/bare_metal/pmufw.elf"
 &fsbl="../platform/bare_metal/fsbl.elf"
 
 ;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
-&test_elf="../platform/bare_metal/test_int_v3.elf"
+&test_elf="../platform/bare_metal/int_test_v4.elf"
 
 ; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
 
@@ -209,19 +209,25 @@ ChDir &current_dir
 
 
 
-IC ARM ETM.STALL ON
-IC ARM ETM.TimeStampCLOCK 1.GHz
+//IC ARM ETM.STALL ON
+//IC ARM ETM.TimeStampCLOCK 1.GHz
+//IC ARM ETM.TimeStamps ON
+//IC ARM ETM.TImeMode CycleAccurate
+//IC ARM ETM.CycleAccurate ON
+////IC ARM Trace.CLOCK 1.GHz
+////IC ARM ETM.ReturnStack ON
+//IC ARM ETM.Trace ON
+//IC ARM ETM.ON
+
 IC ARM ETM.TimeStamps ON
-IC ARM ETM.TImeMode CycleAccurate
-IC ARM ETM.CycleAccurate ON
-IC ARM Trace.CLOCK 1.GHz
-IC ARM ETM.ReturnStack ON
-
-
-b.s \\test_int_v3\test_measurements\main\27
-go
-WAIT !STATE.RUN()
+IC ARM etm.CycleAccurate ON
 IC ARM ETM.ON
+//IC ARM Trace.DISable
+
+
+go \\int_test_v4\test_measurements\main\27
+WAIT !STATE.RUN()
+
 
 go
 WAIT 0.7s

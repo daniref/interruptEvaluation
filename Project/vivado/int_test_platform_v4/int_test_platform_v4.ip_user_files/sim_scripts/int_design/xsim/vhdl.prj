@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/int_design/sim/int_design.vhd" \
+
+nosort

@@ -4,8 +4,8 @@
 
 ;Environment Variables
 OS=
-SYS=/home/daniele/Utilities/t32
-TMP=/home/daniele/Utilities/t32/tmp
+SYS=/home/oppy/Utilities/t32
+TMP=/home/oppy/Utilities/t32/tmp
 
 ;Connection to Host
 PBI=

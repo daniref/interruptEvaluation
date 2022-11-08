@@ -1,28 +1,25 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.874792",
-   "Default View_TopLeft":"-171,270",
+   "Default View_ScaleFactor":"0.726646",
+   "Default View_TopLeft":"-50,202",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port port-id_TRACE_CTL -pg 1 -lvl 4 -x 1080 -y 610 -defaultsOSRD
-preplace port port-id_TRACE_CLK -pg 1 -lvl 4 -x 1080 -y 650 -defaultsOSRD
-preplace portBus TRACE_DATA -pg 1 -lvl 4 -x 1080 -y 580 -defaultsOSRD
-preplace portBus GPIO_OUT -pg 1 -lvl 4 -x 1080 -y 390 -defaultsOSRD
-preplace portBus INT_SIGNAL -pg 1 -lvl 4 -x 1080 -y 480 -defaultsOSRD -right
-preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 500 -y 580 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 3 -x 930 -y 460 -defaultsOSRD
+preplace port port-id_TRACE_CLK_SDR -pg 1 -lvl 4 -x 1070 -y 660 -defaultsOSRD
+preplace portBus GPIO_OUT -pg 1 -lvl 4 -x 1070 -y 390 -defaultsOSRD
+preplace portBus INT_SIGNAL -pg 1 -lvl 4 -x 1070 -y 480 -defaultsOSRD -right
+preplace portBus TRACE_DATA -pg 1 -lvl 4 -x 1070 -y 620 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 500 -y 600 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 3 -x 950 -y 460 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 1 -x 70 -y 330 -defaultsOSRD
-preplace netloc zynq_ultra_ps_e_0_trace_clk_out 1 2 2 820 650 N
-preplace netloc zynq_ultra_ps_e_0_ps_pl_tracedata 1 2 2 810 580 N
-preplace netloc zynq_ultra_ps_e_0_ps_pl_tracectl 1 2 2 N 600 1030
-preplace netloc zynq_ultra_ps_e_0_pl_clk1 1 1 2 170 720 810
-preplace netloc zynq_ultra_ps_e_0_emio_gpio_o 1 2 1 820 460n
-preplace netloc xlslice_0_Dout 1 3 1 1030 390n
-preplace netloc INT_SIGNAL_1 1 0 4 -30 400 NJ 400 NJ 400 1040J
+preplace netloc INT_SIGNAL_1 1 0 4 -30 470 NJ 470 830J 520 1050J
 preplace netloc xlconcat_0_dout 1 1 2 NJ 330 810
-levelinfo -pg 1 -50 70 500 930 1080
-pagesize -pg 1 -db -bbox -sgen -50 0 1270 730
+preplace netloc xlslice_0_Dout 1 3 1 1050 390n
+preplace netloc zynq_ultra_ps_e_0_emio_gpio_o 1 2 1 820 460n
+preplace netloc zynq_ultra_ps_e_0_ps_pl_tracedata 1 2 2 820J 620 NJ
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 1 3 170 730 820J 660 NJ
+levelinfo -pg 1 -50 70 500 950 1070
+pagesize -pg 1 -db -bbox -sgen -50 0 1260 740
 "
 }
 {

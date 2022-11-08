@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x190EA798C1AFBB38",
+      "boundary_crc": "0x387E51E1651F1AEF",
       "device": "xczu7ev-ffvc1156-2-e",
       "gen_directory": "../../../../zcu106_plat_int_measurement.gen/sources_1/bd/zcu106_int_meas_plat",
       "name": "zcu106_int_meas_plat",
@@ -16,39 +16,6 @@
       "xlconcat_0": ""
     },
     "ports": {
-      "TRACE_CTL": {
-        "direction": "O"
-      },
-      "TRACE_CLK": {
-        "type": "clk",
-        "direction": "O",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_trace_clk_out",
-            "value_src": "default_prop"
-          },
-          "FREQ_HZ": {
-            "value": "50000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
-      },
-      "TRACE_DATA": {
-        "direction": "O",
-        "left": "15",
-        "right": "0"
-      },
       "GPIO_OUT": {
         "direction": "O",
         "left": "3",
@@ -65,6 +32,36 @@
           },
           "SENSITIVITY": {
             "value": "EDGE_RISING"
+          }
+        }
+      },
+      "TRACE_DATA": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "TRACE_CLK_SDR": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "zcu106_int_meas_plat_zynq_ultra_ps_e_0_0_pl_clk0",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "249975021"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       }
@@ -1118,19 +1115,19 @@
             "value": "1"
           },
           "PSU__CRF_APB__DBG_FPD_CTRL__ACT_FREQMHZ": {
-            "value": "99.990005"
+            "value": "249.975021"
           },
           "PSU__CRF_APB__DBG_FPD_CTRL__FREQMHZ": {
-            "value": "100"
+            "value": "250"
           },
           "PSU__CRF_APB__DBG_FPD_CTRL__SRCSEL": {
             "value": "IOPLL"
           },
           "PSU__CRF_APB__DBG_TRACE_CTRL__ACT_FREQMHZ": {
-            "value": "100.000000"
+            "value": "250.000000"
           },
           "PSU__CRF_APB__DBG_TRACE_CTRL__FREQMHZ": {
-            "value": "100"
+            "value": "250"
           },
           "PSU__CRF_APB__DBG_TRACE_CTRL__SRCSEL": {
             "value": "IOPLL"
@@ -1493,16 +1490,16 @@
             "value": "IOPLL"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ": {
-            "value": "99.990005"
+            "value": "249.975021"
+          },
+          "PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ": {
+            "value": "250"
+          },
+          "PSU__CRL_APB__PL0_REF_CTRL__SRCSEL": {
+            "value": "IOPLL"
           },
           "PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ": {
             "value": "99.990005"
-          },
-          "PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ": {
-            "value": "100"
-          },
-          "PSU__CRL_APB__PL1_REF_CTRL__SRCSEL": {
-            "value": "IOPLL"
           },
           "PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ": {
             "value": "100"
@@ -1922,10 +1919,10 @@
             "value": "99.990005"
           },
           "PSU__FPGA_PL0_ENABLE": {
-            "value": "0"
+            "value": "1"
           },
           "PSU__FPGA_PL1_ENABLE": {
-            "value": "1"
+            "value": "0"
           },
           "PSU__FPGA_PL2_ENABLE": {
             "value": "0"
@@ -2425,8 +2422,8 @@
           "PSU__PJTAG__PERIPHERAL__ENABLE": {
             "value": "0"
           },
-          "PSU__PL_CLK1_BUF": {
-            "value": "TRUE"
+          "PSU__PL_CLK0_BUF": {
+            "value": "FALSE"
           },
           "PSU__PL__POWER__ON": {
             "value": "1"
@@ -2699,7 +2696,7 @@
             "value": "8"
           },
           "PSU__TRACE__INTERNAL_WIDTH": {
-            "value": "16"
+            "value": "32"
           },
           "PSU__TRACE__PERIPHERAL__ENABLE": {
             "value": "1"
@@ -2708,7 +2705,7 @@
             "value": "EMIO"
           },
           "PSU__TRACE__WIDTH": {
-            "value": "16Bit"
+            "value": "32Bit"
           },
           "PSU__TRISTATE__INVERTED": {
             "value": "1"
@@ -3069,28 +3066,17 @@
           "xlslice_0/Din"
         ]
       },
-      "zynq_ultra_ps_e_0_pl_clk1": {
+      "zynq_ultra_ps_e_0_pl_clk0": {
         "ports": [
-          "zynq_ultra_ps_e_0/pl_clk1",
+          "zynq_ultra_ps_e_0/pl_clk0",
+          "TRACE_CLK_SDR",
           "zynq_ultra_ps_e_0/pl_ps_trace_clk"
-        ]
-      },
-      "zynq_ultra_ps_e_0_ps_pl_tracectl": {
-        "ports": [
-          "zynq_ultra_ps_e_0/ps_pl_tracectl",
-          "TRACE_CTL"
         ]
       },
       "zynq_ultra_ps_e_0_ps_pl_tracedata": {
         "ports": [
           "zynq_ultra_ps_e_0/ps_pl_tracedata",
           "TRACE_DATA"
-        ]
-      },
-      "zynq_ultra_ps_e_0_trace_clk_out": {
-        "ports": [
-          "zynq_ultra_ps_e_0/trace_clk_out",
-          "TRACE_CLK"
         ]
       }
     }

@@ -18,3 +18,6 @@ platform active {zcu106_int_meas_plat_v3}
 catch {platform remove test_int_v3}
 platform generate
 platform generate
+platform clean
+platform generate
+platform clean

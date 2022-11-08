@@ -185,8 +185,8 @@ TRANSlation.ON
 
 
 ; run up to the first task
-Go main
-WAIT !STATE.RUN()
+; Go main
+; WAIT !STATE.RUN()
 
 ; TASK.CONFIG /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios64.t32
 ; MENU.ReProgram /home/paoloamato/Desktop/MASK-Lauterbach/TestEnvironmentTrace32/port/os/RFIOS/RFIOS-Package/scripts/lauterbach/binaries/rfios.men
@@ -200,6 +200,38 @@ WAIT !STATE.RUN()
 ; GROUP.Create "supervisor" 1:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /YELLOW
 ; GROUP.Create "producer" 2:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /BLUE
 ; GROUP.Create "consumer" 3:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /RED
+
+
+
+
+&current_dir = OS.PresentPracticeDirectory()
+ChDir &current_dir
+
+
+
+IC ARM ETM.STALL ON
+IC ARM ETM.TimeStampCLOCK 1.GHz
+IC ARM ETM.TimeStamps ON
+IC ARM ETM.TImeMode CycleAccurate
+IC ARM ETM.CycleAccurate ON
+IC ARM Trace.CLOCK 1.GHz
+IC ARM ETM.ReturnStack ON
+
+
+b.s \\test_int_v3\test_measurements\main\27
+go
+WAIT !STATE.RUN()
+IC ARM ETM.ON
+
+go
+WAIT 0.7s
+; IC ARM ETM.Trace OFF
+break
+
+; COV.Option.SourceMetric MCDC
+; sYmbol.ECA.LOADALL /SkipErrors
+
+; open some windows
 
 IF Analyzer()
 (
@@ -223,35 +255,6 @@ IF Analyzer()
 )
 
 
-
-&current_dir = OS.PresentPracticeDirectory()
-ChDir &current_dir
-
-go \\test_int_v3\test_measurements\main
-WAIT !STATE.RUN()
-
-go
-WAIT 0.5s
-break
-
-IC ARM ETM.STALL ON
-IC ARM ETM.TimeStampCLOCK 1.GHz
-IC ARM ETM.TimeStamps ON
-IC ARM ETM.TImeMode CycleAccurate
-IC ARM ETM.CycleAccurate ON
-IC ARM Trace.CLOCK 1.GHz
-IC ARM ETM.ReturnStack ON
-IC ARM ETM.ON
-
-go
-WAIT 0.015s
-IC ARM ETM.Trace OFF
-break
-
-; COV.Option.SourceMetric MCDC
-; sYmbol.ECA.LOADALL /SkipErrors
-
-; open some windows
 
 Mode.Hll
 WinPOS 0. 0.

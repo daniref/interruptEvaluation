@@ -42,3 +42,4 @@ platform active {zcu106_int_meas_plat_wrapper}
 platform generate
 platform clean
 platform generate
+platform clean

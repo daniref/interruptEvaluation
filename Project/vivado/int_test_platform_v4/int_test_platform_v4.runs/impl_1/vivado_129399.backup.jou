@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue Nov  8 15:57:18 2022
+# Process ID: 129399
+# Current directory: /home/oppy/Repositories/interruptEvaluation/Project/vivado/int_test_platform_v4/int_test_platform_v4.runs/impl_1
+# Command line: vivado -log int_design_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source int_design_wrapper.tcl -notrace
+# Log file: /home/oppy/Repositories/interruptEvaluation/Project/vivado/int_test_platform_v4/int_test_platform_v4.runs/impl_1/int_design_wrapper.vdi
+# Journal file: /home/oppy/Repositories/interruptEvaluation/Project/vivado/int_test_platform_v4/int_test_platform_v4.runs/impl_1/vivado.jou
+# Running On: oppy, OS: Linux, CPU Frequency: 3600.000 MHz, CPU Physical cores: 10, Host memory: 33457 MB
+#-----------------------------------------------------------
+source int_design_wrapper.tcl -notrace

@@ -1,84 +1,138 @@
-Nothing to build in platform 'zcu106_int_meas_plat_v3'
+16:36:24 **** Clean-only build of project int_test_plat_v4 ****
+buildplatform.sh 34313 int_test_plat_v4 clean 
+xsct% XSDB Server Channel: tcfchan#11
+Cleaning the zynqmp_fsbl application.
+rm -rf  psu_init.o  xfsbl_authentication.o  xfsbl_board.o  xfsbl_bs.o  xfsbl_csu_dma.o  xfsbl_ddr_init.o  xfsbl_dfu_util.o  xfs
+bl_handoff.o  xfsbl_hooks.o  xfsbl_image_header.o  xfsbl_initialization.o  xfsbl_main.o  xfsbl_misc.o  xfsbl_misc_drivers.o  xf
+sbl_nand.o  xfsbl_partition_load.o  xfsbl_plpartition_valid.o  xfsbl_qspi.o  xfsbl_rsa_sha.o  xfsbl_sd.o  xfsbl_tpm.o  xfsbl_tp
+m_util.o  xfsbl_usb.o  xfsbl_exit.o  xfsbl_translation_table.o zynqmp_fsbl_bsp/psu_cortexa53_0/lib/libxil.a fsbl_a53.elf *.o
 
-20:45:09 **** Incremental Build of configuration Debug for project test_int_v3 ****
-make all 
-Building file: ../src/gicv2.c
-Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gicv2.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include -MMD -MP -MF"src/gicv2.d" -MT"src/gicv2.o" -o "src/gicv2.o" "../src/gicv2.c"
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xscugic.h:188,
-                 from ../src/gicv2.h:4,
-                 from ../src/gicv2.c:1:
-../src/gicv2.c: In function 'GicInitialize':
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   43 | #define XST_FAILURE                     1L
-      |                                         ^~
-../src/gicv2.c:77:10: note: in expansion of macro 'XST_FAILURE'
-   77 |   return XST_FAILURE;
-      |          ^~~~~~~~~~~
-../src/gicv2.c:62:6: note: declared here
-   62 | void GicInitialize(void)
-      |      ^~~~~~~~~~~~~
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xscugic.h:188,
-                 from ../src/gicv2.h:4,
-                 from ../src/gicv2.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   43 | #define XST_FAILURE                     1L
-      |                                         ^~
-../src/gicv2.c:83:10: note: in expansion of macro 'XST_FAILURE'
-   83 |   return XST_FAILURE;
-      |          ^~~~~~~~~~~
-../src/gicv2.c:62:6: note: declared here
-   62 | void GicInitialize(void)
-      |      ^~~~~~~~~~~~~
-../src/gicv2.c:104:10: warning: 'return' with a value, in function returning void [-Wreturn-type]
-  104 |   return Status;
-      |          ^~~~~~
-../src/gicv2.c:62:6: note: declared here
-   62 | void GicInitialize(void)
-      |      ^~~~~~~~~~~~~
-../src/gicv2.c:111:49: warning: passing argument 3 of 'XGpioPs_SetCallbackHandler' from incompatible pointer type [-Wincompatible-pointer-types]
-  111 |  XGpioPs_SetCallbackHandler(Gpio, (void *)Gpio, gpio_isr_callback);
-      |                                                 ^~~~~~~~~~~~~~~~~
-      |                                                 |
-      |                                                 void (*)(void)
-In file included from ../src/utility.h:3,
-                 from ../src/gicv2.c:6:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xgpiops.h:253:25: note: expected 'XGpioPs_Handler' {aka 'void (*)(void *, unsigned int,  unsigned int)'} but argument is of type 'void (*)(void)'
-  253 |         XGpioPs_Handler FuncPointer);
-      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~
-In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xscugic.h:188,
-                 from ../src/gicv2.h:4,
-                 from ../src/gicv2.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bspinclude/include/xstatus.h:42:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   42 | #define XST_SUCCESS                     0L
-      |                                         ^~
-../src/gicv2.c:128:9: note: in expansion of macro 'XST_SUCCESS'
-  128 |  return XST_SUCCESS;
-      |         ^~~~~~~~~~~
-../src/gicv2.c:62:6: note: declared here
-   62 | void GicInitialize(void)
-      |      ^~~~~~~~~~~~~
-At top level:
-../src/gicv2.c:26:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
-   26 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
-      |             ^~~~~~~~~~~
-In file included from ../src/gicv2.c:6:
-../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
-   21 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
-      |                ^~~~
-../src/utility.h:19:16: warning: 'Gpio' defined but not used [-Wunused-variable]
-   19 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
-      |                ^~~~
-Finished building: ../src/gicv2.c
- 
-Building target: test_int_v3.elf
-Invoking: ARM v8 gcc linker
-aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zcu106_int_meas_plat_v3/export/zcu106_int_meas_plat_v3/sw/zcu106_int_meas_plat_v3/standalone_domain/bsplib/lib -o "test_int_v3.elf" ./src/axi_gpio.o ./src/generic_timer.o ./src/gicv2.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: test_int_v3.elf
- 
-Invoking: ARM v8 Print Size
-aarch64-none-elf-size test_int_v3.elf  |tee "test_int_v3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 121031	   7712	  21173	 149916	  2499c	test_int_v3.elf
-Finished building: test_int_v3.elf.size
- 
+Cleaning the zynqmp_fsbl application, bsp
+make -C psu_cortexa53_0/libsrc/axipmon_v6_9/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/clockps_v1_3/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_8/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v2_0/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/csudma_v1_10/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_3/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/gpiops_v3_9/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/iicps_v3_14/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_10/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/resetps_v1_4/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_11/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/scugic_v4_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/spips_v3_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/standalone_v7_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_7/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/uartps_v3_11/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/xilffs_v4_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/xilpm_v3_5/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/xilsecure_v4_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/zdma_v1_13/src -s clean 
+
+rm -f psu_cortexa53_0/lib/libxil.a
+
+Cleaning the zynqmp_pmufw application.
+rm -rf  idle_hooks.o  pm_binding.o  pm_callbacks.o  pm_clock.o  pm_config.o  pm_core.o  pm_csudma.o  pm_ddr.o  pm_extern.o  pm_
+gic_proxy.o  pm_gpp.o  pm_hooks.o  pm_ioctl.o  pm_master.o  pm_mmio_access.o  pm_node.o  pm_node_reset.o  pm_notifier.o  pm_per
+iph.o  pm_pinctrl.o  pm_pll.o  pm_power.o  pm_proc.o  pm_qspi.o  pm_requirement.o  pm_reset.o  pm_slave.o  pm_sram.o  pm_system
+.o  pm_usb.o  xpfw_aib.o  xpfw_core.o  xpfw_error_manager.o  xpfw_events.o  xpfw_interrupts.o  xpfw_ipi_manager.o  xpfw_main.o 
+ xpfw_mod_common.o  xpfw_mod_dap.o  xpfw_mod_em.o  xpfw_mod_extwdt.o  xpfw_mod_legacy.o  xpfw_mod_overtemp.o  xpfw_mod_pm.o  xp
+fw_mod_rpu.o  xpfw_mod_rtc.o  xpfw_mod_sched.o  xpfw_mod_stl.o  xpfw_module.o  xpfw_mod_ultra96.o  xpfw_mod_wdt.o  xpfw_platfor
+m.o  xpfw_resets.o  xpfw_restart.o  xpfw_rom_interface.o  xpfw_scheduler.o  xpfw_user_startup.o  xpfw_util.o  xpfw_xpu.o  xpfw_
+start.o zynqmp_pmufw_bsp/psu_pmu_0/lib/libxil.a pmufw.elf *.o
+
+Cleaning the zynqmp_pmufw application, bsp
+make -C psu_pmu_0/libsrc/axipmon_v6_9/src -s clean 
+
+make -C psu_pmu_0/libsrc/clockps_v1_3/src -s clean 
+
+make -C psu_pmu_0/libsrc/cpu_v2_14/src -s clean 
+
+make -C psu_pmu_0/libsrc/csudma_v1_10/src -s clean 
+
+make -C psu_pmu_0/libsrc/ddrcpsu_v1_3/src -s clean 
+
+make -C psu_pmu_0/libsrc/gpiops_v3_9/src -s clean 
+
+make -C psu_pmu_0/libsrc/iicps_v3_14/src -s clean 
+
+make -C psu_pmu_0/libsrc/ipipsu_v2_10/src -s clean 
+
+make -C psu_pmu_0/libsrc/resetps_v1_4/src -s clean 
+
+make -C psu_pmu_0/libsrc/rtcpsu_v1_11/src -s clean 
+
+make -C psu_pmu_0/libsrc/spips_v3_6/src -s clean 
+
+make -C psu_pmu_0/libsrc/standalone_v7_6/src -s clean 
+
+make -C psu_pmu_0/libsrc/sysmonpsu_v2_7/src -s clean 
+
+make -C psu_pmu_0/libsrc/uartps_v3_11/src -s clean 
+
+make -C psu_pmu_0/libsrc/xilfpga_v6_1/src -s clean 
+
+make -C psu_pmu_0/libsrc/xilsecure_v4_6/src -s clean 
+
+make -C psu_pmu_0/libsrc/xilskey_v7_2/src -s clean 
+
+make -C psu_pmu_0/libsrc/zdma_v1_13/src -s clean 
+
+rm -f psu_pmu_0/lib/libxil.a
+
+Cleaning the BSP for domain  - standalone_domain
+make -C psu_cortexa53_0/libsrc/axipmon_v6_9/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/clockps_v1_3/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/coresightps_dcc_v1_8/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/cpu_cortexa53_v2_0/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/csudma_v1_10/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/ddrcpsu_v1_3/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/gpiops_v3_9/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/iicps_v3_14/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/ipipsu_v2_10/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/resetps_v1_4/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/rtcpsu_v1_11/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/scugic_v4_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/spips_v3_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/standalone_v7_6/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/sysmonpsu_v2_7/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/uartps_v3_11/src -s clean 
+
+make -C psu_cortexa53_0/libsrc/zdma_v1_13/src -s clean 
+
+rm -f psu_cortexa53_0/lib/libxil.a
+

@@ -1,0 +1,10 @@
+16:33:34 **** Build of configuration Debug for project test_int_v4_system ****
+make all 
+Generating bif file for the system project
+Executing command '::scw::generate_bif -xpfm /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/int_test_plat_v4.xpfm -domains standalone_domain -bifpath /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/int_test_plat_v4.xpfm --sys_config int_test_plat_v4 --bif /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4_system/Debug/system.bif --bitstream /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4/_ide/bitstream/int_design_wrapper.bit --elf /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4/Debug/test_int_v4.elf,psu_cortexa53_0
+creating BOOT.BIN using /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4/_ide/bitstream/int_design_wrapper.bit
+Running /tools/Xilinx/Vitis/2021.2/bin/bootgen -arch zynqmp -image /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v4_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+16:33:40 Build Finished (took 6s.79ms)
+

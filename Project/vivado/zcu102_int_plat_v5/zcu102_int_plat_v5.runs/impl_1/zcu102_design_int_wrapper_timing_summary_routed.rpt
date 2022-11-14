@@ -1,0 +1,2097 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date              : Fri Nov 11 15:11:56 2022
+| Host              : oppy running 64-bit Ubuntu 22.04.1 LTS
+| Command           : report_timing_summary -max_paths 10 -report_unconstrained -file zcu102_design_int_wrapper_timing_summary_routed.rpt -pb zcu102_design_int_wrapper_timing_summary_routed.pb -rpx zcu102_design_int_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design            : zcu102_design_int_wrapper
+| Device            : xczu9eg-ffvb1156
+| Speed File        : -2  PRODUCTION 1.29 08-03-2020
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity  Description                    Violations  
+---------  --------  -----------------------------  ----------  
+TIMING-18  Warning   Missing input or output delay  17          
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (17)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (17)
+--------------------------------
+ There are 17 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      8.008        0.000                      0                  431        0.046        0.000                      0                  431        1.000        0.000                       0                   401  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock     Waveform(ns)       Period(ns)      Frequency(MHz)
+-----     ------------       ----------      --------------
+clk_pl_0  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_pl_0            8.008        0.000                      0                  431        0.046        0.000                      0                  431        1.000        0.000                       0                   401  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)        clk_pl_0                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        8.008ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.046ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             8.008ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData0_reg[14]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/D[0]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.553ns  (logic 0.080ns (5.151%)  route 1.473ns (94.849%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.668ns = ( 11.668 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.849ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.686ns (routing 0.395ns, distribution 1.291ns)
+  Clock Net Delay (Destination): 1.538ns (routing 0.356ns, distribution 1.182ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.686     1.849    yAdapter/CLK
+    SLICE_X78Y184        FDRE                                         r  yAdapter/eIndirect.rData0_reg[14]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y184        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.080     1.929 r  yAdapter/eIndirect.rData0_reg[14]/Q
+                         net (fo=1, routed)           1.473     3.402    yAdapter/eIndirect.yBufferData/Q[14]
+    HDIOLOGIC_M_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/D[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.538    11.668    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.748    
+                         clock uncertainty           -0.130    11.618    
+    HDIOLOGIC_M_X0Y31    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[0])
+                                                     -0.208    11.410    yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.410    
+                         arrival time                          -3.402    
+  -------------------------------------------------------------------
+                         slack                                  8.008    
+
+Slack (MET) :             8.096ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData1_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/D[4]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.443ns  (logic 0.079ns (5.475%)  route 1.364ns (94.525%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.109ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.663ns = ( 11.663 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.852ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.689ns (routing 0.395ns, distribution 1.294ns)
+  Clock Net Delay (Destination): 1.533ns (routing 0.356ns, distribution 1.177ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.689     1.852    yAdapter/CLK
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y184        FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.079     1.931 r  yAdapter/eIndirect.rData1_reg[12]/Q
+                         net (fo=1, routed)           1.364     3.295    yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1_0[12]
+    HDIOLOGIC_M_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/D[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.533    11.663    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.743    
+                         clock uncertainty           -0.130    11.613    
+    HDIOLOGIC_M_X0Y30    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[4])
+                                                     -0.222    11.391    yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.391    
+                         arrival time                          -3.295    
+  -------------------------------------------------------------------
+                         slack                                  8.096    
+
+Slack (MET) :             8.120ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData0_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/D[0]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.436ns  (logic 0.079ns (5.501%)  route 1.357ns (94.499%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.663ns = ( 11.663 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.849ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.686ns (routing 0.395ns, distribution 1.291ns)
+  Clock Net Delay (Destination): 1.533ns (routing 0.356ns, distribution 1.177ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.686     1.849    yAdapter/CLK
+    SLICE_X78Y184        FDRE                                         r  yAdapter/eIndirect.rData0_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y184        FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.079     1.928 r  yAdapter/eIndirect.rData0_reg[12]/Q
+                         net (fo=1, routed)           1.357     3.285    yAdapter/eIndirect.yBufferData/Q[12]
+    HDIOLOGIC_M_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/D[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.533    11.663    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.743    
+                         clock uncertainty           -0.130    11.613    
+    HDIOLOGIC_M_X0Y30    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[0])
+                                                     -0.208    11.405    yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.405    
+                         arrival time                          -3.285    
+  -------------------------------------------------------------------
+                         slack                                  8.120    
+
+Slack (MET) :             8.194ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData1_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/D[4]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.358ns  (logic 0.080ns (5.891%)  route 1.278ns (94.109%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.096ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.676ns = ( 11.676 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.852ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.689ns (routing 0.395ns, distribution 1.294ns)
+  Clock Net Delay (Destination): 1.546ns (routing 0.356ns, distribution 1.190ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.689     1.852    yAdapter/CLK
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y184        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.080     1.932 r  yAdapter/eIndirect.rData1_reg[8]/Q
+                         net (fo=1, routed)           1.278     3.210    yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1_0[8]
+    HDIOLOGIC_M_X0Y28    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/D[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.546    11.676    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y28    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.756    
+                         clock uncertainty           -0.130    11.626    
+    HDIOLOGIC_M_X0Y28    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[4])
+                                                     -0.222    11.404    yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.404    
+                         arrival time                          -3.210    
+  -------------------------------------------------------------------
+                         slack                                  8.194    
+
+Slack (MET) :             8.216ns  (required time - arrival time)
+  Source:                 zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLPSTRACECLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.558ns  (logic 0.793ns (50.899%)  route 0.765ns (49.101%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.121ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.613ns = ( 11.613 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.828ns
+    Clock Pessimism Removal (CPR):    0.094ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.665ns (routing 0.395ns, distribution 1.270ns)
+  Clock Net Delay (Destination): 1.483ns (routing 0.356ns, distribution 1.127ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.665     1.828    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_ps_trace_clk
+    PS8_X0Y0             PS8                                          r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLPSTRACECLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_PLPSTRACECLK_PSPLTRACEDATA[14])
+                                                      0.793     2.621 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PSPLTRACEDATA[14]
+                         net (fo=1, routed)           0.765     3.386    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_i[14]
+    SLICE_X36Y69         FDRE                                         r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.483    11.613    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_ps_trace_clk
+    SLICE_X36Y69         FDRE                                         r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][14]/C
+                         clock pessimism              0.094    11.707    
+                         clock uncertainty           -0.130    11.577    
+    SLICE_X36Y69         FDRE (Setup_BFF_SLICEL_C_D)
+                                                      0.025    11.602    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][14]
+  -------------------------------------------------------------------
+                         required time                         11.602    
+                         arrival time                          -3.386    
+  -------------------------------------------------------------------
+                         slack                                  8.216    
+
+Slack (MET) :             8.234ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData0_reg[13]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[13].eUltraScale.yOddre1/D[0]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.315ns  (logic 0.079ns (6.008%)  route 1.236ns (93.992%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.144ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.666ns = ( 11.666 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.890ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.727ns (routing 0.395ns, distribution 1.332ns)
+  Clock Net Delay (Destination): 1.536ns (routing 0.356ns, distribution 1.180ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.727     1.890    yAdapter/CLK
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y185        FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.079     1.969 r  yAdapter/eIndirect.rData0_reg[13]/Q
+                         net (fo=1, routed)           1.236     3.205    yAdapter/eIndirect.yBufferData/Q[13]
+    HDIOLOGIC_S_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[13].eUltraScale.yOddre1/D[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.536    11.666    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y30    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[13].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.746    
+                         clock uncertainty           -0.130    11.616    
+    HDIOLOGIC_S_X0Y30    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_S_CLK_D[0])
+                                                     -0.177    11.439    yAdapter/eIndirect.yBufferData/eBits[13].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.439    
+                         arrival time                          -3.205    
+  -------------------------------------------------------------------
+                         slack                                  8.234    
+
+Slack (MET) :             8.255ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData1_reg[14]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/D[4]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.289ns  (logic 0.080ns (6.206%)  route 1.209ns (93.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.104ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.668ns = ( 11.668 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.852ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.689ns (routing 0.395ns, distribution 1.294ns)
+  Clock Net Delay (Destination): 1.538ns (routing 0.356ns, distribution 1.182ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.689     1.852    yAdapter/CLK
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[14]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y184        FDRE (Prop_BFF2_SLICEL_C_Q)
+                                                      0.080     1.932 r  yAdapter/eIndirect.rData1_reg[14]/Q
+                         net (fo=1, routed)           1.209     3.141    yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1_0[14]
+    HDIOLOGIC_M_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/D[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.538    11.668    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.748    
+                         clock uncertainty           -0.130    11.618    
+    HDIOLOGIC_M_X0Y31    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[4])
+                                                     -0.222    11.396    yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.396    
+                         arrival time                          -3.141    
+  -------------------------------------------------------------------
+                         slack                                  8.255    
+
+Slack (MET) :             8.260ns  (required time - arrival time)
+  Source:                 zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLPSTRACECLK
+                            (rising edge-triggered cell PS8 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][6]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.516ns  (logic 0.773ns (50.989%)  route 0.743ns (49.011%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.119ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.615ns = ( 11.615 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.828ns
+    Clock Pessimism Removal (CPR):    0.094ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.665ns (routing 0.395ns, distribution 1.270ns)
+  Clock Net Delay (Destination): 1.485ns (routing 0.356ns, distribution 1.129ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.665     1.828    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_ps_trace_clk
+    PS8_X0Y0             PS8                                          r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLPSTRACECLK
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8 (Prop_PS8_PLPSTRACECLK_PSPLTRACEDATA[6])
+                                                      0.773     2.601 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PSPLTRACEDATA[6]
+                         net (fo=1, routed)           0.743     3.344    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_i[6]
+    SLICE_X36Y69         FDRE                                         r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.485    11.615    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_ps_trace_clk
+    SLICE_X36Y69         FDRE                                         r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][6]/C
+                         clock pessimism              0.094    11.709    
+                         clock uncertainty           -0.130    11.579    
+    SLICE_X36Y69         FDRE (Setup_GFF2_SLICEL_C_D)
+                                                      0.025    11.604    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/trace_data_pipe_reg[7][6]
+  -------------------------------------------------------------------
+                         required time                         11.604    
+                         arrival time                          -3.344    
+  -------------------------------------------------------------------
+                         slack                                  8.260    
+
+Slack (MET) :             8.267ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData0_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/D[0]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.269ns  (logic 0.081ns (6.383%)  route 1.188ns (93.617%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.684ns = ( 11.684 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.890ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.727ns (routing 0.395ns, distribution 1.332ns)
+  Clock Net Delay (Destination): 1.554ns (routing 0.356ns, distribution 1.198ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.727     1.890    yAdapter/CLK
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y185        FDRE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.081     1.971 r  yAdapter/eIndirect.rData0_reg[7]/Q
+                         net (fo=1, routed)           1.188     3.159    yAdapter/eIndirect.yBufferData/Q[7]
+    HDIOLOGIC_M_X0Y26    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/D[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.554    11.684    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y26    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.764    
+                         clock uncertainty           -0.130    11.634    
+    HDIOLOGIC_M_X0Y26    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_M_CLK_D[0])
+                                                     -0.208    11.426    yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.426    
+                         arrival time                          -3.159    
+  -------------------------------------------------------------------
+                         slack                                  8.267    
+
+Slack (MET) :             8.271ns  (required time - arrival time)
+  Source:                 yAdapter/eIndirect.rData0_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1/D[0]
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        1.283ns  (logic 0.081ns (6.313%)  route 1.202ns (93.687%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.671ns = ( 11.671 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.890ns
+    Clock Pessimism Removal (CPR):    0.080ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.727ns (routing 0.395ns, distribution 1.332ns)
+  Clock Net Delay (Destination): 1.541ns (routing 0.356ns, distribution 1.185ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.727     1.890    yAdapter/CLK
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y185        FDRE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     1.971 r  yAdapter/eIndirect.rData0_reg[15]/Q
+                         net (fo=1, routed)           1.202     3.173    yAdapter/eIndirect.yBufferData/Q[15]
+    HDIOLOGIC_S_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1/D[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105    10.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.541    11.671    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y31    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1/CLK
+                         clock pessimism              0.080    11.751    
+                         clock uncertainty           -0.130    11.621    
+    HDIOLOGIC_S_X0Y31    OSERDESE3 (Setup_OPTFF_HDIOLOGIC_S_CLK_D[0])
+                                                     -0.177    11.444    yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1
+  -------------------------------------------------------------------
+                         required time                         11.444    
+                         arrival time                          -3.173    
+  -------------------------------------------------------------------
+                         slack                                  8.271    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.046ns  (arrival time - required time)
+  Source:                 yAdapter/ePipeline[0].wrDataPipeline_reg[0][30]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData1_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.359ns  (logic 0.090ns (25.070%)  route 0.269ns (74.930%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.251ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.852ns
+    Source Clock Delay      (SCD):    1.529ns
+    Clock Pessimism Removal (CPR):    0.072ns
+  Clock Net Delay (Source):      1.399ns (routing 0.356ns, distribution 1.043ns)
+  Clock Net Delay (Destination): 1.689ns (routing 0.395ns, distribution 1.294ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105     0.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.399     1.529    yAdapter/CLK
+    SLICE_X73Y172        FDRE                                         r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][30]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y172        FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     1.587 r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][30]/Q
+                         net (fo=2, routed)           0.259     1.846    yAdapter/eIndirect.yTestPatternGenerator/Q[30]
+    SLICE_X80Y184        LUT3 (Prop_B5LUT_SLICEL_I2_O)
+                                                      0.032     1.878 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData1[14]_i_1/O
+                         net (fo=1, routed)           0.010     1.888    yAdapter/eIndirect.yTestPatternGenerator_n_17
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.689     1.852    yAdapter/CLK
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[14]/C
+                         clock pessimism             -0.072     1.780    
+    SLICE_X80Y184        FDRE (Hold_BFF2_SLICEL_C_D)
+                                                      0.062     1.842    yAdapter/eIndirect.rData1_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.842    
+                         arrival time                           1.888    
+  -------------------------------------------------------------------
+                         slack                                  0.046    
+
+Slack (MET) :             0.047ns  (arrival time - required time)
+  Source:                 yAdapter/ePipeline[0].wrDataPipeline_reg[0][6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData0_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.380ns  (logic 0.122ns (32.105%)  route 0.258ns (67.895%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.271ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.872ns
+    Source Clock Delay      (SCD):    1.529ns
+    Clock Pessimism Removal (CPR):    0.072ns
+  Clock Net Delay (Source):      1.399ns (routing 0.356ns, distribution 1.043ns)
+  Clock Net Delay (Destination): 1.709ns (routing 0.395ns, distribution 1.314ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105     0.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.399     1.529    yAdapter/CLK
+    SLICE_X73Y172        FDRE                                         r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y172        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     1.587 r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][6]/Q
+                         net (fo=2, routed)           0.249     1.836    yAdapter/eIndirect.yTestPatternGenerator/Q[6]
+    SLICE_X79Y186        LUT3 (Prop_H5LUT_SLICEM_I2_O)
+                                                      0.064     1.900 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData0[6]_i_1/O
+                         net (fo=1, routed)           0.009     1.909    yAdapter/eIndirect.yTestPatternGenerator_n_9
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.rData0_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.709     1.872    yAdapter/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.rData0_reg[6]/C
+                         clock pessimism             -0.072     1.800    
+    SLICE_X79Y186        FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     1.862    yAdapter/eIndirect.rData0_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.862    
+                         arrival time                           1.909    
+  -------------------------------------------------------------------
+                         slack                                  0.047    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData1_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.101ns  (logic 0.072ns (71.287%)  route 0.029ns (28.713%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.163ns
+    Source Clock Delay      (SCD):    1.021ns
+    Clock Pessimism Removal (CPR):    0.136ns
+  Clock Net Delay (Source):      0.928ns (routing 0.213ns, distribution 0.715ns)
+  Clock Net Delay (Destination): 1.047ns (routing 0.239ns, distribution 0.808ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.928     1.021    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X78Y185        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y185        FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.039     1.060 r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[3]/Q
+                         net (fo=1, routed)           0.023     1.083    yAdapter/eIndirect.yTestPatternGenerator/rData1_reg_n_0_[3]
+    SLICE_X78Y185        LUT3 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.033     1.116 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData1[3]_i_1/O
+                         net (fo=1, routed)           0.006     1.122    yAdapter/eIndirect.yTestPatternGenerator_n_28
+    SLICE_X78Y185        FDRE                                         r  yAdapter/eIndirect.rData1_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.098     0.098    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.116 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.047     1.163    yAdapter/CLK
+    SLICE_X78Y185        FDRE                                         r  yAdapter/eIndirect.rData1_reg[3]/C
+                         clock pessimism             -0.136     1.027    
+    SLICE_X78Y185        FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     1.074    yAdapter/eIndirect.rData1_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.074    
+                         arrival time                           1.122    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 yAdapter/ePipeline[0].wrDataPipeline_reg[0][3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData0_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.399ns  (logic 0.091ns (22.807%)  route 0.308ns (77.193%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.289ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.890ns
+    Source Clock Delay      (SCD):    1.529ns
+    Clock Pessimism Removal (CPR):    0.072ns
+  Clock Net Delay (Source):      1.399ns (routing 0.356ns, distribution 1.043ns)
+  Clock Net Delay (Destination): 1.727ns (routing 0.395ns, distribution 1.332ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105     0.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.399     1.529    yAdapter/CLK
+    SLICE_X73Y172        FDRE                                         r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y172        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.058     1.587 r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][3]/Q
+                         net (fo=2, routed)           0.298     1.885    yAdapter/eIndirect.yTestPatternGenerator/Q[3]
+    SLICE_X80Y185        LUT3 (Prop_F5LUT_SLICEL_I2_O)
+                                                      0.033     1.918 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData0[3]_i_1/O
+                         net (fo=1, routed)           0.010     1.928    yAdapter/eIndirect.yTestPatternGenerator_n_12
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.727     1.890    yAdapter/CLK
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[3]/C
+                         clock pessimism             -0.072     1.818    
+    SLICE_X80Y185        FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.062     1.880    yAdapter/eIndirect.rData0_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.880    
+                         arrival time                           1.928    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.056ns  (arrival time - required time)
+  Source:                 yAdapter/ePipeline[0].wrDataPipeline_reg[0][24]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData1_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.370ns  (logic 0.120ns (32.432%)  route 0.250ns (67.568%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.252ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.852ns
+    Source Clock Delay      (SCD):    1.528ns
+    Clock Pessimism Removal (CPR):    0.072ns
+  Clock Net Delay (Source):      1.398ns (routing 0.356ns, distribution 1.042ns)
+  Clock Net Delay (Destination): 1.689ns (routing 0.395ns, distribution 1.294ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105     0.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.398     1.528    yAdapter/CLK
+    SLICE_X73Y172        FDRE                                         r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][24]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y172        FDRE (Prop_GFF_SLICEM_C_Q)
+                                                      0.058     1.586 r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][24]/Q
+                         net (fo=2, routed)           0.241     1.827    yAdapter/eIndirect.yTestPatternGenerator/Q[24]
+    SLICE_X80Y184        LUT3 (Prop_C5LUT_SLICEL_I2_O)
+                                                      0.062     1.889 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData1[8]_i_1/O
+                         net (fo=1, routed)           0.009     1.898    yAdapter/eIndirect.yTestPatternGenerator_n_23
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.689     1.852    yAdapter/CLK
+    SLICE_X80Y184        FDRE                                         r  yAdapter/eIndirect.rData1_reg[8]/C
+                         clock pessimism             -0.072     1.780    
+    SLICE_X80Y184        FDRE (Hold_CFF2_SLICEL_C_D)
+                                                      0.062     1.842    yAdapter/eIndirect.rData1_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -1.842    
+                         arrival time                           1.898    
+  -------------------------------------------------------------------
+                         slack                                  0.056    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData0_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.112ns  (logic 0.062ns (55.357%)  route 0.050ns (44.643%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.172ns
+    Source Clock Delay      (SCD):    1.028ns
+    Clock Pessimism Removal (CPR):    0.138ns
+  Clock Net Delay (Source):      0.935ns (routing 0.213ns, distribution 0.722ns)
+  Clock Net Delay (Destination): 1.056ns (routing 0.239ns, distribution 0.817ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.935     1.028    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y186        FDRE (Prop_GFF_SLICEM_C_Q)
+                                                      0.039     1.067 r  yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[4]/Q
+                         net (fo=1, routed)           0.029     1.096    yAdapter/eIndirect.yTestPatternGenerator/rData0_reg_n_0_[4]
+    SLICE_X79Y186        LUT3 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.023     1.119 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData0[4]_i_1/O
+                         net (fo=1, routed)           0.021     1.140    yAdapter/eIndirect.yTestPatternGenerator_n_11
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.rData0_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.098     0.098    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.116 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.056     1.172    yAdapter/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.rData0_reg[4]/C
+                         clock pessimism             -0.138     1.034    
+    SLICE_X79Y186        FDRE (Hold_HFF_SLICEM_C_D)
+                                                      0.046     1.080    yAdapter/eIndirect.rData0_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.080    
+                         arrival time                           1.140    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.062ns  (arrival time - required time)
+  Source:                 yAdapter/ePipeline[0].wrDataPipeline_reg[0][5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.rData0_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.412ns  (logic 0.115ns (27.913%)  route 0.297ns (72.087%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.290ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.890ns
+    Source Clock Delay      (SCD):    1.528ns
+    Clock Pessimism Removal (CPR):    0.072ns
+  Clock Net Delay (Source):      1.398ns (routing 0.356ns, distribution 1.042ns)
+  Clock Net Delay (Destination): 1.727ns (routing 0.395ns, distribution 1.332ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.105     0.105    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.130 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.398     1.528    yAdapter/CLK
+    SLICE_X73Y171        FDRE                                         r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y171        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     1.586 r  yAdapter/ePipeline[0].wrDataPipeline_reg[0][5]/Q
+                         net (fo=2, routed)           0.277     1.863    yAdapter/eIndirect.yTestPatternGenerator/Q[5]
+    SLICE_X80Y185        LUT3 (Prop_E6LUT_SLICEL_I2_O)
+                                                      0.057     1.920 r  yAdapter/eIndirect.yTestPatternGenerator/eIndirect.rData0[5]_i_1/O
+                         net (fo=1, routed)           0.020     1.940    yAdapter/eIndirect.yTestPatternGenerator_n_10
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     0.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.163 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.727     1.890    yAdapter/CLK
+    SLICE_X80Y185        FDRE                                         r  yAdapter/eIndirect.rData0_reg[5]/C
+                         clock pessimism             -0.072     1.818    
+    SLICE_X80Y185        FDRE (Hold_EFF_SLICEL_C_D)
+                                                      0.060     1.878    yAdapter/eIndirect.rData0_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.878    
+                         arrival time                           1.940    
+  -------------------------------------------------------------------
+                         slack                                  0.062    
+
+Slack (MET) :             0.063ns  (arrival time - required time)
+  Source:                 yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.149ns  (logic 0.060ns (40.268%)  route 0.089ns (59.732%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.163ns
+    Source Clock Delay      (SCD):    1.029ns
+    Clock Pessimism Removal (CPR):    0.095ns
+  Clock Net Delay (Source):      0.936ns (routing 0.213ns, distribution 0.723ns)
+  Clock Net Delay (Destination): 1.047ns (routing 0.239ns, distribution 0.808ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.936     1.029    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y186        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.039     1.068 r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[0]/Q
+                         net (fo=20, routed)          0.082     1.150    yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg_n_0_[0]
+    SLICE_X78Y185        LUT5 (Prop_B5LUT_SLICEL_I1_O)
+                                                      0.021     1.171 r  yAdapter/eIndirect.yTestPatternGenerator/rData1[5]_i_1/O
+                         net (fo=1, routed)           0.007     1.178    yAdapter/eIndirect.yTestPatternGenerator/rData17_out[5]
+    SLICE_X78Y185        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.098     0.098    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.116 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.047     1.163    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X78Y185        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[5]/C
+                         clock pessimism             -0.095     1.068    
+    SLICE_X78Y185        FDRE (Hold_BFF2_SLICEL_C_D)
+                                                      0.047     1.115    yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.115    
+                         arrival time                           1.178    
+  -------------------------------------------------------------------
+                         slack                                  0.063    
+
+Slack (MET) :             0.063ns  (arrival time - required time)
+  Source:                 yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.145ns  (logic 0.058ns (40.000%)  route 0.087ns (60.000%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.159ns
+    Source Clock Delay      (SCD):    1.029ns
+    Clock Pessimism Removal (CPR):    0.095ns
+  Clock Net Delay (Source):      0.936ns (routing 0.213ns, distribution 0.723ns)
+  Clock Net Delay (Destination): 1.043ns (routing 0.239ns, distribution 0.804ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.936     1.029    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y186        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     1.067 r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/Q
+                         net (fo=18, routed)          0.081     1.148    yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg_n_0_[2]
+    SLICE_X78Y186        LUT5 (Prop_C5LUT_SLICEL_I3_O)
+                                                      0.020     1.168 r  yAdapter/eIndirect.yTestPatternGenerator/rData0[8]_i_1/O
+                         net (fo=1, routed)           0.006     1.174    yAdapter/eIndirect.yTestPatternGenerator/rData0[8]_i_1_n_0
+    SLICE_X78Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.098     0.098    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.116 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.043     1.159    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X78Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[8]/C
+                         clock pessimism             -0.095     1.064    
+    SLICE_X78Y186        FDRE (Hold_CFF2_SLICEL_C_D)
+                                                      0.047     1.111    yAdapter/eIndirect.yTestPatternGenerator/rData0_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -1.111    
+                         arrival time                           1.174    
+  -------------------------------------------------------------------
+                         slack                                  0.063    
+
+Slack (MET) :             0.063ns  (arrival time - required time)
+  Source:                 yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.139ns  (logic 0.072ns (51.799%)  route 0.067ns (48.201%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.029ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.182ns
+    Source Clock Delay      (SCD):    1.029ns
+    Clock Pessimism Removal (CPR):    0.124ns
+  Clock Net Delay (Source):      0.936ns (routing 0.213ns, distribution 0.723ns)
+  Clock Net Delay (Destination): 1.066ns (routing 0.239ns, distribution 0.827ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.936     1.029    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X79Y186        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y186        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     1.067 r  yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg[2]/Q
+                         net (fo=18, routed)          0.059     1.126    yAdapter/eIndirect.yTestPatternGenerator/rCounter_reg_n_0_[2]
+    SLICE_X79Y185        LUT5 (Prop_B5LUT_SLICEM_I3_O)
+                                                      0.034     1.160 r  yAdapter/eIndirect.yTestPatternGenerator/rData1[13]_i_1/O
+                         net (fo=1, routed)           0.008     1.168    yAdapter/eIndirect.yTestPatternGenerator/rData17_out[13]
+    SLICE_X79Y185        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.098     0.098    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.116 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.066     1.182    yAdapter/eIndirect.yTestPatternGenerator/CLK
+    SLICE_X79Y185        FDRE                                         r  yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[13]/C
+                         clock pessimism             -0.124     1.058    
+    SLICE_X79Y185        FDRE (Hold_BFF2_SLICEM_C_D)
+                                                      0.047     1.105    yAdapter/eIndirect.yTestPatternGenerator/rData1_reg[13]
+  -------------------------------------------------------------------
+                         required time                         -1.105    
+                         arrival time                           1.168    
+  -------------------------------------------------------------------
+                         slack                                  0.063    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_pl_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0] }
+
+Check Type        Corner  Lib Pin        Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location           Pin
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_S_X0Y27  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_M_X0Y13  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_M_X0Y29  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_S_X0Y29  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_M_X0Y30  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_S_X0Y30  yAdapter/eIndirect.yBufferData/eBits[13].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_M_X0Y31  yAdapter/eIndirect.yBufferData/eBits[14].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_S_X0Y31  yAdapter/eIndirect.yBufferData/eBits[15].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_M_X0Y14  yAdapter/eIndirect.yBufferData/eBits[1].eUltraScale.yOddre1/CLK
+Min Period        n/a     OSERDESE3/CLK  n/a            8.000         10.000      2.000      HDIOLOGIC_S_X0Y14  yAdapter/eIndirect.yBufferData/eBits[2].eUltraScale.yOddre1/CLK
+Low Pulse Width   Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y27  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+Low Pulse Width   Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y27  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+Low Pulse Width   Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y13  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+Low Pulse Width   Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y13  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+Low Pulse Width   Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y29  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+Low Pulse Width   Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y29  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+Low Pulse Width   Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y29  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+Low Pulse Width   Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y29  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+Low Pulse Width   Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y30  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+Low Pulse Width   Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y30  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+High Pulse Width  Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y27  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+High Pulse Width  Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y27  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+High Pulse Width  Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y13  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+High Pulse Width  Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y13  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+High Pulse Width  Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y29  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+High Pulse Width  Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y29  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+High Pulse Width  Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y29  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+High Pulse Width  Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_S_X0Y29  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+High Pulse Width  Slow    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y30  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+High Pulse Width  Fast    OSERDESE3/CLK  n/a            4.000         5.000       1.000      HDIOLOGIC_M_X0Y30  yAdapter/eIndirect.yBufferData/eBits[12].eUltraScale.yOddre1/CLK
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  
+
+Max Delay            17 Endpoints
+Min Delay            17 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.665ns  (logic 3.662ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.766ns (routing 0.395ns, distribution 1.371ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.766     6.929    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y13    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y13    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.818     7.747 r  yAdapter/eIndirect.yBufferData/eBits[0].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.750    oTRACE_DATA_OBUF[0]
+    L19                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      2.844    10.594 r  oTRACE_DATA_OBUF[0]_inst/O
+                         net (fo=0)                   0.000    10.594    oTRACE_DATA[0]
+    L19                                                               r  oTRACE_DATA[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[1].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[1]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.663ns  (logic 3.660ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.764ns (routing 0.395ns, distribution 1.369ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.764     6.927    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y14    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[1].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y14    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.818     7.745 r  yAdapter/eIndirect.yBufferData/eBits[1].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.748    oTRACE_DATA_OBUF[1]
+    J21                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      2.842    10.590 r  oTRACE_DATA_OBUF[1]_inst/O
+                         net (fo=0)                   0.000    10.590    oTRACE_DATA[1]
+    J21                                                               r  oTRACE_DATA[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[2].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[2]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.661ns  (logic 3.658ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.763ns (routing 0.395ns, distribution 1.368ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.763     6.926    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y14    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[2].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y14    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.819     7.745 r  yAdapter/eIndirect.yBufferData/eBits[2].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.748    oTRACE_DATA_OBUF[2]
+    H21                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      2.839    10.587 r  oTRACE_DATA_OBUF[2]_inst/O
+                         net (fo=0)                   0.000    10.587    oTRACE_DATA[2]
+    H21                                                               r  oTRACE_DATA[2] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[4]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.640ns  (logic 3.637ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.781ns (routing 0.395ns, distribution 1.386ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.781     6.944    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y24    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y24    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.819     7.763 r  yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.766    oTRACE_DATA_OBUF[4]
+    H19                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      2.818    10.584 r  oTRACE_DATA_OBUF[4]_inst/O
+                         net (fo=0)                   0.000    10.584    oTRACE_DATA[4]
+    H19                                                               r  oTRACE_DATA[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.637ns  (logic 3.634ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.781ns (routing 0.395ns, distribution 1.386ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.781     6.944    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y24    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y24    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.818     7.762 r  yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.765    oTRACE_DATA_OBUF[3]
+    H18                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      2.816    10.581 r  oTRACE_DATA_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    10.581    oTRACE_DATA[3]
+    H18                                                               r  oTRACE_DATA[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_CLK
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.637ns  (logic 3.634ns (99.917%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.773ns (routing 0.395ns, distribution 1.378ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.773     6.936    yAdapter/eIndirect.yBufferClk/CLK
+    HDIOLOGIC_S_X0Y27    OSERDESE3                                    f  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y27    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.819     7.755 r  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.758    oTRACE_CLK_OBUF
+    K17                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      2.815    10.573 r  oTRACE_CLK_OBUF_inst/O
+                         net (fo=0)                   0.000    10.573    oTRACE_CLK
+    K17                                                               r  oTRACE_CLK (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[8]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.640ns  (logic 3.637ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.769ns (routing 0.395ns, distribution 1.374ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.769     6.932    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y28    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y28    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.818     7.750 r  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.753    oTRACE_DATA_OBUF[8]
+    G18                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      2.819    10.572 r  oTRACE_DATA_OBUF[8]_inst/O
+                         net (fo=0)                   0.000    10.572    oTRACE_DATA[8]
+    G18                                                               r  oTRACE_DATA[8] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[5]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.628ns  (logic 3.625ns (99.917%)  route 0.003ns (0.083%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.780ns (routing 0.395ns, distribution 1.385ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.780     6.943    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y25    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y25    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.818     7.761 r  yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.764    oTRACE_DATA_OBUF[5]
+    J17                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      2.807    10.571 r  oTRACE_DATA_OBUF[5]_inst/O
+                         net (fo=0)                   0.000    10.571    oTRACE_DATA[5]
+    J17                                                               r  oTRACE_DATA[5] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[6]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.628ns  (logic 3.625ns (99.917%)  route 0.003ns (0.083%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.780ns (routing 0.395ns, distribution 1.385ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.780     6.943    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y25    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y25    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.819     7.762 r  yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.765    oTRACE_DATA_OBUF[6]
+    H17                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      2.806    10.571 r  oTRACE_DATA_OBUF[6]_inst/O
+                         net (fo=0)                   0.000    10.571    oTRACE_DATA[6]
+    H17                                                               r  oTRACE_DATA[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/CLK
+                            (falling edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[9]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.640ns  (logic 3.637ns (99.918%)  route 0.003ns (0.082%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.767ns (routing 0.395ns, distribution 1.372ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.135     5.135    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.163 f  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         1.767     6.930    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y28    OSERDESE3                                    f  yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y28    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.819     7.749 r  yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.003     7.752    oTRACE_DATA_OBUF[9]
+    G19                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      2.818    10.570 r  oTRACE_DATA_OBUF[9]_inst/O
+                         net (fo=0)                   0.000    10.570    oTRACE_DATA[9]
+    G19                                                               r  oTRACE_DATA[9] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[6]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.632ns  (logic 1.630ns (99.877%)  route 0.002ns (0.123%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.975ns (routing 0.213ns, distribution 0.762ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.975     1.068    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y25    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y25    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.168     1.236 r  yAdapter/eIndirect.yBufferData/eBits[6].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.238    oTRACE_DATA_OBUF[6]
+    H17                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      1.462     2.700 r  oTRACE_DATA_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     2.700    oTRACE_DATA[6]
+    H17                                                               r  oTRACE_DATA[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_CLK
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.641ns  (logic 1.639ns (99.878%)  route 0.002ns (0.122%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.971ns (routing 0.213ns, distribution 0.758ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.971     1.064    yAdapter/eIndirect.yBufferClk/CLK
+    HDIOLOGIC_S_X0Y27    OSERDESE3                                    r  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y27    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.168     1.232 r  yAdapter/eIndirect.yBufferClk/eBits[0].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.234    oTRACE_CLK_OBUF
+    K17                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      1.471     2.705 r  oTRACE_CLK_OBUF_inst/O
+                         net (fo=0)                   0.000     2.705    oTRACE_CLK
+    K17                                                               r  oTRACE_CLK (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[11]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.647ns  (logic 1.645ns (99.879%)  route 0.002ns (0.121%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.965ns (routing 0.213ns, distribution 0.752ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.965     1.058    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y29    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y29    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.168     1.226 r  yAdapter/eIndirect.yBufferData/eBits[11].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.228    oTRACE_DATA_OBUF[11]
+    F18                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      1.477     2.705 r  oTRACE_DATA_OBUF[11]_inst/O
+                         net (fo=0)                   0.000     2.705    oTRACE_DATA[11]
+    F18                                                               r  oTRACE_DATA[11] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[9]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.644ns  (logic 1.642ns (99.878%)  route 0.002ns (0.122%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.968ns (routing 0.213ns, distribution 0.755ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.968     1.061    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y28    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y28    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.168     1.229 r  yAdapter/eIndirect.yBufferData/eBits[9].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.231    oTRACE_DATA_OBUF[9]
+    G19                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      1.474     2.705 r  oTRACE_DATA_OBUF[9]_inst/O
+                         net (fo=0)                   0.000     2.705    oTRACE_DATA[9]
+    G19                                                               r  oTRACE_DATA[9] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[7]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.640ns  (logic 1.638ns (99.878%)  route 0.002ns (0.122%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.974ns (routing 0.213ns, distribution 0.761ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.974     1.067    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y26    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y26    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.175     1.242 r  yAdapter/eIndirect.yBufferData/eBits[7].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.244    oTRACE_DATA_OBUF[7]
+    L18                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      1.463     2.707 r  oTRACE_DATA_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     2.707    oTRACE_DATA[7]
+    L18                                                               r  oTRACE_DATA[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[5]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.640ns  (logic 1.638ns (99.878%)  route 0.002ns (0.122%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.975ns (routing 0.213ns, distribution 0.762ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.975     1.068    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y25    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y25    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.175     1.243 r  yAdapter/eIndirect.yBufferData/eBits[5].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.245    oTRACE_DATA_OBUF[5]
+    J17                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      1.463     2.708 r  oTRACE_DATA_OBUF[5]_inst/O
+                         net (fo=0)                   0.000     2.708    oTRACE_DATA[5]
+    J17                                                               r  oTRACE_DATA[5] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[4]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.644ns  (logic 1.642ns (99.878%)  route 0.002ns (0.122%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.975ns (routing 0.213ns, distribution 0.762ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.975     1.068    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_S_X0Y24    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_S_X0Y24    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_S_CLK_OQ)
+                                                      0.168     1.236 r  yAdapter/eIndirect.yBufferData/eBits[4].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.238    oTRACE_DATA_OBUF[4]
+    H19                  OBUF (Prop_OUTBUF_HDIOB_S_I_O)
+                                                      1.474     2.712 r  oTRACE_DATA_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     2.712    oTRACE_DATA[4]
+    H19                                                               r  oTRACE_DATA[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[8]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.652ns  (logic 1.650ns (99.879%)  route 0.002ns (0.121%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.969ns (routing 0.213ns, distribution 0.756ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.969     1.062    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y28    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y28    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.175     1.237 r  yAdapter/eIndirect.yBufferData/eBits[8].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.239    oTRACE_DATA_OBUF[8]
+    G18                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      1.475     2.714 r  oTRACE_DATA_OBUF[8]_inst/O
+                         net (fo=0)                   0.000     2.714    oTRACE_DATA[8]
+    G18                                                               r  oTRACE_DATA[8] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[10]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.655ns  (logic 1.653ns (99.879%)  route 0.002ns (0.121%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.967ns (routing 0.213ns, distribution 0.754ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.967     1.060    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y29    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y29    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.175     1.235 r  yAdapter/eIndirect.yBufferData/eBits[10].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.237    oTRACE_DATA_OBUF[10]
+    F17                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      1.478     2.715 r  oTRACE_DATA_OBUF[10]_inst/O
+                         net (fo=0)                   0.000     2.715    oTRACE_DATA[10]
+    F17                                                               r  oTRACE_DATA[10] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/CLK
+                            (rising edge-triggered cell OSERDESE3 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            oTRACE_DATA[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.649ns  (logic 1.647ns (99.879%)  route 0.002ns (0.121%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      0.975ns (routing 0.213ns, distribution 0.762ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.076     0.076    zcu102_design_int_i/zynq_ultra_ps_e_0/U0/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y58        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.093 r  zcu102_design_int_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X2Y2 (CLOCK_ROOT)    net (fo=401, routed)         0.975     1.068    yAdapter/eIndirect.yBufferData/CLK
+    HDIOLOGIC_M_X0Y24    OSERDESE3                                    r  yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/CLK
+  -------------------------------------------------------------------    -------------------
+    HDIOLOGIC_M_X0Y24    OSERDESE3 (Prop_OPTFF_HDIOLOGIC_M_CLK_OQ)
+                                                      0.175     1.243 r  yAdapter/eIndirect.yBufferData/eBits[3].eUltraScale.yOddre1/OQ
+                         net (fo=1, routed)           0.002     1.245    oTRACE_DATA_OBUF[3]
+    H18                  OBUF (Prop_OUTBUF_HDIOB_M_I_O)
+                                                      1.472     2.717 r  oTRACE_DATA_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     2.717    oTRACE_DATA[3]
+    H18                                                               r  oTRACE_DATA[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

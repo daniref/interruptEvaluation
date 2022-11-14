@@ -6,6 +6,7 @@ import time
 from ctypes import *
 import enum
 import psutil
+from math import ceil
 
 class PracticeState(enum.IntEnum):
     UNKNOWN = -1
@@ -122,7 +123,9 @@ class LAUTERBACH():
             print("Lauterbach: Even connected!")
 
     def get_trace(self, connection_state):
-        # check_connection()
+        con_state = self.connect(connection_state)
+        if not con_state:
+            raise ValueError("Error: No connection established to TRACE32!")
 
         systemstate = c_uint()
         min_record = c_int()
@@ -133,8 +136,9 @@ class LAUTERBACH():
         num_bytes indica il numero di dati che ci interessa leggere dalla traccia: tale numero è
         determinato dalla maschera mask
         """
-        num_bytes = 20
-        mask = 0x070c
+        num_bytes = 16
+        mask = 0x030C
+        # mask = 0x003C
 
         """
         recupero informazioni della traccia, ovvero numero di record totali e id del recrod minimo e massimo
@@ -143,8 +147,7 @@ class LAUTERBACH():
         t32api.T32_GetTraceState(0, byref(systemstate), byref(total_records), byref(min_record), byref(max_record))
         print("DEBUG 1")
 
-        # num_records = min_record.value * -1
-        num_records = 4000
+        num_records = min_record.value * -1
         total_bytes = num_bytes * num_records
 
         print("Numero di record =", num_records)
@@ -177,63 +180,25 @@ class LAUTERBACH():
 
         parsed_trace = []
 
-        # Creazione primo record per confronto
-        # for i in range(0, 2):
-        #     address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X') \
-        #               + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
-        #               + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
-        #     timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
-        #                 + format(buffer[i + 4], '02X') + format(buffer[0 + 3], '02X') + format(buffer[i + 2], '02X') \
-        #                 + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
-
-        #     cpu_mode = str(format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X'))
-        #     app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
-        #     record = {"address": address, "symbol": '', "timestamp": timestamp, "cpu_mode": cpu_mode, "app_info": app_info}
-        #     parsed_trace.append(record)
         for i in range(0 * num_bytes, (num_records) * num_bytes, num_bytes):
-            # if "38" not in format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X') and "0000" not in format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X'):
             address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X')\
                       + format(buffer[i + 12], '02X') + format(buffer[i + 11], '02X') + format(buffer[i + 10], '02X') \
                       + format(buffer[i + 9], '02X') + format(buffer[i + 8], '02X')
             timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
                         + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
                         + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
-    
-            cpu_mode = format(buffer[i + 19], '02X') + format(buffer[i + 18], '02X')
-            app_info = format(buffer[i + 17], '02X') + format(buffer[i + 16], '02X')
-    
-            record = {"address": address, "symbol": '', "timestamp": int(timestamp, 16), "cpu_mode": cpu_mode, "app_info": app_info}
-            if record["address"] == parsed_trace[-2]["address"] and record["address"] == parsed_trace[-1]["address"]:
-                parsed_trace[-1] = record
-            else:
+            record = {"a": address,"t": int(timestamp, 16)}
+            if address == "0x0000000000002C00" or address == "0x0000000000001044":
+                print("Lauterbach: address found!")
                 parsed_trace.append(record)
 
-        # find_symbols(parsed_trace)
-        with open("traccianottimestamppck.txt", 'w') as t:
+        with open("trace_captured.txt", 'w') as t:
             for record in parsed_trace:
                 t.write(str(record) + '\n')
-        # create_first_node(g)
-        # build_graph(g, parsed_trace)
-        # last_record_node = find_node_by_record(g, parsed_trace[-1])
-        # create_last_node(g, last_record_node)
-
-        # for node in g.vs[1:-1]:
-        #     node["label"] = node["label"] + ' ' + str((node["content"][-1]["timestamp"] - node["content"][0]["timestamp"])/1000)
-
-        # return g
 
 
-# if __name__ == "__main__":
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("--file", type=str, help="Practice script to launch", default="trace_generator.cmm")
-#
-#     args = parser.parse_args()
-#     script_state = c_uint(0)
-#     state = False
-#
-#     open_trace()
-#     state = connect(state)
-#     runscript(state, args.file)
-#     get_trace()
-#     disconnect(state)
+    # def read_timestamps(self, timestamp_file):
+    #     timestamp_file.
 
+    # 2C00 -> address write_gpio
+    # 1044 -> address isr first instruction

@@ -51,3 +51,39 @@ timestamp=[2022-11-08 19:32:00], mode=PLATFORM_CREATION, duration=0:00:08.694, d
 timestamp=[2022-11-08 19:32:38], mode=APP_CREATION, duration=0:00:02.037, duration_ms=2037, data={name=int_test_v4, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=int_test_plat_v4, application_type=application}
 timestamp=[2022-11-08 19:33:34], mode=PLATFORM_GENERATION, duration=0:00:35.727, duration_ms=35727, data={name=int_test_plat_v4}
 timestamp=[2022-11-08 19:33:39], mode=BUILD, duration=0:00:01.277, duration_ms=1277, data={name=int_test_v4, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 15:16:54], mode=WORKBENCH_START, duration=0:00:05.823, duration_ms=5823, data={}
+timestamp=[2022-11-11 15:16:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.026, duration_ms=26, data={}
+timestamp=[2022-11-11 15:16:55], mode=WORKBENCH_UI_INIT, duration=0:00:00.569, duration_ms=569, data={editors_count=6, platform_editors_count=3, projects_count=10, platform_projects_count=3, active_platform_editor=false, projects=RemoteSystemsTempFiles,int_test_plat_v4,int_test_v4,int_test_v4_system,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
+timestamp=[2022-11-11 15:18:11], mode=PLATFORM_CREATION, duration=0:00:10.266, duration_ms=10266, data={platform_source=dsa, os=standalone, processor=psu_cortexa53, platform=null}
+timestamp=[2022-11-11 15:19:28], mode=APP_CREATION, duration=0:00:01.757, duration_ms=1757, data={name=test_int_v5, project_type=sdk, os=standalone, processor=cortex-a53, runtime=C/C++, platform=int_test_plat_v5, application_type=application}
+timestamp=[2022-11-11 15:20:38], mode=PLATFORM_GENERATION, duration=0:00:46.267, duration_ms=46267, data={name=int_test_plat_v5}
+timestamp=[2022-11-11 15:20:46], mode=BUILD, duration=0:00:01.428, duration_ms=1428, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 16:01:04], mode=BUILD, duration=0:00:00.223, duration_ms=223, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 16:25:06], mode=BUILD, duration=0:00:00.322, duration_ms=322, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 16:27:34], mode=BUILD, duration=0:00:00.321, duration_ms=321, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 17:55:49], mode=BUILD, duration=0:00:00.830, duration_ms=830, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 17:58:44], mode=BUILD, duration=0:00:00.323, duration_ms=323, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 17:58:50], mode=BUILD, duration=0:00:00.173, duration_ms=173, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 18:01:01], mode=BUILD, duration=0:00:00.321, duration_ms=321, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 18:03:54], mode=BUILD, duration=0:00:01.080, duration_ms=1080, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 20:30:19], mode=WORKBENCH_START, duration=0:00:04.801, duration_ms=4801, data={}
+timestamp=[2022-11-11 20:30:20], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.020, duration_ms=20, data={}
+timestamp=[2022-11-11 20:30:20], mode=WORKBENCH_UI_INIT, duration=0:00:00.723, duration_ms=723, data={editors_count=13, platform_editors_count=4, projects_count=13, platform_projects_count=4, active_platform_editor=false, projects=RemoteSystemsTempFiles,int_test_plat_v4,int_test_plat_v5,int_test_v4,int_test_v4_system,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,test_int_v5,test_int_v5_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
+timestamp=[2022-11-11 20:30:45], mode=BUILD, duration=0:00:00.347, duration_ms=347, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-11 20:44:56], mode=BUILD, duration=0:00:01.482, duration_ms=1482, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:23:46], mode=WORKBENCH_START, duration=0:00:05.921, duration_ms=5921, data={}
+timestamp=[2022-11-12 16:23:46], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.022, duration_ms=22, data={}
+timestamp=[2022-11-12 16:23:47], mode=WORKBENCH_UI_INIT, duration=0:00:00.766, duration_ms=766, data={editors_count=13, platform_editors_count=4, projects_count=13, platform_projects_count=4, active_platform_editor=false, projects=RemoteSystemsTempFiles,int_test_plat_v4,int_test_plat_v5,int_test_v4,int_test_v4_system,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,test_int_v5,test_int_v5_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
+timestamp=[2022-11-12 16:29:49], mode=BUILD, duration=0:00:00.598, duration_ms=598, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:31:25], mode=BUILD, duration=0:00:00.217, duration_ms=217, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:32:51], mode=BUILD, duration=0:00:00.217, duration_ms=217, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:34:55], mode=BUILD, duration=0:00:00.230, duration_ms=230, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:36:38], mode=BUILD, duration=0:00:00.318, duration_ms=318, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:39:29], mode=BUILD, duration=0:00:00.270, duration_ms=270, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:41:04], mode=BUILD, duration=0:00:00.219, duration_ms=219, data={name=test_int_v5, configuration=Debug, clean_build=false}
+timestamp=[2022-11-12 16:46:14], mode=WORKBENCH_START, duration=0:00:04.224, duration_ms=4224, data={}
+timestamp=[2022-11-12 16:46:14], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.018, duration_ms=18, data={}
+timestamp=[2022-11-12 16:46:14], mode=WORKBENCH_UI_INIT, duration=0:00:00.714, duration_ms=714, data={editors_count=14, platform_editors_count=5, projects_count=13, platform_projects_count=4, active_platform_editor=false, projects=RemoteSystemsTempFiles,int_test_plat_v4,int_test_plat_v5,int_test_v4,int_test_v4_system,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,test_int_v5,test_int_v5_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}
+timestamp=[2022-11-13 19:26:29], mode=WORKBENCH_START, duration=0:00:05.726, duration_ms=5726, data={}
+timestamp=[2022-11-13 19:26:29], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.027, duration_ms=27, data={}
+timestamp=[2022-11-13 19:26:30], mode=WORKBENCH_UI_INIT, duration=0:00:00.723, duration_ms=723, data={editors_count=14, platform_editors_count=5, projects_count=13, platform_projects_count=4, active_platform_editor=false, projects=RemoteSystemsTempFiles,int_test_plat_v4,int_test_plat_v5,int_test_v4,int_test_v4_system,interr_measurement_test,interr_measurement_test_system,test_int_v3,test_int_v3_system,test_int_v5,test_int_v5_system,zcu106_int_meas_plat_v3,zcu106_int_meas_plat_wrapper}

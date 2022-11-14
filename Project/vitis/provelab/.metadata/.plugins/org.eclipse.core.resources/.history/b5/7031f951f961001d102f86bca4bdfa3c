@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="test_int_v5" location="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5" platform="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/int_test_plat_v5.xpfm" platformUID="xilinx:zcu102::0.0(custom)" systemProject="test_int_v5_system" sysConfig="int_test_plat_v5" runtime="C/C++" cpu="standalone_domain" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="bb2e959aa659b7935ec213437254e3de">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.1702802028">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.1634308206" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

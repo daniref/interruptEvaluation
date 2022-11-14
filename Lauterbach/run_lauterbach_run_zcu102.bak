@@ -8,12 +8,12 @@ WinCLEAR
 &CurrentDir = OS.PresentPracticeDirectory()
 ChDir &CurrentDir
 
-&bitfile="../platform/bare_metal/int_design_wrapper.bit"
+&bitfile="../platform/bare_metal/zcu102_design_int_wrapper.bit"
 &pmufw="../platform/bare_metal/pmufw.elf"
 &fsbl="../platform/bare_metal/fsbl.elf"
 
 ;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
-&test_elf="../platform/bare_metal/int_test_v4.elf"
+&test_elf="../platform/bare_metal/test_int_v5.elf"
 
 ; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
 
@@ -201,43 +201,13 @@ TRANSlation.ON
 ; GROUP.Create "producer" 2:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /BLUE
 ; GROUP.Create "consumer" 3:0xFFFFFF8000000000--0xFFFFFFFFFFFFFFFF /RED
 
-
-
-
 &current_dir = OS.PresentPracticeDirectory()
 ChDir &current_dir
 
-
-
-//IC ARM ETM.STALL ON
-//IC ARM ETM.TimeStampCLOCK 1.GHz
 //IC ARM ETM.TimeStamps ON
-//IC ARM ETM.TImeMode CycleAccurate
-//IC ARM ETM.CycleAccurate ON
-////IC ARM Trace.CLOCK 1.GHz
-////IC ARM ETM.ReturnStack ON
-//IC ARM ETM.Trace ON
+//IC ARM etm.CycleAccurate ON
 //IC ARM ETM.ON
-
-IC ARM ETM.TimeStamps ON
-IC ARM etm.CycleAccurate ON
-IC ARM ETM.ON
-IC ARM Trace.DISable
-
-
-go \\int_test_v4\test_measurements\main\27
-WAIT !STATE.RUN()
-
-
-go
-WAIT 0.7s
-; IC ARM ETM.Trace OFF
-break
-
-; COV.Option.SourceMetric MCDC
-; sYmbol.ECA.LOADALL /SkipErrors
-
-; open some windows
+//IC ARM Trace.DISable
 
 IF Analyzer()
 (
@@ -260,7 +230,30 @@ IF Analyzer()
   ;IC ARM Analyzer.AutoFocus
 )
 
+go \\test_int_v5\test_measurements\main\18
+WAIT !STATE.RUN()
 
+IC ARM ETM.STALL ON
+IC ARM ETM.TimeStampCLOCK 1.2GHz
+IC ARM ETM.TimeStamps ON
+IC ARM ETM.TImeMode CycleAccurate
+IC ARM ETM.CycleAccurate ON
+//IC ARM Trace.CLOCK 1.2GHz
+//IC ARM ETM.ReturnStack ON
+IC ARM ETM.Trace ON
+IC ARM ETM.ON
+
+go
+wait 0.02s
+break
+
+; IC ARM ETM.Trace OFF
+;break
+
+; COV.Option.SourceMetric MCDC
+; sYmbol.ECA.LOADALL /SkipErrors
+
+; open some windows
 
 Mode.Hll
 WinPOS 0. 0.
@@ -276,6 +269,5 @@ WinPOS 120. 14.
 ;Trace.List
 ; TASK.TaskApp
 WinPOS 0. 32.
-
 
 ENDDO

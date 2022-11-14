@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"zcu102_design_int": {
+			"proto_instances": {
+			}
+		}
+	}
+}

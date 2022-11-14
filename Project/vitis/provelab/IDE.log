@@ -6693,3 +6693,1081 @@ con
 
 19:42:28 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_v4_system/_ide/scripts/debugger_int_test_v4-default.tcl'
 22:10:49 INFO  : Disconnected from the channel tcfchan#5.
+15:16:53 INFO  : Launching XSCT server: xsct -n  -interactive /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/temp_xsdb_launch_script.tcl
+15:16:54 INFO  : Platform repository initialization has completed.
+15:16:54 INFO  : Registering command handlers for Vitis TCF services
+15:16:56 INFO  : XSCT server has started successfully.
+15:16:56 INFO  : plnx-install-location is set to ''
+15:16:56 INFO  : Successfully done setting XSCT server connection channel  
+15:16:56 INFO  : Successfully done query RDI_DATADIR 
+15:16:56 INFO  : Successfully done setting workspace for the tool. 
+15:18:10 INFO  : Result from executing command 'getProjects': int_test_plat_v4;int_test_plat_v5;zcu106_int_meas_plat_v3;zcu106_int_meas_plat_wrapper
+15:18:10 INFO  : Result from executing command 'getPlatforms': int_test_plat_v4|/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/int_test_plat_v4.xpfm
+15:20:35 INFO  : Result from executing command 'getProjects': int_test_plat_v4;int_test_plat_v5;zcu106_int_meas_plat_v3;zcu106_int_meas_plat_wrapper
+15:20:35 INFO  : Result from executing command 'getPlatforms': int_test_plat_v4|/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/int_test_plat_v4.xpfm;int_test_plat_v5|/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/int_test_plat_v5.xpfm
+15:20:38 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+15:20:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:21:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:21:05 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+15:21:05 INFO  : 'jtag frequency' command is executed.
+15:21:05 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+15:21:05 INFO  : Context for 'APU' is selected.
+15:21:05 INFO  : System reset is completed.
+15:21:08 INFO  : 'after 3000' command is executed.
+15:21:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+15:21:23 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+15:21:23 INFO  : Context for 'APU' is selected.
+15:21:24 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+15:21:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:21:24 INFO  : Context for 'APU' is selected.
+15:21:24 INFO  : Boot mode is read from the target.
+15:21:24 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:21:24 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:21:24 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:21:24 INFO  : 'set bp_21_24_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+15:21:25 INFO  : 'con -block -timeout 60' command is executed.
+15:21:25 INFO  : 'bpremove $bp_21_24_fsbl_bp' command is executed.
+15:21:25 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:21:25 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:21:26 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:21:26 INFO  : 'configparams force-mem-access 0' command is executed.
+15:21:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_21_24_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_21_24_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:21:26 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:21:26 INFO  : 'con' command is executed.
+15:21:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+15:21:26 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+15:33:42 INFO  : Disconnected from the channel tcfchan#2.
+15:33:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:33:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:33:52 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+15:35:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:35:01 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+15:35:01 INFO  : 'jtag frequency' command is executed.
+15:35:01 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+15:35:01 INFO  : Context for 'APU' is selected.
+15:35:01 INFO  : System reset is completed.
+15:35:04 INFO  : 'after 3000' command is executed.
+15:35:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+15:35:19 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+15:35:19 INFO  : Context for 'APU' is selected.
+15:35:19 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+15:35:19 INFO  : 'configparams force-mem-access 1' command is executed.
+15:35:19 INFO  : Context for 'APU' is selected.
+15:35:19 INFO  : Boot mode is read from the target.
+15:35:19 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:20 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:35:20 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:35:20 INFO  : 'set bp_35_20_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+15:35:21 INFO  : 'con -block -timeout 60' command is executed.
+15:35:21 INFO  : 'bpremove $bp_35_20_fsbl_bp' command is executed.
+15:35:21 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:21 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+15:35:22 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+15:35:22 INFO  : 'configparams force-mem-access 0' command is executed.
+15:35:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_35_20_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_35_20_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:35:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+15:35:22 INFO  : 'con' command is executed.
+15:35:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+15:35:22 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:01:03 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:01:25 INFO  : Disconnected from the channel tcfchan#3.
+16:01:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:01:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:01:35 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:01:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:01:39 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:01:39 INFO  : 'jtag frequency' command is executed.
+16:01:39 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:01:39 INFO  : Context for 'APU' is selected.
+16:01:40 INFO  : System reset is completed.
+16:01:43 INFO  : 'after 3000' command is executed.
+16:01:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:01:58 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:01:58 INFO  : Context for 'APU' is selected.
+16:01:58 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:01:58 INFO  : 'configparams force-mem-access 1' command is executed.
+16:01:58 INFO  : Context for 'APU' is selected.
+16:01:58 INFO  : Boot mode is read from the target.
+16:01:58 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:01:58 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:01:59 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:01:59 INFO  : 'set bp_1_59_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:02:00 INFO  : 'con -block -timeout 60' command is executed.
+16:02:00 INFO  : 'bpremove $bp_1_59_fsbl_bp' command is executed.
+16:02:00 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:02:00 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:02:00 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:02:00 INFO  : 'configparams force-mem-access 0' command is executed.
+16:02:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_1_59_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_1_59_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:02:00 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:02:00 INFO  : 'con' command is executed.
+16:02:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:02:00 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:25:05 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:25:24 INFO  : Launch of emulator has been cancelled. Launch configuration will be terminated.
+16:25:29 INFO  : Disconnected from the channel tcfchan#4.
+16:25:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:25:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:25:39 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:25:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:25:43 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:25:43 INFO  : 'jtag frequency' command is executed.
+16:25:43 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:25:43 INFO  : Context for 'APU' is selected.
+16:25:43 INFO  : System reset is completed.
+16:25:46 INFO  : 'after 3000' command is executed.
+16:25:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:26:01 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:26:01 INFO  : Context for 'APU' is selected.
+16:26:02 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:26:02 INFO  : 'configparams force-mem-access 1' command is executed.
+16:26:02 INFO  : Context for 'APU' is selected.
+16:26:02 INFO  : Boot mode is read from the target.
+16:26:02 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:26:02 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:26:02 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:26:02 INFO  : 'set bp_26_2_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:26:03 INFO  : 'con -block -timeout 60' command is executed.
+16:26:03 INFO  : 'bpremove $bp_26_2_fsbl_bp' command is executed.
+16:26:03 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:26:03 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:26:04 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:26:04 INFO  : 'configparams force-mem-access 0' command is executed.
+16:26:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_26_2_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_26_2_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:26:04 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:26:04 INFO  : 'con' command is executed.
+16:26:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:26:04 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:27:33 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:27:38 INFO  : Disconnected from the channel tcfchan#5.
+16:27:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:27:48 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:27:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:51 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:27:51 INFO  : 'jtag frequency' command is executed.
+16:27:51 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:27:51 INFO  : Context for 'APU' is selected.
+16:27:51 INFO  : System reset is completed.
+16:27:54 INFO  : 'after 3000' command is executed.
+16:27:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:28:10 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:28:10 INFO  : Context for 'APU' is selected.
+16:28:10 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:28:10 INFO  : 'configparams force-mem-access 1' command is executed.
+16:28:10 INFO  : Context for 'APU' is selected.
+16:28:10 INFO  : Boot mode is read from the target.
+16:28:10 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:28:10 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:28:10 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:28:10 INFO  : 'set bp_28_10_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:28:11 INFO  : 'con -block -timeout 60' command is executed.
+16:28:11 INFO  : 'bpremove $bp_28_10_fsbl_bp' command is executed.
+16:28:11 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:28:11 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:28:12 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:28:12 INFO  : 'configparams force-mem-access 0' command is executed.
+16:28:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_28_10_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_28_10_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:28:12 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:28:12 INFO  : 'con' command is executed.
+16:28:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:28:12 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+17:55:48 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+17:56:25 INFO  : Disconnected from the channel tcfchan#6.
+17:56:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:56:26 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+17:56:26 INFO  : 'jtag frequency' command is executed.
+17:56:26 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:56:26 INFO  : Context for 'APU' is selected.
+17:56:26 INFO  : System reset is completed.
+17:56:29 INFO  : 'after 3000' command is executed.
+17:56:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+17:56:44 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+17:56:44 INFO  : Context for 'APU' is selected.
+17:56:44 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+17:56:44 INFO  : 'configparams force-mem-access 1' command is executed.
+17:56:44 INFO  : Context for 'APU' is selected.
+17:56:44 INFO  : Boot mode is read from the target.
+17:56:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:56:44 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:56:45 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:56:45 INFO  : 'set bp_56_45_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+17:56:46 INFO  : 'con -block -timeout 60' command is executed.
+17:56:46 INFO  : 'bpremove $bp_56_45_fsbl_bp' command is executed.
+17:56:46 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:56:46 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:56:47 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:56:47 INFO  : 'configparams force-mem-access 0' command is executed.
+17:56:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_56_45_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_56_45_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:56:47 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:56:47 INFO  : 'con' command is executed.
+17:56:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+17:56:47 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+17:58:43 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+17:58:50 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+17:58:56 INFO  : Disconnected from the channel tcfchan#7.
+17:58:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:58:57 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+17:58:57 INFO  : 'jtag frequency' command is executed.
+17:58:57 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+17:58:57 INFO  : Context for 'APU' is selected.
+17:58:58 INFO  : System reset is completed.
+17:59:01 INFO  : 'after 3000' command is executed.
+17:59:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+17:59:16 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+17:59:16 INFO  : Context for 'APU' is selected.
+17:59:16 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+17:59:16 INFO  : 'configparams force-mem-access 1' command is executed.
+17:59:16 INFO  : Context for 'APU' is selected.
+17:59:16 INFO  : Boot mode is read from the target.
+17:59:16 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:59:16 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:59:17 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:59:17 INFO  : 'set bp_59_17_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+17:59:18 INFO  : 'con -block -timeout 60' command is executed.
+17:59:18 INFO  : 'bpremove $bp_59_17_fsbl_bp' command is executed.
+17:59:18 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:59:18 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+17:59:18 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+17:59:18 INFO  : 'configparams force-mem-access 0' command is executed.
+17:59:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_59_17_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_59_17_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:59:18 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+17:59:18 INFO  : 'con' command is executed.
+17:59:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+17:59:18 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+18:01:00 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+18:01:20 INFO  : Disconnected from the channel tcfchan#8.
+18:01:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:01:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+18:01:30 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+18:01:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:01:49 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+18:01:49 INFO  : 'jtag frequency' command is executed.
+18:01:49 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+18:01:49 INFO  : Context for 'APU' is selected.
+18:01:49 INFO  : System reset is completed.
+18:01:52 INFO  : 'after 3000' command is executed.
+18:01:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+18:02:07 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+18:02:07 INFO  : Context for 'APU' is selected.
+18:02:07 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+18:02:07 INFO  : 'configparams force-mem-access 1' command is executed.
+18:02:08 INFO  : Context for 'APU' is selected.
+18:02:08 INFO  : Boot mode is read from the target.
+18:02:08 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:02:08 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+18:02:08 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+18:02:08 INFO  : 'set bp_2_8_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+18:02:09 INFO  : 'con -block -timeout 60' command is executed.
+18:02:09 INFO  : 'bpremove $bp_2_8_fsbl_bp' command is executed.
+18:02:09 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:02:09 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+18:02:10 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+18:02:10 INFO  : 'configparams force-mem-access 0' command is executed.
+18:02:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_2_8_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_2_8_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:02:10 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:02:10 INFO  : 'con' command is executed.
+18:02:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+18:02:10 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+18:03:53 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+19:38:32 INFO  : Disconnected from the channel tcfchan#9.
+20:30:18 INFO  : Launching XSCT server: xsct -n  -interactive /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/temp_xsdb_launch_script.tcl
+20:30:20 INFO  : Platform repository initialization has completed.
+20:30:20 INFO  : Registering command handlers for Vitis TCF services
+20:30:21 INFO  : XSCT server has started successfully.
+20:30:21 INFO  : plnx-install-location is set to ''
+20:30:21 INFO  : Successfully done setting XSCT server connection channel  
+20:30:21 INFO  : Successfully done query RDI_DATADIR 
+20:30:21 INFO  : Successfully done setting workspace for the tool. 
+20:30:40 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+20:44:54 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:23:45 INFO  : Launching XSCT server: xsct -n  -interactive /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/temp_xsdb_launch_script.tcl
+16:23:46 INFO  : Platform repository initialization has completed.
+16:23:46 INFO  : Registering command handlers for Vitis TCF services
+16:23:48 INFO  : XSCT server has started successfully.
+16:23:48 INFO  : Successfully done setting XSCT server connection channel  
+16:23:48 INFO  : plnx-install-location is set to ''
+16:23:48 INFO  : Successfully done query RDI_DATADIR 
+16:23:48 INFO  : Successfully done setting workspace for the tool. 
+16:29:43 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:30:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:30:14 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:30:14 INFO  : 'jtag frequency' command is executed.
+16:30:14 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:30:14 INFO  : Context for 'APU' is selected.
+16:30:14 INFO  : System reset is completed.
+16:30:17 INFO  : 'after 3000' command is executed.
+16:30:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:30:32 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:30:32 INFO  : Context for 'APU' is selected.
+16:30:33 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:30:33 INFO  : 'configparams force-mem-access 1' command is executed.
+16:30:33 INFO  : Context for 'APU' is selected.
+16:30:33 INFO  : Boot mode is read from the target.
+16:30:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:30:33 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:30:33 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:30:33 INFO  : 'set bp_30_33_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:30:34 INFO  : 'con -block -timeout 60' command is executed.
+16:30:34 INFO  : 'bpremove $bp_30_33_fsbl_bp' command is executed.
+16:30:34 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:30:34 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:30:35 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:30:35 INFO  : 'configparams force-mem-access 0' command is executed.
+16:30:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_30_33_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_30_33_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:30:35 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:30:35 INFO  : 'con' command is executed.
+16:30:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:30:35 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:31:25 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:31:29 INFO  : Disconnected from the channel tcfchan#1.
+16:31:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:31:31 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:31:31 INFO  : 'jtag frequency' command is executed.
+16:31:31 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:31:31 INFO  : Context for 'APU' is selected.
+16:31:31 INFO  : System reset is completed.
+16:31:34 INFO  : 'after 3000' command is executed.
+16:31:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:31:49 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:31:49 INFO  : Context for 'APU' is selected.
+16:31:54 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:31:54 INFO  : 'configparams force-mem-access 1' command is executed.
+16:31:54 INFO  : Context for 'APU' is selected.
+16:31:54 INFO  : Boot mode is read from the target.
+16:31:54 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:31:54 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:31:55 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:31:55 INFO  : 'set bp_31_55_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:31:56 INFO  : 'con -block -timeout 60' command is executed.
+16:31:56 INFO  : 'bpremove $bp_31_55_fsbl_bp' command is executed.
+16:31:56 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:31:56 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:31:57 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:31:57 INFO  : 'configparams force-mem-access 0' command is executed.
+16:31:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_31_55_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_31_55_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:31:57 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:31:57 INFO  : 'con' command is executed.
+16:31:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:31:57 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:32:51 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:33:30 INFO  : Disconnected from the channel tcfchan#2.
+16:33:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:33:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:33:40 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:33:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:34:00 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:34:00 INFO  : 'jtag frequency' command is executed.
+16:34:00 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:34:00 INFO  : Context for 'APU' is selected.
+16:34:00 INFO  : System reset is completed.
+16:34:03 INFO  : 'after 3000' command is executed.
+16:34:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:34:18 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:34:18 INFO  : Context for 'APU' is selected.
+16:34:22 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:34:22 INFO  : 'configparams force-mem-access 1' command is executed.
+16:34:22 INFO  : Context for 'APU' is selected.
+16:34:22 INFO  : Boot mode is read from the target.
+16:34:22 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:34:23 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:34:23 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:34:23 INFO  : 'set bp_34_23_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:34:24 INFO  : 'con -block -timeout 60' command is executed.
+16:34:24 INFO  : 'bpremove $bp_34_23_fsbl_bp' command is executed.
+16:34:24 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:34:24 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:34:25 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:34:25 INFO  : 'configparams force-mem-access 0' command is executed.
+16:34:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_34_23_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_34_23_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:34:25 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:34:25 INFO  : 'con' command is executed.
+16:34:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:34:25 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:34:54 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:35:03 INFO  : Disconnected from the channel tcfchan#3.
+16:35:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:35:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:35:13 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:35:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:35:20 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:35:20 INFO  : 'jtag frequency' command is executed.
+16:35:20 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:35:20 INFO  : Context for 'APU' is selected.
+16:35:20 INFO  : System reset is completed.
+16:35:23 INFO  : 'after 3000' command is executed.
+16:35:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:35:39 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:35:39 INFO  : Context for 'APU' is selected.
+16:35:44 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:35:44 INFO  : 'configparams force-mem-access 1' command is executed.
+16:35:44 INFO  : Context for 'APU' is selected.
+16:35:44 INFO  : Boot mode is read from the target.
+16:35:44 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:35:44 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:35:44 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:35:45 INFO  : 'set bp_35_44_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:35:46 INFO  : 'con -block -timeout 60' command is executed.
+16:35:46 INFO  : 'bpremove $bp_35_44_fsbl_bp' command is executed.
+16:35:46 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:35:46 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:35:46 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:35:46 INFO  : 'configparams force-mem-access 0' command is executed.
+16:35:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_35_44_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_35_44_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:35:46 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:35:46 INFO  : 'con' command is executed.
+16:35:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:35:46 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:36:38 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:36:45 INFO  : Disconnected from the channel tcfchan#4.
+16:36:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:36:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:36:55 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:38:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:38:17 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:38:17 INFO  : 'jtag frequency' command is executed.
+16:38:17 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:38:17 INFO  : Context for 'APU' is selected.
+16:38:17 INFO  : System reset is completed.
+16:38:20 INFO  : 'after 3000' command is executed.
+16:38:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:38:35 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:38:35 INFO  : Context for 'APU' is selected.
+16:38:41 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:38:41 INFO  : 'configparams force-mem-access 1' command is executed.
+16:38:41 INFO  : Context for 'APU' is selected.
+16:38:41 INFO  : Boot mode is read from the target.
+16:38:41 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:38:41 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:38:41 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:38:42 INFO  : 'set bp_38_41_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:38:43 INFO  : 'con -block -timeout 60' command is executed.
+16:38:43 INFO  : 'bpremove $bp_38_41_fsbl_bp' command is executed.
+16:38:43 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:38:43 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:38:43 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:38:43 INFO  : 'configparams force-mem-access 0' command is executed.
+16:38:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_38_41_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_38_41_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:38:43 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:38:43 INFO  : 'con' command is executed.
+16:38:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:38:43 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:39:29 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:39:33 INFO  : Disconnected from the channel tcfchan#5.
+16:39:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:39:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+16:39:43 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:39:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:39:49 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:39:49 INFO  : 'jtag frequency' command is executed.
+16:39:49 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:39:49 INFO  : Context for 'APU' is selected.
+16:39:49 INFO  : System reset is completed.
+16:39:52 INFO  : 'after 3000' command is executed.
+16:39:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:40:07 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:40:07 INFO  : Context for 'APU' is selected.
+16:40:12 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:40:12 INFO  : 'configparams force-mem-access 1' command is executed.
+16:40:12 INFO  : Context for 'APU' is selected.
+16:40:12 INFO  : Boot mode is read from the target.
+16:40:12 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:40:12 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:40:13 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:40:13 INFO  : 'set bp_40_13_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:40:14 INFO  : 'con -block -timeout 60' command is executed.
+16:40:14 INFO  : 'bpremove $bp_40_13_fsbl_bp' command is executed.
+16:40:14 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:40:14 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:40:15 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:40:15 INFO  : 'configparams force-mem-access 0' command is executed.
+16:40:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_40_13_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_40_13_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:40:15 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:40:15 INFO  : 'con' command is executed.
+16:40:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:40:15 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:41:04 INFO  : Checking for BSP changes to sync application flags for project 'test_int_v5'...
+16:41:08 INFO  : Disconnected from the channel tcfchan#6.
+16:41:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:41:09 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A7A329' is selected.
+16:41:09 INFO  : 'jtag frequency' command is executed.
+16:41:09 INFO  : Sourcing of '/tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl' is done.
+16:41:09 INFO  : Context for 'APU' is selected.
+16:41:10 INFO  : System reset is completed.
+16:41:13 INFO  : 'after 3000' command is executed.
+16:41:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}' command is executed.
+16:41:28 INFO  : Device configured successfully with "/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit"
+16:41:28 INFO  : Context for 'APU' is selected.
+16:41:33 INFO  : Hardware design and registers information is loaded from '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa'.
+16:41:33 INFO  : 'configparams force-mem-access 1' command is executed.
+16:41:33 INFO  : Context for 'APU' is selected.
+16:41:33 INFO  : Boot mode is read from the target.
+16:41:33 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:41:33 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:41:34 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:41:34 INFO  : 'set bp_41_34_fsbl_bp [bpadd -addr &XFsbl_Exit]' command is executed.
+16:41:35 INFO  : 'con -block -timeout 60' command is executed.
+16:41:35 INFO  : 'bpremove $bp_41_34_fsbl_bp' command is executed.
+16:41:35 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:41:35 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+16:41:35 INFO  : The application '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf' is downloaded to processor 'psu_cortexa53_0'.
+16:41:35 INFO  : 'configparams force-mem-access 0' command is executed.
+16:41:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /tools/Xilinx/Vitis/2021.2/scripts/vitis/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A7A329" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A7A329-24738093-0"}
+fpga -file /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/_ide/bitstream/zcu102_design_int_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/hw/zcu102_design_int_wrapper.xsa -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+set mode [expr [mrd -value 0xFF5E0200] & 0xf]
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/boot/fsbl.elf
+set bp_41_34_fsbl_bp [bpadd -addr &XFsbl_Exit]
+con -block -timeout 60
+bpremove $bp_41_34_fsbl_bp
+targets -set -nocase -filter {name =~ "*A53*#0"}
+rst -processor
+dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5/Debug/test_int_v5.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:41:35 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+16:41:35 INFO  : 'con' command is executed.
+16:41:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con
+----------------End of Script----------------
+
+16:41:35 INFO  : Launch script is exported to file '/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/test_int_v5_system/_ide/scripts/debugger_test_int_v5-default.tcl'
+16:44:53 INFO  : Disconnected from the channel tcfchan#7.
+16:46:13 INFO  : Launching XSCT server: xsct -n  -interactive /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/temp_xsdb_launch_script.tcl
+16:46:14 INFO  : Platform repository initialization has completed.
+16:46:14 INFO  : Registering command handlers for Vitis TCF services
+16:46:16 INFO  : XSCT server has started successfully.
+16:46:16 INFO  : Successfully done setting XSCT server connection channel  
+16:46:16 INFO  : plnx-install-location is set to ''
+16:46:16 INFO  : Successfully done setting workspace for the tool. 
+16:46:16 INFO  : Successfully done query RDI_DATADIR 
+19:26:28 INFO  : Launching XSCT server: xsct -n  -interactive /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/temp_xsdb_launch_script.tcl
+19:26:29 INFO  : Platform repository initialization has completed.
+19:26:29 INFO  : Registering command handlers for Vitis TCF services
+19:26:31 INFO  : XSCT server has started successfully.
+19:26:31 INFO  : plnx-install-location is set to ''
+19:26:31 INFO  : Successfully done setting XSCT server connection channel  
+19:26:31 INFO  : Successfully done query RDI_DATADIR 
+19:26:31 INFO  : Successfully done setting workspace for the tool. 

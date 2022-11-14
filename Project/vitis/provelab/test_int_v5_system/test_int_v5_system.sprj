@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdsproject="http://www.xilinx.com/sdsproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="test_int_v5_system" platform="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/int_test_plat_v5.xpfm" platformUID="xilinx:zcu102::0.0(custom)" sysConfig="int_test_plat_v5" runtime="C/C++" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.1360161469">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="test_int_v5" domainName="standalone_domain" domainPrettyName="standalone_domain" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.264615358">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="test_int_v5" domainName="standalone_domain" domainPrettyName="standalone_domain" appBuildConfig="Release"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

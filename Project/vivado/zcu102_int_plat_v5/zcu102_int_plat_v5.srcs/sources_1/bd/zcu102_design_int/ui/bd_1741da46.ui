@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.984091",
+   "Default View_TopLeft":"210,-307",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_TRACE_CLK -pg 1 -lvl 3 -x 1240 -y 26 -defaultsOSRD
+preplace portBus GPIO_OUT -pg 1 -lvl 3 -x 1240 -y -150 -defaultsOSRD
+preplace portBus INT_SIGNAL -pg 1 -lvl 3 -x 1240 -y -220 -defaultsOSRD -right
+preplace portBus TRACE_DATA -pg 1 -lvl 3 -x 1240 -y -50 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 680 -y -34 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 2 -x 1110 -y -150 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 1110 -y -320 -defaultsOSRD
+preplace netloc In0_0_1 1 1 2 990J -220 N
+preplace netloc xlconcat_0_dout 1 1 2 N -74 1210
+preplace netloc xlslice_0_Dout 1 2 1 N -150
+preplace netloc zynq_ultra_ps_e_0_emio_gpio_o 1 1 1 990 -150n
+preplace netloc zynq_ultra_ps_e_0_ps_pl_tracedata 1 1 2 NJ -14 1210J
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 3 20 86 990J 26 NJ
+levelinfo -pg 1 0 680 1110 1240
+pagesize -pg 1 -db -bbox -sgen 0 -420 1430 180
+"
+}
+{
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

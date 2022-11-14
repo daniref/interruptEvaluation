@@ -1,0 +1,34 @@
+16:41:04 **** Incremental Build of configuration Debug for project test_int_v5 ****
+make all 
+Building file: ../src/test_measurements.c
+Invoking: ARM v8 gcc compiler
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
+../src/test_measurements.c: In function 'main':
+../src/test_measurements.c:49:13: warning: unused variable 'timer_value' [-Wunused-variable]
+   49 |    uint64_t timer_value = 0;
+      |             ^~~~~~~~~~~
+In file included from ../src/generic_timer.h:4,
+                 from ../src/test_measurements.c:33:
+At top level:
+../src/utility.h:21:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   21 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:19:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   19 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/test_measurements.c
+ 
+Building target: test_int_v5.elf
+Invoking: ARM v8 gcc linker
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5/sw/int_test_plat_v5/standalone_domain/bsplib/lib -o "test_int_v5.elf" ./src/axi_gpio.o ./src/generic_timer.o ./src/gicv2.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: test_int_v5.elf
+ 
+Invoking: ARM v8 Print Size
+aarch64-none-elf-size test_int_v5.elf  |tee "test_int_v5.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 121159	   7712	  21173	 150044	  24a1c	test_int_v5.elf
+Finished building: test_int_v5.elf.size
+ 
+
+16:41:04 Build Finished (took 214ms)
+

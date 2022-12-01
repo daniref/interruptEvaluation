@@ -8,9 +8,9 @@ WinCLEAR
 &CurrentDir = OS.PresentPracticeDirectory()
 ChDir &CurrentDir
 
-&bitfile="../platform/bare_metal/zcu102_design_int_wrapper.bit"
-&pmufw="../platform/bare_metal/pmufw.elf"
-&fsbl="../platform/bare_metal/fsbl.elf"
+&bitfile="../platform/bare_metal/zup/zcu102_design_int.bit"
+&pmufw="../platform/bare_metal/zup/pmufw.elf"
+&fsbl="../platform/bare_metal/zup/fsbl.elf"
 
 ;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
 &test_elf="../platform/bare_metal/test_int_v5.elf"
@@ -230,21 +230,23 @@ IF Analyzer()
   ;IC ARM Analyzer.AutoFocus
 )
 
-go \\test_int_v5\test_measurements\main\18
+go \\int_test_v5\test_measurements\main\18
 WAIT !STATE.RUN()
 
 IC ARM ETM.STALL ON
-IC ARM ETM.TimeStampCLOCK 1.2GHz
+;IC ARM ETM.TimeStampCLOCK 1GHz
 IC ARM ETM.TimeStamps ON
 IC ARM ETM.TImeMode CycleAccurate
 IC ARM ETM.CycleAccurate ON
-//IC ARM Trace.CLOCK 1.2GHz
+IC ARM Trace.CLOCK 1.2GHz
 //IC ARM ETM.ReturnStack ON
 IC ARM ETM.Trace ON
 IC ARM ETM.ON
+IC ARM Analyzer.AutoFocus
+
 
 go
-wait 0.02s
+wait 0.03s
 break
 
 ; IC ARM ETM.Trace OFF

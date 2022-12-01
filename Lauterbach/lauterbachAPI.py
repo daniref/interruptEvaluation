@@ -145,6 +145,7 @@ class LAUTERBACH():
         """
         print("DEBUG 0")
         t32api.T32_GetTraceState(0, byref(systemstate), byref(total_records), byref(min_record), byref(max_record))
+        print("Lauterbach: min record =", min_record)
         print("DEBUG 1")
 
         num_records = min_record.value * -1
@@ -178,7 +179,7 @@ class LAUTERBACH():
         """
         # g = ig.Graph(directed=True)
 
-        parsed_trace = []
+        filtered_trace = []
 
         for i in range(0 * num_bytes, (num_records) * num_bytes, num_bytes):
             address = '0x' + format(buffer[i + 15], '02X') + format(buffer[i + 14], '02X') + format(buffer[i + 13], '02X')\
@@ -187,16 +188,98 @@ class LAUTERBACH():
             timestamp = format(buffer[i + 7], '02X') + format(buffer[i + 6], '02X') + format(buffer[i + 5], '02X') \
                         + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
                         + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
-            record = {"a": address,"t": int(timestamp, 16)}
-            if address == "0x0000000000002C00" or address == "0x0000000000001044":
-                print("Lauterbach: address found!")
-                parsed_trace.append(record)
+            record = {"id": "","symbol": "", "timestamp": ""}
+           # record = {"a": address,"t": int(timestamp, base=16)}
+           #  if address == "0x00000000000014B0":  #zup
+           #  print(address)
+            if address == "0x00000000000008C4":
+                record["id"]=i/num_bytes
+                record["symbol"]="get_time_main"
+                record["timestamp"]=int(timestamp,base=16)
+                if len(filtered_trace) != 0:
+                    if filtered_trace[-1]["symbol"] == record["symbol"]:
+                        if filtered_trace[-1]["timestamp"] != record["timestamp"]:
+                            filtered_trace.append(record)
+                    else:
+                        filtered_trace.append(record)
+                else:
+                    filtered_trace.append(record)
+            # if address == "0x0000000000000D54":
+            if address == "0x0000000000000880":
+                record["id"] = i / num_bytes
+                record["symbol"] = "get_time_isr"
+                record["timestamp"] = int(timestamp, base=16)
+                if len(filtered_trace) != 0:
+                    if filtered_trace[-1]["symbol"] == record["symbol"]:
+                        if filtered_trace[-1]["timestamp"] != record["timestamp"]:
+                            filtered_trace.append(record)
+                    else:
+                        filtered_trace.append(record)
+                else:
+                    filtered_trace.append(record)
+            # if address == "0x0000000000002B10":
+            if address == "0x0000000000002544":
+                record["id"]=i/num_bytes
+                record["symbol"]="XGpioPs_WritePin"
+                record["timestamp"]=int(timestamp,base=16)
+                if len(filtered_trace) != 0:
+                    if filtered_trace[-1]["symbol"] == record["symbol"]:
+                        if filtered_trace[-1]["timestamp"] != record["timestamp"]:
+                            filtered_trace.append(record)
+                    else:
+                        filtered_trace.append(record)
+                else:
+                    filtered_trace.append(record)
+                print()
+            # if address == "0x0000000000002B60":  #zup
+            if address == "0x0000000000002598":     #z7
+                record["id"]=i/num_bytes
+                record["symbol"]="XGpioPs_WriteReg"
+                record["timestamp"]=int(timestamp,base=16)
+                if len(filtered_trace) != 0:
+                    if filtered_trace[-1]["symbol"] == record["symbol"]:
+                        if filtered_trace[-1]["timestamp"] != record["timestamp"]:
+                            filtered_trace.append(record)
+                    else:
+                        filtered_trace.append(record)
+                else:
+                    filtered_trace.append(record)
+            # if address == "0x0000000000001044": #zup
+            if address == "0x0000000000000668":  # z7
+                record["id"]=i/num_bytes
+                record["symbol"]="gpio_isr_callback"
+                record["timestamp"]=int(timestamp,base=16)
+                if len(filtered_trace) != 0:
+                    if filtered_trace[-1]["symbol"] == record["symbol"]:
+                        if filtered_trace[-1]["timestamp"] != record["timestamp"]:
+                            filtered_trace.append(record)
+                    else:
+                        filtered_trace.append(record)
+                else:
+                    filtered_trace.append(record)
 
         with open("trace_captured.txt", 'w') as t:
-            for record in parsed_trace:
+            for record in filtered_trace:
                 t.write(str(record) + '\n')
 
-
+        print("Debug, 1")
+        isr = 0
+        for record in filtered_trace:
+            if record["symbol"]=="gpio_isr_callback":
+                isr += 1
+                #print("Debug: indice record gpio_isr: ", filtered_trace.index(record))
+                i=1
+                while filtered_trace[filtered_trace.index(record)-i]["symbol"] != "XGpioPs_WriteReg":
+                    i+=1
+                #print("Debug: indice record Gpio_Write: ", filtered_trace[filtered_trace.index(record)-i])
+                t0 = filtered_trace[filtered_trace.index(record)-i]["timestamp"]
+                #print("Debug: timestamp gpio_write: ", int(timestamp,base=16))
+                j=1
+                # while filtered_trace[filtered_trace.index(record)+j]["symbol"] != "get_time_isr":
+                while filtered_trace[filtered_trace.index(record) + j]["symbol"] != "get_time_main":
+                    j+=1
+                t1 = filtered_trace[filtered_trace.index(record)+j]["timestamp"]
+                print("Debug: isr ", isr, "latency= ", ((t1-t0)*625/8000)/1000)
     # def read_timestamps(self, timestamp_file):
     #     timestamp_file.
 

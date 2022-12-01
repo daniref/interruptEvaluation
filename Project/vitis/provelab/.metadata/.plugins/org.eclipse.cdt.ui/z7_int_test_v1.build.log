@@ -1,0 +1,170 @@
+17:23:38 **** Incremental Build of configuration Debug for project z7_int_test_v1 ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/gic.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gic.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/gic.d" -MT"src/gic.o" -o "src/gic.o" "../src/gic.c"
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gic.h:4,
+                 from ../src/gic.c:1:
+../src/gic.c: In function 'GicInitialize':
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/gic.c:76:10: note: in expansion of macro 'XST_FAILURE'
+   76 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/gic.c:61:6: note: declared here
+   61 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gic.h:4,
+                 from ../src/gic.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/gic.c:82:10: note: in expansion of macro 'XST_FAILURE'
+   82 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/gic.c:61:6: note: declared here
+   61 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+../src/gic.c:103:10: warning: 'return' with a value, in function returning void [-Wreturn-type]
+  103 |   return Status;
+      |          ^~~~~~
+../src/gic.c:61:6: note: declared here
+   61 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+../src/gic.c:110:49: warning: passing argument 3 of 'XGpioPs_SetCallbackHandler' from incompatible pointer type [-Wincompatible-pointer-types]
+  110 |  XGpioPs_SetCallbackHandler(Gpio, (void *)Gpio, gpio_isr_callback);
+      |                                                 ^~~~~~~~~~~~~~~~~
+      |                                                 |
+      |                                                 void (*)(void)
+In file included from ../src/utility.h:3,
+                 from ../src/global_timer.h:4,
+                 from ../src/gic.c:5:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xgpiops.h:253:25: note: expected 'XGpioPs_Handler' {aka 'void (*)(void *, long unsigned int,  long unsigned int)'} but argument is of type 'void (*)(void)'
+  253 |         XGpioPs_Handler FuncPointer);
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~
+In file included from /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xscugic.h:188,
+                 from ../src/gic.h:4,
+                 from ../src/gic.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xstatus.h:42:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   42 | #define XST_SUCCESS                     0L
+      |                                         ^~
+../src/gic.c:127:9: note: in expansion of macro 'XST_SUCCESS'
+  127 |  return XST_SUCCESS;
+      |         ^~~~~~~~~~~
+../src/gic.c:61:6: note: declared here
+   61 | void GicInitialize(void)
+      |      ^~~~~~~~~~~~~
+At top level:
+../src/gic.c:25:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
+   25 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
+      |             ^~~~~~~~~~~
+In file included from ../src/global_timer.h:4,
+                 from ../src/gic.c:5:
+../src/utility.h:22:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   22 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:20:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   20 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/gic.c
+ 
+Building file: ../src/ps_gpio.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps_gpio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/ps_gpio.d" -MT"src/ps_gpio.o" -o "src/ps_gpio.o" "../src/ps_gpio.c"
+In file included from ../src/ps_gpio.h:6,
+                 from ../src/ps_gpio.c:1:
+../src/ps_gpio.c: In function 'PSGpioInit':
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/ps_gpio.c:24:10: note: in expansion of macro 'XST_FAILURE'
+   24 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+In file included from ../src/ps_gpio.h:6,
+                 from ../src/ps_gpio.c:1:
+/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/ps_gpio.c:30:10: note: in expansion of macro 'XST_FAILURE'
+   30 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+../src/ps_gpio.c:68:9: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   68 |  return &Gpio;
+      |         ^~~~~
+../src/ps_gpio.c:12:6: note: declared here
+   12 | void PSGpioInit()
+      |      ^~~~~~~~~~
+../src/ps_gpio.c:16:6: warning: unused variable 'Type_of_board' [-Wunused-variable]
+   16 |  int Type_of_board;
+      |      ^~~~~~~~~~~~~
+At top level:
+../src/ps_gpio.c:83:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
+   83 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
+      |             ^~~~~~~~~~~
+Finished building: ../src/ps_gpio.c
+ 
+Building file: ../src/test_measurements.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
+../src/test_measurements.c: In function 'main':
+../src/test_measurements.c:84:15: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
+   84 |     printf("%lu \n", final_time[i]);
+      |             ~~^      ~~~~~~~~~~~~~
+      |               |                |
+      |               |                uint64_t {aka long long unsigned int}
+      |               long unsigned int
+      |             %llu
+../src/test_measurements.c:90:15: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
+   90 |     printf("%lu \n", init_time[i]);
+      |             ~~^      ~~~~~~~~~~~~
+      |               |               |
+      |               |               uint64_t {aka long long unsigned int}
+      |               long unsigned int
+      |             %llu
+../src/test_measurements.c:95:15: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
+   95 |     printf("%lu \n", (final_time[i] - init_time[i]));
+      |             ~~^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |               |                     |
+      |               long unsigned int     uint64_t {aka long long unsigned int}
+      |             %llu
+../src/test_measurements.c:49:13: warning: unused variable 'timer_value' [-Wunused-variable]
+   49 |    uint64_t timer_value = 0;
+      |             ^~~~~~~~~~~
+In file included from ../src/global_timer.h:4,
+                 from ../src/test_measurements.c:33:
+At top level:
+../src/utility.h:22:16: warning: 'Intc' defined but not used [-Wunused-variable]
+   22 | static XScuGic Intc; /* The Instance of the Interrupt Controller Driver */
+      |                ^~~~
+../src/utility.h:20:16: warning: 'Gpio' defined but not used [-Wunused-variable]
+   20 | static XGpioPs Gpio; /* The Instance of the GPIO Driver */
+      |                ^~~~
+Finished building: ../src/test_measurements.c
+ 
+Building target: z7_int_test_v1.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat/sw/z7_int_test_v1_plat/standalone_domain/bsplib/lib -o "z7_int_test_v1.elf" ./src/axi_gpio.o ./src/gic.o ./src/global_timer.o ./src/ps_gpio.o ./src/test_measurements.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: z7_int_test_v1.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size z7_int_test_v1.elf  |tee "z7_int_test_v1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  65231	   3332	  22880	  91443	  16533	z7_int_test_v1.elf
+Finished building: z7_int_test_v1.elf.size
+ 
+
+17:23:39 Build Finished (took 319ms)
+

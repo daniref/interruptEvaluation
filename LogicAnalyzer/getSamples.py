@@ -16,11 +16,11 @@ def get_LA_latency(sampling_frequency, sample_number, observation_number):
     f.close()
 
     # extract latencies from samples
-    latency_values = process_latencies(samples, observation_number, sampling_frequency)
-    if latency_values != -1:
-        return latency_values
-    else:
-        return -1
+    # latency_values = process_latencies(samples, observation_number, sampling_frequency)
+    # if latency_values != -1:
+    #     return latency_values
+    # else:
+    #     return -1
 
 def process_latencies(samples, observation_number, sampling_frequency):
 
@@ -38,7 +38,9 @@ def process_latencies(samples, observation_number, sampling_frequency):
 
     while(observation_detected < observation_number):                                       # find all latencies observed
 
-        while((samples[samples_processed] & mask_irq_served) != mask_zero):                 # skip to the next DIO1/DIO0 low levels
+        while((samples[samples_processed] & mask_irq_served) != mask_zero):
+            print("S0",samples[samples_processed])
+            # skip to the next DIO1/DIO0 low levels
             samples_processed+=1                                                            # state = (DIO1-DIO0:1-1 or 0-1 or 1-0(?))
 
         while((samples[samples_processed] & mask_channel0) != mask_channel0):               # skip to the next DIO0 rising edge

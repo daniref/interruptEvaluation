@@ -1,0 +1,24 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.941304",
+   "Default View_TopLeft":"-186,-420",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port TRACE_OUT -pg 1 -lvl 3 -x 810 -y -350 -defaultsOSRD
+preplace port DDR_0 -pg 1 -lvl 3 -x 810 -y -60 -defaultsOSRD
+preplace port FIXED_IO_0 -pg 1 -lvl 3 -x 810 -y -40 -defaultsOSRD
+preplace port GPIO_SIGN -pg 1 -lvl 3 -x 810 -y -100 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 270 -y -60 -defaultsOSRD
+preplace inst trace_clock_divider_0 -pg 1 -lvl 2 -x 630 -y -350 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 1 440J -340n
+preplace netloc processing_system7_0_DDR 1 1 2 430J -60 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 2 420J -40 NJ
+preplace netloc processing_system7_0_TRACE_0 1 1 1 410 -360n
+preplace netloc trace_clock_divider_0_TRACE_OUT 1 2 1 NJ -350
+preplace netloc processing_system7_0_GPIO_0 1 1 2 NJ -100 NJ
+levelinfo -pg 1 -50 270 630 810
+pagesize -pg 1 -db -bbox -sgen -50 -460 950 360
+"
+}
+0

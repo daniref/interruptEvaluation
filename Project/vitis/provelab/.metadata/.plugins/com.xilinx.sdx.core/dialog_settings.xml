@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="sdx.custom.platform.repository.locations" value="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4;/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5"/>
+	<item key="sdx.custom.platform.repository.locations" value="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4;/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v1_plat/export/z7_int_test_v1_plat;/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v5/export/int_test_plat_v5;/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/z7_int_test_v2/export/z7_int_test_v2"/>
 </section>

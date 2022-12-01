@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"design_int_test_z7_v1": {
+			"proto_instances": {
+			}
+		}
+	}
+}

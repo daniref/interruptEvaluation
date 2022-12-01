@@ -53,16 +53,16 @@ void PSGpioInit()
 	XGpioPs_WritePin(&Gpio, EXT_LED_OUT, 0x0);
 
 
-	XGpioPs_WritePin(&Gpio, INT_SIGN_OUT, 0x1);
-	XGpioPs_WritePin(&Gpio, INT_LED_OUT, 0x1);
-	XGpioPs_WritePin(&Gpio, EXT_SIGN_OUT, 0x1);
-	XGpioPs_WritePin(&Gpio, EXT_LED_OUT, 0x1);
-
-
-	XGpioPs_WritePin(&Gpio, INT_SIGN_OUT, 0x0);
-	XGpioPs_WritePin(&Gpio, INT_LED_OUT, 0x0);
-	XGpioPs_WritePin(&Gpio, EXT_SIGN_OUT, 0x0);
-	XGpioPs_WritePin(&Gpio, EXT_LED_OUT, 0x0);
+//	XGpioPs_WritePin(&Gpio, INT_SIGN_OUT, 0x1);
+//	XGpioPs_WritePin(&Gpio, INT_LED_OUT, 0x1);
+//	XGpioPs_WritePin(&Gpio, EXT_SIGN_OUT, 0x1);
+//	XGpioPs_WritePin(&Gpio, EXT_LED_OUT, 0x1);
+//
+//
+//	XGpioPs_WritePin(&Gpio, INT_SIGN_OUT, 0x0);
+//	XGpioPs_WritePin(&Gpio, INT_LED_OUT, 0x0);
+//	XGpioPs_WritePin(&Gpio, EXT_SIGN_OUT, 0x0);
+//	XGpioPs_WritePin(&Gpio, EXT_LED_OUT, 0x0);
 
 
 

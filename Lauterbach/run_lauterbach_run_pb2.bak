@@ -1,0 +1,208 @@
+;WinCLEAR
+
+LOCAL &ppd
+&ppd=OS.PPD()
+
+RESet
+SYStem.RESet
+
+AREA.CLEAR
+WinPOS 0.14286 32.167 80. 25. 0. 0. W002
+AREA.view
+
+; --------------------------------------------------------;WinCLEAR
+
+LOCAL &ppd
+&ppd=OS.PPD()
+
+RESet
+SYStem.RESet
+;ETM.Trace OFF
+;ETM.OFF
+AREA.CLEAR
+WinPOS 0.14286 32.167 80. 25. 0. 0. W002
+AREA.view
+
+; ------------------------------------------------------------------------------
+; Files
+; ------------------------------------------------------------------------------
+
+&bitfile="../platform/bare_metal/z7/pb2_design_int.bit"
+;&bitfile="../platform/bare_metal/rfios/bitstream.bit"
+
+;&ps7_init="../platform/bare_metal/z7/ps7_init.tcl"
+&ps7_init="../platform/bare_metal/rfios/ps7_init.tcl"
+&test_elf="../platform/bare_metal/z7/z7_int_test_v2.elf"
+
+
+
+; ------------------------------------------------------------------------------
+; check prerequisites
+; ------------------------------------------------------------------------------
+
+IF VERSION.BUILD.BASE()<75524.
+(
+  PRINT %ERROR "Please use more recent Software! Contact support@lauterbach.com."
+  ENDDO
+)
+
+IF !OS.FILE("&bitfile")
+(
+  PRINT %ERROR "&bitfile not found."
+  ENDDO
+)
+
+IF !OS.FILE("&ps7_init")
+(
+  PRINT %ERROR "&ps7_init not found."
+  ENDDO
+)
+
+IF !OS.FILE("&test_elf")
+(
+  PRINT %ERROR "&test_elf not found."
+  ENDDO
+)
+
+; ------------------------------------------------------------------------------
+; System Configuration
+; ------------------------------------------------------------------------------
+;ETM.Trace OFF
+SYStem.CPU ZYNQ-7000CORE0
+; set DaisyChaining Parameters of the board
+; check e.g. SYStem.DETECT.ShowCHAIN
+SYStem.CONFIG DAPIRPRE  6.
+SYStem.CONFIG DAPIRPOST 0.
+SYStem.CONFIG DAPDRPRE  1.
+SYStem.CONFIG DAPDRPOST 0.
+
+; trigger a soft-reset using the AHB Bus -> we loose the connection
+SYStem.Mode.Prepare
+; SYStem.Mode.Attach
+;ETM.Trace OFF
+;ETM.OFF
+
+ON ERROR CONTinue
+Data.Set EAHB:0xF8000008 %Long 0xDF0D
+Data.Set EAHB:0xF8000200 %Long 0x1
+WAIT 0.1s
+PRINT ""
+ON ERROR inherit
+
+//IC ARM ETM.TImeMode CycleAccurate
+//IC ARM ETM.CycleAccurate ON
+//IC ARM ETM.ON
+
+SYStem.Mode.Attach
+
+IF STATE.RUN()
+  Break
+
+; ------------------------------------------------------------------------------
+; Processing System Initialization
+; ------------------------------------------------------------------------------
+
+PRINT "initializing the target"
+DO "../platform/bare_metal/z7/ps7_init.cmm" &ps7_init
+
+PRINT "programming FPGA"
+DO "../platform/bare_metal/z7/zynq_bitstream.cmm" &bitfile 0x100000
+
+; abilita l'estensione per gestire gli spaceID in TRACE32
+SYStem.Option MMUSPACES ON
+
+; in case the Debug Clock was not running - it's now running
+;Trace.METHOD Onchip
+;ETM.ON				; Turn ETM on
+
+; --------------------------------------------------------------------------------
+; Program Loading
+; --------------------------------------------------------------------------------
+
+
+
+
+; carica i simboli HLL dei file Elf delle applicazioni
+Data.LOAD.Elf &test_elf 0:0
+
+
+; definizione dell'MMU per il debugger
+TRANSlation.RESet
+MMU.FORMAT STD /SPACEID TTB1
+TRANSlation.Create 0:0x0--0x7fffffff 0x0
+TRANSlation.COMMON 0--0x7fffffff
+TRANSlation.TableWalk ON       ; debugger uses a table walk to decode virtual addresses
+TRANSlation.ON
+
+
+IF Analyzer()
+(
+  Trace.METHOD Analyzer
+  TPIU.PortSize 8.
+  TPIU.PortMode Continuous
+;  IC ARM ETM.CycleAccurate ON
+;  ETM.Trace ON
+;  ETM.ON
+IC ARM Trace.CLOCK 666MHz
+  ETM.ContextID 32
+  Analyzer.AutoFocus
+)
+
+go \\z7_int_test_v2\test_measurements\main\26
+;go \\z7_int_test_v2\ps_gpio\PSGpioInit\6
+WAIT !STATE.RUN()
+//IC ARM ETM.TImeMode CycleAccurate
+//IC ARM ETM.CycleAccurate ON
+;IC ARM Trace.CLOCK 666.666MHz
+////IC ARM ETM.ReturnStack ON
+//IC ETM.CycleAccurate ON
+ETM.Trace ON
+ETM.ON
+go
+wait 0.025s
+break
+
+; epilog (Break)
+; stop the global timer
+//Data.EPILOG.RESet
+//Data.EPILOG.SEQuence SET AZUD:0xF8F00208 %Long 0yXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxx0
+//Data.EPILOG.ON
+//
+//; prolog (Go)
+//; start the global timer
+//Data.PROLOG.RESet
+//Data.PROLOG.SEQuence SET AZUD:0xF8F00208 %Long 0yXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxx1
+//Data.PROLOG.ON
+
+; caricare la RTOS awareness per RfiOS (32-bit) e il file di menu:
+; TASK.CONFIG /home/oppy/RFIOS/scripts/lauterbach/binaries/rfios32.t32
+; MENU.ReProgram /home/oppy/RFIOS/scripts/lauterbach/binaries/rfios.men
+; TASK.STacK.PATtern 0xAA
+
+; enable a GROUP on RfiOS
+; PRIVATE &address
+; &address=address.offset(symbol.secend(\\RfiOs\.ramtest_executor_secondary))
+; GROUP.Create "RfiOs" 0x1000--&address /RED
+
+; GROUP.Create "ProducerApp" 1:0x80000000--0xFFFFFFFF /YELLOW
+; GROUP.Create "Supervisor" 2:0x80000000--0xFFFFFFFF /YELLOW
+
+; --------------------------------------------------------------------------------
+; initialize OFFCHIP trace if Analyzer is plugged (ETM)
+; --------------------------------------------------------------------------------
+
+
+
+
+; open some windows
+WinCLEAR
+Mode.Hll
+WinPOS 0% 0%
+List.auto
+WinPOS 0% 50%
+; Register.view /SpotLight
+; WinPOS 50% 0%
+; Trace.Chart.TASK /Track
+; Trace.ListNesting /Track
+
+ENDDO

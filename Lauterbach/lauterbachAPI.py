@@ -102,17 +102,17 @@ class LAUTERBACH():
             print("Lauterbach: Error: No connection established to TRACE32!")
             return
 
-        print("Lauterbach: launched script:"+script)
+        print("Lauterbach: launched script: "+script)
         current_dir = os.path.dirname(os.path.realpath(__file__))
         cmd = "DO " + current_dir + '/' + script
-        print("Lauterbach: Sending script to TRACE32...")
+        # print("Lauterbach: Sending script to TRACE32...")
         t32api.T32_Cmd(cmd.encode())
 
         rc = 0
         while rc == 0 and not practice_state.value == PracticeState.NOT_RUNNING:
             rc = t32api.T32_GetPracticeState(ctypes.byref(practice_state))
 
-        self.disconnect(connection_state)
+        # self.disconnect(connection_state)
 
     def disconnect(self, connection_state):
         if connection_state:
@@ -122,7 +122,22 @@ class LAUTERBACH():
         else:
             print("Lauterbach: Even connected!")
 
-    def get_trace(self, connection_state):
+    def get_trace(self, connection_state, architecture):
+
+        if architecture == 0:
+            address_get_time_main = "0x00000000000014B0"
+            address_get_time_isr = "0x0000000000000D54"
+            address_XGpioPs_WritePin ="0x0000000000002B10"
+            address_XGpioPs_WriteReg = "0x0000000000001044"
+            address_gpio_isr_callback = "0x0000000000001044"
+
+        else:
+            address_get_time_main = "0x00000000000008C4"
+            address_get_time_isr = "0x0000000000000880"
+            address_XGpioPs_WritePin = "0x0000000000002544"
+            address_XGpioPs_WriteReg ="0x0000000000002598"
+            address_gpio_isr_callback = "0x0000000000000668"
+
         con_state = self.connect(connection_state)
         if not con_state:
             raise ValueError("Error: No connection established to TRACE32!")
@@ -143,15 +158,13 @@ class LAUTERBACH():
         """
         recupero informazioni della traccia, ovvero numero di record totali e id del recrod minimo e massimo
         """
-        print("DEBUG 0")
         t32api.T32_GetTraceState(0, byref(systemstate), byref(total_records), byref(min_record), byref(max_record))
-        print("Lauterbach: min record =", min_record)
-        print("DEBUG 1")
+        # print("Lauterbach: min record =", min_record)
 
         num_records = min_record.value * -1
         total_bytes = num_bytes * num_records
 
-        print("Numero di record =", num_records)
+        # print("Numero di record =", num_records)
 
         """
         buffer contiene i byte dela traccia che interessa leggere
@@ -164,20 +177,6 @@ class LAUTERBACH():
 
         t32api.T32_ReadTrace(0, min_record.value, num_records, mask, buffer)
         self.disconnect(connection_state)
-        print("DEBUG 3")
-
-        """
-        Interazione con Trace32 finita
-        """
-
-        # applications = search_application_id(args.file)
-        # for i in range(0, len(applications)):
-        #     search_elf(applications[i], os.getcwd() + "/../" + args.app)
-
-        """
-        su graph verranno aggiunti i nodi e gi archi
-        """
-        # g = ig.Graph(directed=True)
 
         filtered_trace = []
 
@@ -189,10 +188,8 @@ class LAUTERBACH():
                         + format(buffer[i + 4], '02X') + format(buffer[i + 3], '02X') + format(buffer[i + 2], '02X') \
                         + format(buffer[i + 1], '02X') + format(buffer[i + 0], '02X')
             record = {"id": "","symbol": "", "timestamp": ""}
-           # record = {"a": address,"t": int(timestamp, base=16)}
-           #  if address == "0x00000000000014B0":  #zup
-           #  print(address)
-            if address == "0x00000000000008C4":
+
+            if address == address_get_time_main:
                 record["id"]=i/num_bytes
                 record["symbol"]="get_time_main"
                 record["timestamp"]=int(timestamp,base=16)
@@ -204,8 +201,8 @@ class LAUTERBACH():
                         filtered_trace.append(record)
                 else:
                     filtered_trace.append(record)
-            # if address == "0x0000000000000D54":
-            if address == "0x0000000000000880":
+
+            if address == address_get_time_isr:
                 record["id"] = i / num_bytes
                 record["symbol"] = "get_time_isr"
                 record["timestamp"] = int(timestamp, base=16)
@@ -217,8 +214,8 @@ class LAUTERBACH():
                         filtered_trace.append(record)
                 else:
                     filtered_trace.append(record)
-            # if address == "0x0000000000002B10":
-            if address == "0x0000000000002544":
+
+            if address == address_XGpioPs_WritePin:
                 record["id"]=i/num_bytes
                 record["symbol"]="XGpioPs_WritePin"
                 record["timestamp"]=int(timestamp,base=16)
@@ -230,9 +227,9 @@ class LAUTERBACH():
                         filtered_trace.append(record)
                 else:
                     filtered_trace.append(record)
-                print()
-            # if address == "0x0000000000002B60":  #zup
-            if address == "0x0000000000002598":     #z7
+
+
+            if address == address_XGpioPs_WriteReg:
                 record["id"]=i/num_bytes
                 record["symbol"]="XGpioPs_WriteReg"
                 record["timestamp"]=int(timestamp,base=16)
@@ -244,8 +241,8 @@ class LAUTERBACH():
                         filtered_trace.append(record)
                 else:
                     filtered_trace.append(record)
-            # if address == "0x0000000000001044": #zup
-            if address == "0x0000000000000668":  # z7
+
+            if address == address_gpio_isr_callback:
                 record["id"]=i/num_bytes
                 record["symbol"]="gpio_isr_callback"
                 record["timestamp"]=int(timestamp,base=16)
@@ -258,30 +255,36 @@ class LAUTERBACH():
                 else:
                     filtered_trace.append(record)
 
-        with open("trace_captured.txt", 'w') as t:
+        # decommenta se vuoi salvare la traccia filtrata
+        with open("Latencies/trace_captured.txt", 'a') as t:
             for record in filtered_trace:
                 t.write(str(record) + '\n')
 
-        print("Debug, 1")
+        m = open("Latencies/lauterbach_cache_miss.txt", "a")
+        h = open("Latencies/lauterbach_cache_hit.txt", "a")
         isr = 0
         for record in filtered_trace:
             if record["symbol"]=="gpio_isr_callback":
                 isr += 1
-                #print("Debug: indice record gpio_isr: ", filtered_trace.index(record))
                 i=1
                 while filtered_trace[filtered_trace.index(record)-i]["symbol"] != "XGpioPs_WriteReg":
                     i+=1
-                #print("Debug: indice record Gpio_Write: ", filtered_trace[filtered_trace.index(record)-i])
                 t0 = filtered_trace[filtered_trace.index(record)-i]["timestamp"]
-                #print("Debug: timestamp gpio_write: ", int(timestamp,base=16))
                 j=1
-                # while filtered_trace[filtered_trace.index(record)+j]["symbol"] != "get_time_isr":
-                while filtered_trace[filtered_trace.index(record) + j]["symbol"] != "get_time_main":
+                while (filtered_trace[filtered_trace.index(record) + j]["symbol"] != "get_time_main")\
+                        & (filtered_trace[filtered_trace.index(record) + j]["symbol"] != "get_time_isr"):
                     j+=1
                 t1 = filtered_trace[filtered_trace.index(record)+j]["timestamp"]
-                print("Debug: isr ", isr, "latency= ", ((t1-t0)*625/8000)/1000)
-    # def read_timestamps(self, timestamp_file):
-    #     timestamp_file.
+                lat = ((t1-t0)*625/8000)/1000
+                # print("Lauterbach: isr ", isr, "latency= ", lat)
 
-    # 2C00 -> address write_gpio
-    # 1044 -> address isr first instruction
+                if(isr == 1):
+                    m.write(str(lat)+'\n')
+                else:
+                    h.write(str(lat)+'\n')
+
+        m.close()
+        h.close()
+
+        # decommenta se vuoi salvare la traccia catturata
+        # os.remove("Latencies/trace_captured.txt")

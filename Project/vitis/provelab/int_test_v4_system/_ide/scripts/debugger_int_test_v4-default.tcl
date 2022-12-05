@@ -24,11 +24,12 @@ set mode [expr [mrd -value 0xFF5E0200] & 0xf]
 targets -set -nocase -filter {name =~ "*A53*#0"}
 rst -processor
 dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/boot/fsbl.elf
-set bp_42_26_fsbl_bp [bpadd -addr &XFsbl_Exit]
+set bp_47_31_fsbl_bp [bpadd -addr &XFsbl_Exit]
 con -block -timeout 60
-bpremove $bp_42_26_fsbl_bp
+bpremove $bp_47_31_fsbl_bp
 targets -set -nocase -filter {name =~ "*A53*#0"}
 rst -processor
 dow /home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_v4/Debug/int_test_v4.elf
 configparams force-mem-access 0
-bpadd -addr &main
+targets -set -nocase -filter {name =~ "*A53*#0"}
+con

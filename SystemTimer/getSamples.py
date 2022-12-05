@@ -1,44 +1,50 @@
 import serial
 
 def get_ST_latencies(name_serial, observation_number):
-    print("Hello, I'm the System Timer!")
+    print("----------Hello, I'm the System Timer!----------")
+
+
     ser = serial.Serial(port = str(name_serial), baudrate = 115200)
 
     end_times = []
     start_times = []
     latencies = []
 
-    print("I am waiting for a line to read")
+    print("System Timer: I am waiting for a line to read")
 
     line = ser.readline()
+    # print("Linea", line.decode("utf-8"))
 
-
-    while(line.decode('utf-8') != "\rEND TIMES:\r\r\n"):
+    while(line.decode('utf-8').strip() != "END TIMES:"):
         line = ser.readline()
-        print(line.decode("utf-8"))
 
-    print(" - DEBUG - Ho beccato gli END TIMES")
+    # print("System Timer: Ho beccato gli END TIMES")
 
     for i in range(0, observation_number):
         line = ser.readline()
-        end_times.append(line.decode('utf-8'))
-        print(line.decode('utf-8'))
+        end_times.append(line.decode('utf-8').strip())
 
     line = ser.readline()
-    print(line)
 
-    if(line.decode('utf-8') == "START TIMES:\r\r\n"):
+    if(line.decode('utf-8').strip() == "START TIMES:"):
         for i in range(0, observation_number):
             line = ser.readline()
-            start_times.append(line.decode('utf-8'))
-            print(line.decode('utf-8'))
+            start_times.append(line.decode('utf-8').strip())
     else:
         print("System Timer: reading error")
+        ser.close()
         return -1
 
-    for i in range(0, observation_number):
-        latencies.append(int(end_times[i]) - int(start_times[i]))
-        print(latencies)
+    m = open("Latencies/systemTimer_cache_miss.txt", "a")
+    h = open("Latencies/systemTimer_cache_hit.txt", "a")
 
-    return latencies
+    for i in range(0, observation_number):
+        if i == 0:
+            m.write(str((int(end_times[i]) - int(start_times[i]))/333330000) + '\n')
+        else:
+            h.write(str((int(end_times[i]) - int(start_times[i]))/333330000) + '\n')
+
+    ser.close()
+    m.close()
+    h.close()
 

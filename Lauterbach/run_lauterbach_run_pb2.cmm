@@ -1,7 +1,7 @@
 ;WinCLEAR
 
 LOCAL &ppd
-&ppd=OS.PPD()
+&ppd=OS.ppd()
 
 RESet
 SYStem.RESet
@@ -13,7 +13,7 @@ AREA.view
 ; --------------------------------------------------------;WinCLEAR
 
 LOCAL &ppd
-&ppd=OS.PPD()
+&ppd=OS.ppd()
 
 RESet
 SYStem.RESet
@@ -26,11 +26,10 @@ AREA.view
 ; ------------------------------------------------------------------------------
 ; Files
 ; ------------------------------------------------------------------------------
-
+&CurrentDir = OS.PresentPracticeDirectory()
+CD &CurrentDir
 &bitfile="../platform/bare_metal/z7/pb2_design_int.bit"
-;&bitfile="../platform/bare_metal/rfios/bitstream.bit"
 
-;&ps7_init="../platform/bare_metal/z7/ps7_init.tcl"
 &ps7_init="../platform/bare_metal/rfios/ps7_init.tcl"
 &test_elf="../platform/bare_metal/z7/z7_int_test_v2.elf"
 
@@ -102,9 +101,13 @@ IF STATE.RUN()
 ; Processing System Initialization
 ; ------------------------------------------------------------------------------
 
+&CurrentDir = OS.PresentPracticeDirectory()
+CD &CurrentDir
 PRINT "initializing the target"
 DO "../platform/bare_metal/z7/ps7_init.cmm" &ps7_init
 
+&CurrentDir = OS.PresentPracticeDirectory()
+CD &CurrentDir
 PRINT "programming FPGA"
 DO "../platform/bare_metal/z7/zynq_bitstream.cmm" &bitfile 0x100000
 

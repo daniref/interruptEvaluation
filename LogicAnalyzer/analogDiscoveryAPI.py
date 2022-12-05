@@ -79,8 +79,8 @@ class ANALOG_DISCOVERY():
         samplevalues = (c_uint8 * self.__sample_number)()
         
         dataAvailable = c_int()
-        dataLost = c_int()
-        dataCorrupted = c_int()
+        dataLost = c_int(0)
+        dataCorrupted = c_int(0)
         
         samplesaquired = 0
         
@@ -118,14 +118,15 @@ class ANALOG_DISCOVERY():
 
         print("Analog Discovery: Aquisition complete!")
         if sample_is_lost:
-            print("Samples were lost! Reduce sample rate")
+            print("Samples ", dataLost.value," were lost! Reduce sample rate")
         if sample_is_corrupted:
-            print("Samples could be corrupted! Reduce sample rate")
+            print("Samples ", dataCorrupted.value," could be corrupted! Reduce sample rate")
 
         return samplevalues
 
     def close(self):
         self.__dwf.FDwfDigitalInReset(self.__hdwf)
+        self.__dwf.FDwfDeviceClose(self.__hdwf)
         print("Analog Discovery: Device closed!")
         del self.__dwf
         return

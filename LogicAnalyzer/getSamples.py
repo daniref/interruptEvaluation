@@ -1,7 +1,7 @@
 from LogicAnalyzer.analogDiscoveryAPI import *
 
 def get_LA_latency(sampling_frequency, sample_number, observation_number):
-    print("Hello, I'm the Analog Discovery!")
+    print("----------Hello, I'm the Analog Discovery!----------")
     # connect to the analog discovery and aquire samples
     la = ANALOG_DISCOVERY()
     la.open_device()

@@ -1,10 +1,5 @@
-19:33:38 **** Build of configuration Debug for project int_test_v4 ****
+22:24:52 **** Incremental Build of configuration Debug for project int_test_v4 ****
 make all 
-Building file: ../src/axi_gpio.c
-Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/axi_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/axi_gpio.d" -MT"src/axi_gpio.o" -o "src/axi_gpio.o" "../src/axi_gpio.c"
-Finished building: ../src/axi_gpio.c
- 
 Building file: ../src/generic_timer.c
 Invoking: ARM v8 gcc compiler
 aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/generic_timer.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/generic_timer.d" -MT"src/generic_timer.o" -o "src/generic_timer.o" "../src/generic_timer.c"
@@ -87,47 +82,6 @@ In file included from ../src/gicv2.c:6:
       |                ^~~~
 Finished building: ../src/gicv2.c
  
-Building file: ../src/ps_gpio.c
-Invoking: ARM v8 gcc compiler
-aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps_gpio.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/ps_gpio.d" -MT"src/ps_gpio.o" -o "src/ps_gpio.o" "../src/ps_gpio.c"
-In file included from ../src/ps_gpio.h:6,
-                 from ../src/ps_gpio.c:1:
-../src/ps_gpio.c: In function 'PSGpioInit':
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   43 | #define XST_FAILURE                     1L
-      |                                         ^~
-../src/ps_gpio.c:24:10: note: in expansion of macro 'XST_FAILURE'
-   24 |   return XST_FAILURE;
-      |          ^~~~~~~~~~~
-../src/ps_gpio.c:12:6: note: declared here
-   12 | void PSGpioInit()
-      |      ^~~~~~~~~~
-In file included from ../src/ps_gpio.h:6,
-                 from ../src/ps_gpio.c:1:
-/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   43 | #define XST_FAILURE                     1L
-      |                                         ^~
-../src/ps_gpio.c:30:10: note: in expansion of macro 'XST_FAILURE'
-   30 |   return XST_FAILURE;
-      |          ^~~~~~~~~~~
-../src/ps_gpio.c:12:6: note: declared here
-   12 | void PSGpioInit()
-      |      ^~~~~~~~~~
-../src/ps_gpio.c:80:9: warning: 'return' with a value, in function returning void [-Wreturn-type]
-   80 |  return &Gpio;
-      |         ^~~~~
-../src/ps_gpio.c:12:6: note: declared here
-   12 | void PSGpioInit()
-      |      ^~~~~~~~~~
-../src/ps_gpio.c:16:6: warning: unused variable 'Type_of_board' [-Wunused-variable]
-   16 |  int Type_of_board;
-      |      ^~~~~~~~~~~~~
-At top level:
-../src/ps_gpio.c:95:13: warning: 'IntrHandler' defined but not used [-Wunused-function]
-   95 | static void IntrHandler(void *CallBackRef, u32 Bank, u32 Status)
-      |             ^~~~~~~~~~~
-Finished building: ../src/ps_gpio.c
- 
 Building file: ../src/test_measurements.c
 Invoking: ARM v8 gcc compiler
 aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_measurements.o" -I/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/int_test_plat_v4/export/int_test_plat_v4/sw/int_test_plat_v4/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_measurements.d" -MT"src/test_measurements.o" -o "src/test_measurements.o" "../src/test_measurements.c"
@@ -158,5 +112,5 @@ aarch64-none-elf-size int_test_v4.elf  |tee "int_test_v4.elf.size"
 Finished building: int_test_v4.elf.size
  
 
-19:33:39 Build Finished (took 1s.271ms)
+22:24:53 Build Finished (took 317ms)
 

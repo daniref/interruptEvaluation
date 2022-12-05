@@ -16,3 +16,4 @@ platform write
 platform generate -domains 
 platform active {int_test_plat_v4}
 platform generate
+platform generate

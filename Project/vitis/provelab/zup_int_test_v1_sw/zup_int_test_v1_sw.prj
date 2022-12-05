@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="zup_int_test_v1_sw" location="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zup_int_test_v1_sw" platform="/home/oppy/Repositories/interruptEvaluation/Project/vitis/provelab/zup_int_test_v1/export/zup_int_test_v1/zup_int_test_v1.xpfm" platformUID="xilinx:zcu102::0.0(custom)" systemProject="zup_int_test_v1_sw_system" sysConfig="zup_int_test_v1" runtime="C/C++" cpu="standalone_domain" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="bb2e959aa659b7935ec213437254e3de">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.1133251436">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.2061059877" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

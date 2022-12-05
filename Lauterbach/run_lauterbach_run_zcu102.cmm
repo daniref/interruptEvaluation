@@ -227,7 +227,7 @@ IF Analyzer()
   IC ARM ETM.ContextID 32
   ; use Autofocus based calibration
   PER.Set.simple ANUD:0xFF5E00C0 %Long 0x1020600
-  ;IC ARM Analyzer.AutoFocus
+  IC ARM Analyzer.AutoFocus
 )
 
 go \\test_int_v5\test_measurements\main\18
@@ -242,7 +242,7 @@ IC ARM Trace.CLOCK 1.2GHz
 //IC ARM ETM.ReturnStack ON
 IC ARM ETM.Trace ON
 IC ARM ETM.ON
-IC ARM Analyzer.AutoFocus
+//IC ARM Analyzer.AutoFocus
 
 
 go

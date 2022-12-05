@@ -13,7 +13,7 @@ ChDir &CurrentDir
 &fsbl="../platform/bare_metal/zup/fsbl.elf"
 
 ;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
-&test_elf="../platform/bare_metal/test_int_v5.elf"
+&test_elf="../platform/bare_metal/zup/test_int_v5.elf"
 
 ; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
 
@@ -93,7 +93,7 @@ IC ARM CORE.ASSIGN 1. 2. 3. 4.
 IC ARM ETM.OFF
 IC ARM Trace.DISable
 IC ARM SYStem.Mode Prepare
-IC ARM DO "../platform/bare_metal/zynq-ultrascale_kick_bootcore.cmm" A53_X64
+IC ARM DO "../platform/bare_metal/zup/zynq-ultrascale_kick_bootcore.cmm" A53_X64
 IC ARM SYStem.Mode.Attach
 
 IF STATE.RUN()
@@ -141,7 +141,7 @@ IF Register(PC)!=ADDRESS.OFFSET(XFsbl_Loop)
 ; program the FPGA fabric (routes the TRACE lines to P6)
 ; --------------------------------------------------------------------------------
 
-IC ARM  DO "../platform/bare_metal/zynq-ultrascale_load_bitstream.cmm" "&bitfile" 0x10000000
+IC ARM  DO "../platform/bare_metal/zup/zynq-ultrascale_load_bitstream.cmm" "&bitfile" 0x10000000
 
 ; DBG_TRACE_CTRL - enable clock to have proper access to the TPIU
 IC ARM  Data.Set ENAXI:0xFD1A0064 %Long Data.Long(ENAXI:0xFD1A0064)|0x01003f00
@@ -211,7 +211,7 @@ ChDir &current_dir
 
 IF Analyzer()
 (
-  IC ARM DO "../platform/bare_metal/timestamps.cmm"
+  IC ARM DO "../platform/bare_metal/zup/timestamps.cmm"
   IC ARM Trace.Method Analyzer
   IF STRing.SCAN("&bitfile","16_to_16",0.)>0.
   (
@@ -227,10 +227,10 @@ IF Analyzer()
   IC ARM ETM.ContextID 32
   ; use Autofocus based calibration
   PER.Set.simple ANUD:0xFF5E00C0 %Long 0x1020600
-  ;IC ARM Analyzer.AutoFocus
+  IC ARM Analyzer.AutoFocus
 )
 
-go \\int_test_v5\test_measurements\main\18
+go \\test_int_v5\test_measurements\main\18
 WAIT !STATE.RUN()
 
 IC ARM ETM.STALL ON
@@ -242,7 +242,7 @@ IC ARM Trace.CLOCK 1.2GHz
 //IC ARM ETM.ReturnStack ON
 IC ARM ETM.Trace ON
 IC ARM ETM.ON
-IC ARM Analyzer.AutoFocus
+//IC ARM Analyzer.AutoFocus
 
 
 go

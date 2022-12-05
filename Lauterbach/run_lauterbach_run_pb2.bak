@@ -28,9 +28,7 @@ AREA.view
 ; ------------------------------------------------------------------------------
 
 &bitfile="../platform/bare_metal/z7/pb2_design_int.bit"
-;&bitfile="../platform/bare_metal/rfios/bitstream.bit"
 
-;&ps7_init="../platform/bare_metal/z7/ps7_init.tcl"
 &ps7_init="../platform/bare_metal/rfios/ps7_init.tcl"
 &test_elf="../platform/bare_metal/z7/z7_int_test_v2.elf"
 
@@ -102,9 +100,11 @@ IF STATE.RUN()
 ; Processing System Initialization
 ; ------------------------------------------------------------------------------
 
+cd current_dir
 PRINT "initializing the target"
 DO "../platform/bare_metal/z7/ps7_init.cmm" &ps7_init
 
+cd current_dir
 PRINT "programming FPGA"
 DO "../platform/bare_metal/z7/zynq_bitstream.cmm" &bitfile 0x100000
 
@@ -143,7 +143,7 @@ IF Analyzer()
 ;  IC ARM ETM.CycleAccurate ON
 ;  ETM.Trace ON
 ;  ETM.ON
-IC ARM Trace.CLOCK 666MHz
+  Trace.CLOCK 666MHz
   ETM.ContextID 32
   Analyzer.AutoFocus
 )

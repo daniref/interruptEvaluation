@@ -13,7 +13,7 @@ ChDir &CurrentDir
 &fsbl="../platform/bare_metal/zup/fsbl.elf"
 
 ;&test_elf="../platform/bare_metal/interrupt_evaluation.elf"
-&test_elf="../platform/bare_metal/zup/test_int_v5.elf"
+&test_elf="../platform/bare_metal/zup/zcu102_lab_sw.elf"
 
 ; &rfios_cfg="/home/paoloamato/Desktop/MASK-Lauterbach/test_apps/measure_syscall/build/rfik_conf.bin"
 
@@ -227,10 +227,10 @@ IF Analyzer()
   IC ARM ETM.ContextID 32
   ; use Autofocus based calibration
   PER.Set.simple ANUD:0xFF5E00C0 %Long 0x1020600
-  IC ARM Analyzer.AutoFocus
+  ;IC ARM Analyzer.AutoFocus
 )
 
-go \\test_int_v5\test_measurements\main\18
+go \\zcu102_lab_sw\test_measurements\main\18
 WAIT !STATE.RUN()
 
 IC ARM ETM.STALL ON
@@ -242,7 +242,7 @@ IC ARM Trace.CLOCK 1.2GHz
 //IC ARM ETM.ReturnStack ON
 IC ARM ETM.Trace ON
 IC ARM ETM.ON
-//IC ARM Analyzer.AutoFocus
+IC ARM Analyzer.AutoFocus
 
 
 go

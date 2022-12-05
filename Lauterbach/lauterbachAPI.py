@@ -25,7 +25,7 @@ class Trace32State(enum.IntEnum):
     HALTED = 2
     RUNNING = 3
 
-t32api = CDLL("/home/oppy/Utilities/t32/demo/api/python/legacy/t32api64.so")
+t32api = CDLL("/home/daniele/Utilities/t32/demo/api/python/legacy/t32api64.so")
 T32_DEV = 1
 
 class LAUTERBACH():
@@ -48,7 +48,7 @@ class LAUTERBACH():
             print("Lauterbach: TRACE32 already opened!")
         else:
             cwd = os.getcwd()
-            os.system("/home/oppy/Utilities/t32/bin/pc_linux64/t32marm -c "+cwd+"/Lauterbach/config_usb.t32 "+" &")
+            os.system("/home/daniele/Utilities/t32/bin/pc_linux64/t32marm -c "+cwd+"/Lauterbach/config_usb.t32 "+" &")
             print("Lauterbach: Waiting for TRACE32 to open...")
             time.sleep(8)
             print("Lauterbach: TRACE32 Opened.")
@@ -125,18 +125,19 @@ class LAUTERBACH():
     def get_trace(self, connection_state, architecture):
 
         if architecture == 0:
-            address_get_time_main = "0x00000000000014B0"
-            address_get_time_isr = "0x0000000000000D54"
-            address_XGpioPs_WritePin ="0x0000000000002B10"
-            address_XGpioPs_WriteReg = "0x0000000000001044"
-            address_gpio_isr_callback = "0x0000000000001044"
-
+            address_get_time_main = "0x0000000000000FA8"
+            address_get_time_isr = "0x0000000000000D5C"
+            address_XGpioPs_WritePin ="0x0000000000001DD0"
+            address_XGpioPs_WriteReg = "0x0000000000001E20"
+            address_gpio_isr_callback = "0x000000000000104C"
+            architecture = "zup"
         else:
             address_get_time_main = "0x00000000000008C4"
             address_get_time_isr = "0x0000000000000880"
             address_XGpioPs_WritePin = "0x0000000000002544"
             address_XGpioPs_WriteReg ="0x0000000000002598"
             address_gpio_isr_callback = "0x0000000000000668"
+            architecture = "z7"
 
         con_state = self.connect(connection_state)
         if not con_state:
@@ -164,7 +165,7 @@ class LAUTERBACH():
         num_records = min_record.value * -1
         total_bytes = num_bytes * num_records
 
-        # print("Numero di record =", num_records)
+        print("Numero di record =", num_records)
 
         """
         buffer contiene i byte dela traccia che interessa leggere
@@ -228,7 +229,6 @@ class LAUTERBACH():
                 else:
                     filtered_trace.append(record)
 
-
             if address == address_XGpioPs_WriteReg:
                 record["id"]=i/num_bytes
                 record["symbol"]="XGpioPs_WriteReg"
@@ -260,8 +260,11 @@ class LAUTERBACH():
             for record in filtered_trace:
                 t.write(str(record) + '\n')
 
-        m = open("Latencies/lauterbach_cache_miss.txt", "a")
-        h = open("Latencies/lauterbach_cache_hit.txt", "a")
+        lat_file_cache_miss = "Latencies/"+architecture+"_lauterbach_cache_miss.txt"
+        lat_file_cache_hit = "Latencies/"+architecture+"_lauterbach_cache_hit.txt"
+
+        m = open(lat_file_cache_miss, "a")
+        h = open(lat_file_cache_hit, "a")
         isr = 0
         for record in filtered_trace:
             if record["symbol"]=="gpio_isr_callback":
